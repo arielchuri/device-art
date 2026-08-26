@@ -30,7 +30,7 @@ device-art/
 │   ├── reference_syllabi/ # Syllabi from other faculty & external institutions
 │   ├── readings_source_pool/ # PDF repository & potential reading material
 │   ├── pedagogy_and_notes/ # Brainstorming, teaching philosophies, curriculum notes
-│   └── teaching_routines/ # Pacing protocols, ADHD executive workflows & timeboxing
+│   └── teaching_routines/ # Pacing protocols, operational workflows & timeboxing
 │
 └── admin/                 # Scripts & Sync Tools
     ├── canvas_sync.py     # Two-way sync engine between canvas/ and Canvas API

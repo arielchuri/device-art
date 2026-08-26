@@ -1,4 +1,4 @@
-# Instructor Operating System & Routine (ADHD & Pacing Protocol)
+# Instructor Operating System & Routine (Pacing Protocol)
 
 This document establishes the weekly operational scaffolding to prevent drift, eliminate administrative backlogs, and protect non-teaching time.
 
@@ -17,7 +17,7 @@ Wednesday (Class Day)  ──>  Thursday (Fast Grade)  ──>  Monday (Prep Che
   - Keep a single plain-text buffer (`canvas/grades/in_class_notes_YYYY-MM-DD.md`) for quick critique feedback bullets.
 
 ### Phase B: Thursday Morning (The 30-Minute Grading Siphon)
-- **Rule**: Never let grading roll past 24 hours. The longer an unreviewed stack sits, the higher the ADHD executive cost.
+- **Rule**: Never let grading roll past 24 hours. The longer an unreviewed stack sits, the higher the executive cost.
 - **Workflow**:
   - Open SpeedGrader with Canvas Rubrics enabled (1-click rubric criteria selection).
   - Use brief, actionable feedback (2 positive notes, 1 technical fix).

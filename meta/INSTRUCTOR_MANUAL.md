@@ -40,7 +40,7 @@ Canvas allows rubrics to be attached directly to assignments for fast, objective
 
 ---
 
-## 3. Weekly Executive Rhythm (ADHD-Friendly Pacing)
+## 3. Weekly Executive Rhythm (Pacing Protocol)
 
 1. **Wednesday Evening (In-Class)**:
    * Open Canvas on your phone/laptop $\to$ Click **Attendance** (Roll Call) $\to$ Tap *Mark All Present* and adjust absentees (takes 30 seconds).
