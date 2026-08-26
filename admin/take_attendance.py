@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """
-Interactive Flashcard Attendance Taker for Device Art (Fall 2026).
+Interactive Flashcard Attendance & Bio Data Manager for Device Art (Fall 2026).
 - Displays student photo directly in the terminal using chafa.
 - Shows preferred name / first name.
-- Prompts for status code (Default: '.' for Present, 'l' for Late, 'a' for Absent).
-- Updates attendance_ledger.md.
+- Prompts for status code:
+    [Enter] = Present (.)
+    'l'     = Late (L)
+    'a'     = Absent (A)
+    'e'     = Edit student bio data (Preferred name, Major, Year, Notes, etc.)
+    's'     = Save & exit with progress so far
+    'q'     = Cancel without saving
+- Updates attendance_ledger.md and student profile markdown files.
 - Automatically pushes roll call marks to Canvas.
 """
 
@@ -64,14 +70,93 @@ def load_students_from_canvas():
     except Exception:
         return []
 
+def edit_student_bio(student_record):
+    """Sub-menu to view and update student profile markdown data."""
+    bio_path = student_record["file"]
+    if not bio_path.exists():
+        print(f"Error: Bio file {bio_path.name} not found.")
+        return
+
+    while True:
+        text = bio_path.read_text()
+        
+        # Parse fields
+        def get_field(pattern, default=""):
+            m = re.search(pattern, text)
+            return m.group(1).strip() if m else default
+
+        pref_name = get_field(r"\*\*Preferred Name\*\*:\s*(.*)", student_record["pref_name"])
+        year = get_field(r"\*\*Year of School\*\*:\s*(.*)")
+        major = get_field(r"\*\*Major\*\*:\s*(.*)")
+        hometown = get_field(r"\*\*Hometown / City & Country\*\*:\s*(.*)")
+        interests = get_field(r"\*\*Interests & Background\*\*:\s*(.*)")
+        experience = get_field(r"\*\*Hardware / Coding Experience\*\*:\s*(.*)")
+        notes = get_field(r"\*\*Studio Observations\*\*:\s*(.*)")
+
+        print("\n=======================================================")
+        print(f"      EDIT BIO DATA: {student_record['roster_name']}")
+        print("=======================================================")
+        print(f" 1. Preferred Name : {pref_name or '[Not set]'}")
+        print(f" 2. Year of School : {year or '[Not set]'}")
+        print(f" 3. Major          : {major or '[Not set]'}")
+        print(f" 4. City & Country : {hometown or '[Not set]'}")
+        print(f" 5. Interests      : {interests or '[Not set]'}")
+        print(f" 6. Experience     : {experience or '[Not set]'}")
+        print(f" 7. Studio Notes   : {notes or '[Not set]'}")
+        print("-------------------------------------------------------")
+        print(" [Enter] / 1 = Edit Preferred Name   |   'r' = Return to Attendance")
+        
+        try:
+            choice = input("Select field (1-7, [Enter]=1, 'r'=Return): ").strip().lower()
+        except (KeyboardInterrupt, EOFError):
+            print("\nReturning to attendance...")
+            break
+
+        if choice in ["r", "q", "exit"]:
+            break
+
+        if choice in ["", "1"]:
+            val = input(f"New Preferred Name [{pref_name}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Preferred Name\*\*:\s*.*", f"**Preferred Name**: {val}", text)
+                student_record["pref_name"] = val
+        elif choice == "2":
+            val = input(f"New Year of School [{year}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Year of School\*\*:\s*.*", f"**Year of School**: {val}", text)
+        elif choice == "3":
+            val = input(f"New Major [{major}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Major\*\*:\s*.*", f"**Major**: {val}", text)
+        elif choice == "4":
+            val = input(f"New City & Country [{hometown}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Hometown / City & Country\*\*:\s*.*", f"**Hometown / City & Country**: {val}", text)
+        elif choice == "5":
+            val = input(f"New Interests [{interests}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Interests & Background\*\*:\s*.*", f"**Interests & Background**: {val}", text)
+        elif choice == "6":
+            val = input(f"New Experience [{experience}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Hardware / Coding Experience\*\*:\s*.*", f"**Hardware / Coding Experience**: {val}", text)
+        elif choice == "7":
+            val = input(f"New Studio Notes [{notes}]: ").strip()
+            if val:
+                text = re.sub(r"\*\*Studio Observations\*\*:\s*.*", f"**Studio Observations**: {val}", text)
+
+        # Write updated text back to file
+        bio_path.write_text(text)
+        print("✓ Bio file updated successfully.")
+
 def main():
     week_num, class_date_iso, class_date_ddmm = determine_current_week()
     
     print("\n=======================================================")
     print(f"      DEVICE ART ATTENDANCE — WEEK {week_num:02d} ({class_date_ddmm})")
     print("=======================================================\n")
-    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent")
-    print("Exits: 's' = Save & exit with progress so far,  'q' or Ctrl+C = Cancel without saving\n")
+    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent,  'e' = Edit Bio Data")
+    print("Exits: 's' = Save & exit,      'q' or Ctrl+C = Cancel without saving\n")
     
     canvas_students = load_students_from_canvas()
     student_records = []
@@ -103,11 +188,11 @@ def main():
         })
 
     attendance_results = {}
-    save_and_exit_early = False
-    
-    for i, s in enumerate(student_records, 1):
+    i = 0
+    while i < len(student_records):
+        s = student_records[i]
         print("\n-------------------------------------------------------")
-        print(f"[{i}/{len(student_records)}]  {s['pref_name']}  ({s['roster_name']})")
+        print(f"[{i+1}/{len(student_records)}]  {s['pref_name']}  ({s['roster_name']})")
         
         if s["img_path"]:
             try:
@@ -118,7 +203,7 @@ def main():
             print("   [No photo available]")
         
         try:
-            choice = input(f"\n{s['pref_name']} [Present]: ").strip().lower()
+            choice = input(f"\n{s['pref_name']} [Present] ('e'=Edit Bio): ").strip().lower()
         except (KeyboardInterrupt, EOFError):
             print("\n\nAttendance cancelled. Exiting without saving.")
             sys.exit(0)
@@ -128,8 +213,10 @@ def main():
             sys.exit(0)
         elif choice == "s":
             print("\nSaving recorded entries so far and exiting...")
-            save_and_exit_early = True
             break
+        elif choice == "e":
+            edit_student_bio(s)
+            continue  # Repeat prompt for this student after bio edit
         elif choice == "l":
             mark = "L"
             status_text = "LATE"
@@ -146,6 +233,7 @@ def main():
             "status_text": status_text,
             "canvas_id": s["canvas_id"]
         }
+        i += 1
 
     # Update attendance_ledger.md
     if LEDGER_PATH.exists():
