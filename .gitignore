@@ -1,6 +1,21 @@
+# Secrets & API Tokens
 .env
+.env.*
+
+# FERPA & Student Privacy Data (NEVER COMMIT GRADES OR ROSTERS)
+canvas/grades/*
+!canvas/grades/.gitkeep
+meta/grades/*
+grades/
+rosters/
+*.csv
+*.xlsx
+
+# Python & OS Artifacts
 *.pyc
 __pycache__/
 .DS_Store
-grades/rosters/*.csv
+
+# Backups & Private Instructor Archives
 admin/backups/
+meta/old_courses/
