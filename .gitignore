@@ -2,12 +2,15 @@
 .env
 .env.*
 
-# FERPA & Student Privacy Data (NEVER COMMIT GRADES OR ROSTERS)
+# FERPA & Student Privacy Data (NEVER COMMIT GRADES, ROSTERS, OR STUDENT PROFILES)
 canvas/grades/*
 !canvas/grades/.gitkeep
 meta/grades/*
 grades/
 rosters/
+meta/terms/*
+!meta/terms/.gitkeep
+terms/
 *.csv
 *.xlsx
 
