@@ -70,7 +70,8 @@ def main():
     print("\n=======================================================")
     print(f"      DEVICE ART ATTENDANCE — WEEK {week_num:02d} ({class_date_ddmm})")
     print("=======================================================\n")
-    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent,  'q' = Quit\n")
+    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent")
+    print("Exits: 's' = Save & exit with progress so far,  'q' or Ctrl+C = Cancel without saving\n")
     
     canvas_students = load_students_from_canvas()
     student_records = []
@@ -102,15 +103,14 @@ def main():
         })
 
     attendance_results = {}
+    save_and_exit_early = False
     
     for i, s in enumerate(student_records, 1):
         print("\n-------------------------------------------------------")
         print(f"[{i}/{len(student_records)}]  {s['pref_name']}  ({s['roster_name']})")
         
-        # Render image inline in terminal using chafa
         if s["img_path"]:
             try:
-                # 36 columns wide, 18 lines tall — optimal for half-screen split
                 subprocess.run(["chafa", "--size=36x18", str(s["img_path"])])
             except Exception:
                 pass
@@ -120,12 +120,16 @@ def main():
         try:
             choice = input(f"\n{s['pref_name']} [Present]: ").strip().lower()
         except (KeyboardInterrupt, EOFError):
-            print("\n\nAttendance cancelled. Exiting cleanly without saving.")
+            print("\n\nAttendance cancelled. Exiting without saving.")
             sys.exit(0)
         
         if choice == "q":
-            print("\nAttendance cancelled. Exiting cleanly without saving.")
+            print("\nAttendance cancelled. Exiting without saving.")
             sys.exit(0)
+        elif choice == "s":
+            print("\nSaving recorded entries so far and exiting...")
+            save_and_exit_early = True
+            break
         elif choice == "l":
             mark = "L"
             status_text = "LATE"
