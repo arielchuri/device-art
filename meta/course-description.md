@@ -1,25 +1,18 @@
-# Course Description: Device Art (Fall 2026)
+# Official Course Description: Device Art (PSAM 2230)
 
-**PSAM 2230 | The New School | Parsons School of Design**  
-**Instructor**: Ariel Churi  
-**Schedule**: Wednesday Evenings, 19:00 – 21:40  
-
----
-
-## Course Premise & Philosophy
-
-In an era dominated by dematerialized digital experiences and flat touchscreen glass, **Device Art** reclaims the physical, tactile, and expressive potential of technology. Rooted in both media art history and contemporary product design, Device Art is an artistic approach where the device itself—its physical mechanics, circuits, materials, and behavior—is the artwork. 
-
-This studio course guides students through the complete arc of conceiving, engineering, and fabricating standalone interactive physical objects. Rather than building generic utilitarian gadgets, students explore technology as an expressive and critical medium: creating objects that evoke humor, provoke critical inquiry, elicit poetic emotional responses, or subvert conventional user expectations.
+**The New School | Parsons School of Design | Course Catalog CRN 15895**  
+**Source**: [https://courses.newschool.edu/courses/PSAM2230/15895/](https://courses.newschool.edu/courses/PSAM2230/15895/)
 
 ---
 
-## What We Do in the Studio
+## Official Catalog Description
 
-Through hands-on benchwork, rapid prototyping, and weekly fabrication labs, students learn to bridge code, physical computing, and material craft:
-1. **Embedded Electronics & Sensing**: Programming microcontrollers (Raspberry Pi Pico / CircuitPython), interfacing analog and digital sensors (light, sound, ultrasonic, touch), and driving custom outputs (OLED displays, NeoPixel RGB arrays, mechanical actuators, audio transducers).
-2. **Materiality & Enclosure Craft**: Progressing from structural cardboard engineering and laser-cut chassis to 3D printed components, cast silicone/resin parts, and finished physical enclosures.
-3. **Behavioral Design & Interaction**: Structuring embedded finite-state machines, custom physical user interfaces (knobs, switches, bespoke physical inputs), and non-screen haptics.
-4. **Professional Documentation & Exhibition**: Producing portfolio-grade process logs, exploded-view technical drawings, schematic documentation, and video demonstrations of working prototypes.
+Device Art is a platform for students to invent new works of art that do not distinguish the object from a tool, the mechanism from the concept; through playfulness these devices are caught between definitions of art, design, and engineering. 
 
-Students culminate the term by designing and exhibiting a fully realized, self-contained interactive device.
+In this course devices are the artwork themselves; the mechanisms of the piece become part of the concept behind the work and the very essence of "making" and "play" is embedded in each of the pieces. Device Art can break the mold of art commercialization, propelled by the new forms of manufacturing and the ease of prototyping as production tools become more accessible. These artworks are easily replicable and can become commercialized, and even display features of playful utility for everyday life. 
+
+Students will learn new methods for prototyping by combining new digital fabrication techniques as well as commonly used fabrication processes including repurposing readymades. They will explore their own artistic concepts and develop a deeper understanding of how their ideas can be reproduced. Device Art will challenge students to rethink their ideas of what art can become, and where the threshold lies between playfulness, utility, and conceptual inquiry. 
+
+They will develop basic electronics and physical computing skills, such as microcontroller programming and circuitry design. They will engage in fabrication experiments to rethink and envision new devices that can facilitate invention from an artistic perspective, gaining new skills in device design, computing media, and device fabrication. They will use physical computing methods to expand on the field of open source hardware, learn interaction design methods and rapid prototyping tools for 3D printing. This course will provide a platform to enhance the design process of material experimentation and propel functional and accessible models of device art.
+
+- **Open to**: All university undergraduate degree students. Some seats reserved for BFA Design & Technology majors.
