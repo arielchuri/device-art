@@ -1,0 +1,1 @@
+../../../../meta/readings_source_pool/theory_and_art/chindogu_and_device_art.md
