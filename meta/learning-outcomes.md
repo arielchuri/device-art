@@ -1,21 +1,13 @@
-# Course Learning Outcomes (CLOs): Device Art
+# Learning Outcomes: Device Art (PSAM 2230)
 
-Upon successful completion of this course, students will be able to:
+By the successful completion of this course, students will be able to:
 
-### 1. Conceptual & Critical Frameworks (Art, Whimsy & Resistance)
-* **CLO 1: Formulate Critical, Playful & Adversarial Device Concepts**  
-  Situate physical computing artifacts within the intertwined traditions of *Device Art / Chindōgu* (whimsical absurdism) and *Disobedient Objects / Design Activism* (political resistance, anti-surveillance, counter-narratives), creating objects that interrogate power, labor, and cultural norms rather than merely serving commercial utility.
-
-### 2. Physical Computing & Hardware Engineering
-* **CLO 2: Engineer Safe, Functional Embedded Electronic Systems**  
-  Design, wire, test, and debug mixed-signal electronic circuits on breadboards and soldered proto-boards using digital multimeters, understanding fundamental principles of voltage, current, resistance, power regulation, and signal integrity.
-* **CLO 3: Program Responsive Microcontroller Behaviors**  
-  Write modular, non-blocking code (CircuitPython / Python) to interface microcontrollers (Raspberry Pi Pico) with diverse sensor inputs (capacitive touch, photocells, ultrasonic rangefinders) and actuator outputs (OLED screens, addressable RGB LEDs, audio buzzers, servos) using finite state machine architectures.
-
-### 3. Fabrication & Industrial Craft
-* **CLO 4: Execute Iterative Physical Enclosures & Mechanisms**  
-  Translate initial conceptual sketches through iterative physical prototyping—progressing from rapid structural cardboard models to digital fabrication (laser cutting, 3D printing, casting/molding)—to produce durable, finished standalone device enclosures.
-
-### 4. Professional Documentation & Exhibition
-* **CLO 5: Synthesize Technical & Visual Portfolio Documentation**  
-  Produce professional portfolio-quality documentation, including wiring schematics, mechanical drawings, user-interaction flowcharts, and video demonstrations conveying the device's operational behavior and political/conceptual premise.
+1. **Integrate skills in physical computing and fabrication** to create unique, multi-sensory interactive works.
+2. **Confidently understand the fundamental physical phenomena** underlying electronics and physical computing, including voltage, current, resistance, power, and signal integrity.
+3. **Prototype and document circuit designs** composed of thoughtfully selected electronic components, sensors, actuators (motors/servos), and OLED displays.
+4. **Program microcontroller-driven projects** using the Raspberry Pi Pico and CircuitPython.
+5. **Break down a high-level creative idea** into its constituent hardware and software subsystems.
+6. **Apply foundational digital fabrication techniques**, including 3D modeling (Fusion 360) for FDM 3D printing and 2D vector preparation (Adobe Illustrator) for laser cutting.
+7. **Safely work with electricity**, batteries, power supplies, a wide variety of electrical components, and digital fabrication tools.
+8. **Participate in nuanced discussions and critiques** about the relationship between electronic/physical media and current social issues by drawing context from relevant history, critical theory, and contemporary practice.
+9. **Build a final interactive capstone project** that integrates varying media and sensory themes in a creative practice of their own choosing.
