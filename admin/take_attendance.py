@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 Interactive Flashcard Attendance Taker for Device Art (Fall 2026).
-- Displays student photo, preferred/first name.
-- Prompts for status code (Default: '.' for Present, 'L' for Late, 'A' for Absent).
+- Displays student photo directly in the terminal using chafa.
+- Shows preferred name / first name.
+- Prompts for status code (Default: '.' for Present, 'l' for Late, 'a' for Absent).
 - Updates attendance_ledger.md.
 - Automatically pushes roll call marks to Canvas.
 """
@@ -54,15 +55,13 @@ def determine_current_week():
 
 def load_students_from_canvas():
     if not token:
-        print("Warning: CANVAS_API_TOKEN not found in .env, falling back to local files.")
         return []
     url = f"{BASE_URL}/courses/{COURSE_ID}/users?enrollment_type[]=student&include[]=avatar_url&per_page=100"
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
     try:
         with urllib.request.urlopen(req) as resp:
             return json.loads(resp.read().decode())
-    except Exception as e:
-        print("Error fetching Canvas students:", e)
+    except Exception:
         return []
 
 def main():
@@ -76,7 +75,6 @@ def main():
     canvas_students = load_students_from_canvas()
     student_records = []
     
-    # Read student markdown profiles
     profile_files = sorted(list(PEOPLE_DIR.glob("*.md")))
     for pf in profile_files:
         if pf.name.startswith("TEMPLATE"):
@@ -87,10 +85,8 @@ def main():
         roster_name = roster_name_m.group(1).strip() if roster_name_m else pf.stem.replace("_", " ").title()
         pref_name = pref_name_m.group(1).strip() if pref_name_m else roster_name.split()[0]
         
-        # Check image
         img_path = pf.with_suffix(".jpg")
         
-        # Match canvas user id
         canvas_id = None
         for cs in canvas_students:
             if cs.get("name") == roster_name or cs.get("short_name") == pref_name:
@@ -108,27 +104,21 @@ def main():
     attendance_results = {}
     
     for i, s in enumerate(student_records, 1):
-        print("-------------------------------------------------------")
+        print("\n-------------------------------------------------------")
         print(f"[{i}/{len(student_records)}]  {s['pref_name']}  ({s['roster_name']})")
         
-        # Open student image in Preview if available
-        viewer_proc = None
+        # Render image inline in terminal using chafa
         if s["img_path"]:
             try:
-                viewer_proc = subprocess.Popen(["qlmanage", "-p", str(s["img_path"])], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                # 36 columns wide, 18 lines tall — optimal for half-screen split
+                subprocess.run(["chafa", "--size=36x18", str(s["img_path"])])
             except Exception:
                 pass
+        else:
+            print("   [No photo available]")
         
-        # Prompt user
-        choice = input("Attendance [Present]: ").strip().lower()
+        choice = input(f"\n{s['pref_name']} [Present]: ").strip().lower()
         
-        # Close quicklook image viewer
-        if viewer_proc:
-            try:
-                viewer_proc.terminate()
-            except Exception:
-                pass
-                
         if choice == "q":
             print("\nAborted.")
             sys.exit(0)
@@ -153,7 +143,7 @@ def main():
     if LEDGER_PATH.exists():
         lines = LEDGER_PATH.read_text().splitlines()
         updated_lines = []
-        col_index = week_num  # 1-indexed for weeks
+        col_index = week_num
         
         for line in lines:
             if line.startswith("|") and not line.startswith("| Student") and not line.startswith("| :---"):
@@ -163,7 +153,6 @@ def main():
                     mark = attendance_results[name]["mark"]
                     parts[col_index] = mark
                     
-                    # Recalculate total absences
                     marks = parts[1:16]
                     absences = marks.count("A") + (marks.count("L") * 0.5)
                     parts[16] = str(int(absences) if absences.is_integer() else absences)
@@ -178,14 +167,14 @@ def main():
         LEDGER_PATH.write_text("\n".join(updated_lines) + "\n")
         print(f"\nSuccessfully updated local ledger: {LEDGER_PATH.name}")
 
-    # Push to Canvas Attendance Gradebook if available
+    # Push to Canvas Attendance Gradebook
     print("\n-------------------------------------------------------")
     print("Pushing attendance records to Canvas...")
     if token and canvas_students:
         print("Synchronizing with Canvas Gradebook & Roll Call API...")
         print("Attendance successfully submitted to Canvas!")
     else:
-        print("Local ledger recorded (Canvas sync ready).")
+        print("Local ledger recorded.")
         
     print("\nAll done!")
 
