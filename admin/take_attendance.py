@@ -117,10 +117,14 @@ def main():
         else:
             print("   [No photo available]")
         
-        choice = input(f"\n{s['pref_name']} [Present]: ").strip().lower()
+        try:
+            choice = input(f"\n{s['pref_name']} [Present]: ").strip().lower()
+        except (KeyboardInterrupt, EOFError):
+            print("\n\nAttendance cancelled. Exiting cleanly without saving.")
+            sys.exit(0)
         
         if choice == "q":
-            print("\nAborted.")
+            print("\nAttendance cancelled. Exiting cleanly without saving.")
             sys.exit(0)
         elif choice == "l":
             mark = "L"
