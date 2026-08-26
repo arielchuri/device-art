@@ -15,3 +15,15 @@
 3. **Behavior & Style**:
    - Be terse, precise, and completely faithful to the instructor's raw materials.
    - Never add unsolicited educational advice, unsolicited teaching philosophies, or AI-generated lesson filler.
+
+4. **CANVAS RUBRIC STANDARDS & SYNCHRONIZATION**:
+   - **Rubric Structure**: Every assignment in `canvas/assignments/` must include a concise, standardized 3-to-4 criteria rubric table formatted with clear point breakdowns:
+     - *Criterion 1: Conceptual & Critical Inquiry* (e.g. 30 pts)
+     - *Criterion 2: Technical Execution & Circuitry/Code* (e.g. 40 pts)
+     - *Criterion 3: Physical Enclosure & Craft/Mechanisms* (e.g. 20 pts)
+     - *Criterion 4: Process Documentation & Reflection* (e.g. 10 pts)
+   - **AI Responsibility**:
+     - Automatically parse markdown rubric tables in `canvas/assignments/*.md`.
+     - Construct Canvas-compatible rubric objects (`rubric_association`) during API sync.
+     - Ensure total points always calculate and align accurately with `points_possible`.
+     - Enable 1-click SpeedGrader rating capabilities for the instructor.
