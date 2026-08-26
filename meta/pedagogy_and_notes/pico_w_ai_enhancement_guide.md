@@ -1,43 +1,39 @@
-# Enhancing Device Art Objects with AI & The Raspberry Pi Pico W
+# Technical Guide: Networked I/O on Raspberry Pi Pico W
 
-## 1. The Core Architecture (Physical Transduction <-> Cloud/Local AI)
+This document outlines the generalized technical architecture for using the onboard 2.4GHz Wi-Fi radio (Infineon CYW43439) on the Raspberry Pi Pico W for networked data exchange and external API communication.
 
-Because the **Raspberry Pi Pico W** includes a 2.4GHz Wi-Fi/Bluetooth radio (Infineon CYW43439), it can connect directly to local networks or the internet. 
+---
 
-While the Pico's microcontroller (RP2040) cannot run a massive neural network internally, its radio allows it to act as an **embodied physical conduit for AI models** (Gemini, Claude, local Ollama endpoints).
+## 1. Generalized Architecture (Physical Transduction <-> Remote Endpoint)
 
 ```
-┌─────────────────────────┐         Wi-Fi (HTTPS/Sockets)       ┌─────────────────────────┐
-│   PHYSICAL DEVICE       │ ─────────────────────────────────>  │     AI ENDPOINT         │
-│   (Raspberry Pi Pico W) │                                     │ (Gemini / Claude /      │
-│                         │ <─────────────────────────────────  │  Local Ollama Server)   │
-│ • Physical Knobs/Dials  │          JSON Response              │                         │
-│ • Photocell / Ultrasonic│     (State machine behaviors,       │ • Generative text/audio │
-│ • OLED Display / Voice  │      absurd responses, dynamic      │ • Semantic perception   │
-│ • NeoPixels & Motors    │      mechanics)                     │ • System subversion     │
+┌─────────────────────────┐         Wi-Fi (HTTPS/REST)          ┌─────────────────────────┐
+│   PHYSICAL MICROCONTROLLER│ ──────────────────────────────────> │     REMOTE API / LLM    │
+│   (Raspberry Pi Pico W) │       Serialized Sensor Payloads    │        ENDPOINT         │
+│                         │                                     │                         │
+│ • Analog / Digital Input│ <────────────────────────────────── │ • External computation  │
+│ • I2C / SPI Peripherals │         JSON Data / Strings         │ • Web APIs / Databases  │
+│ • Actuators & Displays  │                                     │ • Local Ollama Server   │
 └─────────────────────────┘                                     └─────────────────────────┘
 ```
 
 ---
 
-## 2. Compelling Device Art & Political Concepts using Pico W + AI
+## 2. Technical Capabilities (Generalized Engineering Terms)
 
-### A. The "Disobedient Oracle" (Anti-Virtual Device)
-- **Concept**: A small physical object with a single rotary knob and an old receipt printer or OLED screen.
-- **Interaction**: The user turns the dial to select a topic or presses a tactile button. The Pico W queries Gemini with a custom system prompt that generates sarcastic, subversive, or poetic commentary on algorithmic society.
+1. **Sensor Telemetry Upstream**:
+   - Polling local physical sensors (temperature, distance, analog voltage, capacitive touch).
+   - Serializing sensor readings into JSON payloads.
+   - Sending HTTP `POST` requests over local Wi-Fi to a remote service or local model proxy.
 
-### B. The "Absurd Environmental Translator" (Chindōgu + AI)
-- **Concept**: The Pico W reads analog physical values (room temperature, light intensity, ultrasonic proximity) and sends the numerical values to an LLM.
-- **LLM Prompt**: *"You are an anxious Victorian spirit trapped inside an electronic thermometer. Interpret these sensor values: Temperature 72F, Light 45%."*
-- **Output**: The Pico prints or displays the Victorian ghost's dramatic reaction on an OLED display or buzzer.
-
-### C. The "Adversarial Noise Generator" (Anti-Surveillance Object)
-- **Concept**: A physical "smart home decoy" sitting on a desk.
-- **Interaction**: The Pico W periodically connects via Wi-Fi and streams synthetic, AI-generated nonsensical browsing traffic or queries to poison local advertising profile trackers.
+2. **Downstream Actuation & Display**:
+   - Receiving response strings or structured JSON from the network.
+   - Parsing text data and rendering it to local hardware (e.g. SSD1306 OLED display, char-by-char).
+   - Mapping received numerical values to PWM duty cycles, servo angles, or NeoPixel color arrays.
 
 ---
 
-## 3. Technical Implementation in CircuitPython (Zero Friction for Students)
+## 3. Reference Implementation in CircuitPython
 
 ```python
 import ssl
@@ -45,32 +41,23 @@ import wifi
 import socketpool
 import adafruit_requests
 
-# 1. Connect to Wi-Fi
-wifi.radio.connect("PARSONS_WIFI", "password")
+# 1. Initialize Wi-Fi radio
+wifi.radio.connect("NETWORK_SSID", "NETWORK_PASSWORD")
 
-# 2. Setup HTTPS session
+# 2. Configure HTTP session
 pool = socketpool.SocketPool(wifi.radio)
 requests = adafruit_requests.Session(pool, ssl.create_default_context())
 
-# 3. Query AI Endpoint (e.g. Gemini or local proxy)
+# 3. Transmit payload to REST endpoint
 headers = {"Content-Type": "application/json"}
-payload = {
-    "contents": [{"parts": [{"text": "Generate a 1-sentence poetic fortune about a toaster."}]}]
-}
+payload = {"sensor_value": 42.5}
 response = requests.post(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=API_KEY",
+    "https://api.example.com/v1/endpoint",
     json=payload,
     headers=headers
 )
 
-# 4. Parse & Transduce to Hardware
-text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
-oled.text(text, 0, 0, 1)
-oled.show()
+# 4. Transduce response data
+data = response.json()
+print("Received:", data)
 ```
-
----
-
-## 4. Where This Fits into the Curriculum
-- **Week 07/08**: Introduced during *Complex Systems & Networked Interactions*.
-- Gives students the option to use AI as an **unpredictable, conversational, or adversarial material** inside their physical enclosures.

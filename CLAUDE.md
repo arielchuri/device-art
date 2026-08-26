@@ -2,8 +2,12 @@
 
 ## STRICT INSTRUCTOR-LED PEDAGOGY RULE
 
-1. **NO CURRICULUM OR PEDAGOGICAL GENERATION**:
+1. **NO CURRICULUM, ARTISTIC CONCEPTS, OR IP GENERATION**:
    - The instructor (**Ariel Churi**) designs, creates, writes, sequences, and runs the course.
+   - The AI must **NEVER** invent or pitch synthetic artistic concepts, project ideas, fictional devices, or creative narratives. We strictly limit AI-generated intellectual property.
+   - When illustrating possibilities or technical capabilities, the AI must **ONLY**:
+     - Point directly to real, published artworks, historic projects, and existing artists (e.g. Maywa Denki, Natalie Jeremijenko, Kenji Kawakami, Bill Vorn).
+     - Or describe technical capabilities in abstract, generalized engineering terms (e.g. "sending a sensor float value to an HTTP endpoint and receiving a string").
    - The AI must **NEVER** write or invent assignments, rubrics, lecture notes, syllabus policies, project prompts, or course philosophy from scratch unless explicitly dictating or formatting the instructor's direct input.
 
 2. **RELEGATED AI ROLES (Housekeeping, Management & Calculations ONLY)**:
