@@ -1,0 +1,47 @@
+{
+  "id": 1285254,
+  "name": "Core Lab Objects: CT.A.Fa15",
+  "course_code": "Core Lab Objects: CT.A.Fa15",
+  "account_id": 133064,
+  "created_at": "2015-06-22T06:09:26Z",
+  "start_at": "2015-09-01T05:00:00Z",
+  "default_view": "syllabus",
+  "enrollment_term_id": 5686,
+  "is_public": null,
+  "grading_standard_id": null,
+  "root_account_id": 81775,
+  "uuid": "0j7Zlh9oVvBv2Zkk6t8ePlI6bjdqX6SNpjdayefO",
+  "license": null,
+  "grade_passback_setting": null,
+  "syllabus_body": "<h1><a id=\"\" class=\"\" title=\"\" href=\"https://github.com/coreobject/class/blob/master/syllabus.markdown\" target=\"\">See GitHub for updates.</a></h1>\n<h1 id=\"pudt2101\">&nbsp;</h1>",
+  "end_at": "2016-02-20T05:00:00Z",
+  "public_syllabus": false,
+  "public_syllabus_to_auth": false,
+  "storage_quota_mb": 3145,
+  "is_public_to_auth_users": false,
+  "homeroom_course": false,
+  "course_color": null,
+  "friendly_name": null,
+  "apply_assignment_group_weights": false,
+  "calendar": {
+    "ics": "https://canvas.newschool.edu/feeds/calendars/course_0j7Zlh9oVvBv2Zkk6t8ePlI6bjdqX6SNpjdayefO.ics"
+  },
+  "time_zone": "America/New_York",
+  "blueprint": false,
+  "template": false,
+  "sis_course_id": "201510.PUDT.2101.A.1561",
+  "integration_id": null,
+  "enrollments": [
+    {
+      "type": "teacher",
+      "role": "TeacherEnrollment",
+      "role_id": 3784,
+      "user_id": 4884607,
+      "enrollment_state": "active",
+      "limit_privileges_to_course_section": false
+    }
+  ],
+  "hide_final_grades": false,
+  "workflow_state": "available",
+  "restrict_enrollments_to_course_dates": true
+}

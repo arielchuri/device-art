@@ -1,0 +1,47 @@
+{
+  "id": 1894428,
+  "name": "Emergent Objects.A.Sp26",
+  "course_code": "Emergent Objects.A.Sp26",
+  "account_id": 129022,
+  "created_at": "2025-10-23T14:14:33Z",
+  "start_at": null,
+  "default_view": "wiki",
+  "enrollment_term_id": 6704,
+  "is_public": false,
+  "grading_standard_id": null,
+  "root_account_id": 81775,
+  "uuid": "rFSTITUwWODQDDx3cRlONSQq2XQGpYuNngtpT2cQ",
+  "license": "private",
+  "grade_passback_setting": null,
+  "syllabus_body": "<p style=\"text-align: center;\"><strong><span style=\"font-size: 18pt;\"><a class=\"inline_disabled\" title=\"Link\" href=\"https://github.com/arielchuri/emergentobjects/blob/main/PUFY_1263_A_CHURI_SP26.pdf\" target=\"_blank\">PUFY_1263_A_CHURI_SP26.pdf</a></span></strong></p>",
+  "end_at": null,
+  "public_syllabus": false,
+  "public_syllabus_to_auth": false,
+  "storage_quota_mb": 3145,
+  "is_public_to_auth_users": false,
+  "homeroom_course": false,
+  "course_color": null,
+  "friendly_name": null,
+  "apply_assignment_group_weights": false,
+  "calendar": {
+    "ics": "https://canvas.newschool.edu/feeds/calendars/course_rFSTITUwWODQDDx3cRlONSQq2XQGpYuNngtpT2cQ.ics"
+  },
+  "time_zone": "America/New_York",
+  "blueprint": false,
+  "template": false,
+  "sis_course_id": "202530.PUFY.1263.A.10657",
+  "integration_id": null,
+  "enrollments": [
+    {
+      "type": "teacher",
+      "role": "TeacherEnrollment",
+      "role_id": 3784,
+      "user_id": 4884607,
+      "enrollment_state": "active",
+      "limit_privileges_to_course_section": false
+    }
+  ],
+  "hide_final_grades": false,
+  "workflow_state": "available",
+  "restrict_enrollments_to_course_dates": true
+}

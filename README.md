@@ -1,50 +1,38 @@
-# Device Art — The New School
+# Device Art — The New School (Fall 2026)
 
 - **Status**: active
 - **Domain**: work
-- **Institution**: The New School
-- **Schedule**: Wednesday evenings, 19:00 (Fall 2026: Aug 26, 2026 – Dec 09, 2026)
-- **LMS**: Canvas
+- **Schedule**: Wednesday evenings, 19:00 - 21:40
+- **LMS**: Canvas (Course ID: `1929836`)
 
 ---
 
-## Directory Structure (Canvas-Aligned)
+## Workspace Architecture
 
 ```
 device-art/
-├── CLAUDE.md            # Strict boundary rules for AI (housekeeping/calc only)
-├── README.md            # Course overview, term schedule, logistics
-├── tasks.md             # Instructor to-dos, grading schedule, admin reminders
-├── syllabus/            # Official course syllabus, policies, office hours
-├── modules/             # Weekly modules (01-week to 16-week structures)
-├── assignments/         # Assignment briefs, project guidelines, rubrics
-├── announcements/       # Draft and published Canvas announcements
-├── discussions/         # Prompts and discussion board references
-├── files/               # Course readings, diagrams, schematics, slide decks
-├── grades/              # Rosters, grade calculation sheets, rubrics templates
-├── reference/           # Historical course materials, syllabi from prior years
-└── admin/               # Canvas API scripts, export backups, institutional forms
+├── CLAUDE.md              # AI boundary rules (housekeeping, pacing, calc only)
+├── README.md              # Course overview and repository architecture
+├── tasks.md               # Pacing checklist & grading triggers
+├── .env                   # Private Canvas API credentials (gitignored)
+│
+├── canvas/                # DIRECT CANVAS MIRROR (The actual course)
+│   ├── syllabus/          # Course syllabus & policies (syncs to Canvas Syllabus)
+│   ├── modules/           # Weekly module overviews & reading pages (week-01 to 15)
+│   ├── assignments/       # Assignment briefs, rubrics, and point values
+│   ├── announcements/     # Drafted and published Canvas announcements
+│   ├── discussions/       # Canvas discussion prompts
+│   ├── files/             # Public student-facing course PDFs & diagrams
+│   └── grades/            # Attendance logs, rubric score trackers
+│
+├── meta/                  # INSTRUCTOR BACKSTAGE (Course Creation & Research)
+│   ├── old_courses/       # Backups from prior Canvas courses (Fa20, Sp25, Fa15)
+│   ├── reference_syllabi/ # Syllabi from other faculty & external institutions
+│   ├── readings_source_pool/ # PDF repository & potential reading material
+│   ├── pedagogy_and_notes/ # Brainstorming, teaching philosophies, curriculum notes
+│   └── teaching_routines/ # Pacing protocols, ADHD executive workflows & timeboxing
+│
+└── admin/                 # Scripts & Sync Tools
+    ├── canvas_sync.py     # Two-way sync engine between canvas/ and Canvas API
+    └── backups/           # Full Canvas course exports (.imscc)
 ```
-
----
-
-## Fall 2026 Schedule (Wednesday Evenings @ 19:00)
-
-| Week | Date | Module / Class Topic | Notes / Milestones |
-| :---: | :---: | :--- | :--- |
-| **01** | 2026-08-26 | *First Day of Class / Orientation* | Term starts |
-| **02** | 2026-09-02 | Module 02 | |
-| **03** | 2026-09-09 | Module 03 | |
-| **04** | 2026-09-16 | Module 04 | |
-| **05** | 2026-09-23 | Module 05 | Mounty Madness overlap |
-| **06** | 2026-09-30 | Module 06 | |
-| **07** | 2026-10-07 | Module 07 | |
-| **08** | 2026-10-14 | Module 08 | Midterm Milestone |
-| **09** | 2026-10-21 | Module 09 | |
-| **10** | 2026-10-28 | Module 10 | |
-| **11** | 2026-11-04 | Module 11 | |
-| **12** | 2026-11-11 | Module 12 | Veterans Day |
-| **13** | 2026-11-18 | Module 13 | |
-| **--** | 2026-11-25 | *Thanksgiving Eve / Recess (Check TNS Cal)* | |
-| **14** | 2026-12-02 | Module 14 | Final Project Critiques |
-| **15** | 2026-12-09 | Module 15 | Final Presentations / Wrap-up |
