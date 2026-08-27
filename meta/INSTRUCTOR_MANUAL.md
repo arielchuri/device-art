@@ -42,11 +42,15 @@ Canvas allows rubrics to be attached directly to assignments for fast, objective
 
 ## 3. Weekly Executive Rhythm (Pacing Protocol)
 
-1. **Wednesday Evening (In-Class)**:
-   * Open Canvas on your phone/laptop $\to$ Click **Attendance** (Roll Call) $\to$ Tap *Mark All Present* and adjust absentees (takes 30 seconds).
-2. **Thursday Morning (30-Minute Grading Siphon)**:
-   * Open SpeedGrader with your Rubric. Grade all submissions in one sitting before 24 hours pass.
-3. **Monday (Prep)**:
-   * Review next week's module in `canvas/modules/week-XX/overview.md`.
+1. **Wednesday Evening (In-Class Attendance)**:
+   * Open Canvas Roll Call on phone/laptop via [`admin/open_attendance.sh`](../admin/open_attendance.sh) or direct URL `https://canvas.newschool.edu/courses/1929836/external_tools/18235`.
+   * Click **Mark All Present** $\to$ toggle any absent students to Red (takes 15 seconds).
+2. **Thursday Morning (30-Minute SpeedGrader Siphon & Ledger Check)**:
+   * Open SpeedGrader in Canvas with your 1-click Rubrics attached.
+   * Grade all weekly submissions in one sitting before 24 hours pass.
+   * Verify attendance ledger in `meta/terms/fall2026/attendance/attendance_ledger.md`.
+3. **Monday (Content Lock & Prep)**:
+   * Review upcoming week's module in `canvas/modules/week-XX/overview.md`.
+   * Confirm required parts/materials or PDF readings are linked.
 4. **Tuesday (Sync & Broadcast)**:
    * Run sync script to publish the module $\to$ Send Canvas weekly announcement.
