@@ -281,10 +281,53 @@ def main():
 
     # Push to Canvas Attendance Gradebook
     print("\n-------------------------------------------------------")
-    print("Pushing attendance records to Canvas...")
+    print("Pushing attendance records to Canvas Gradebook...")
     if token and canvas_students:
-        print("Synchronizing with Canvas Gradebook & Roll Call API...")
-        print("Attendance successfully submitted to Canvas!")
+        try:
+            # 1. Get or create Roll Call Attendance assignment
+            url_assigns = f"{BASE_URL}/courses/{COURSE_ID}/assignments?per_page=100"
+            req_a = urllib.request.Request(url_assigns, headers={"Authorization": f"Bearer {token}"})
+            with urllib.request.urlopen(req_a) as resp:
+                assigns = json.loads(resp.read().decode())
+            
+            att_assign = next((a for a in assigns if "Attendance" in a.get("name", "")), None)
+            if not att_assign:
+                url_new = f"{BASE_URL}/courses/{COURSE_ID}/assignments"
+                payload = {
+                    "assignment": {
+                        "name": "Roll Call Attendance",
+                        "points_possible": 100,
+                        "grading_type": "percent",
+                        "submission_types": ["none"],
+                        "published": True
+                    }
+                }
+                req_new = urllib.request.Request(url_new, data=json.dumps(payload).encode("utf-8"), headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}, method="POST")
+                with urllib.request.urlopen(req_new) as resp:
+                    att_assign = json.loads(resp.read().decode())
+            
+            assign_id = att_assign.get("id")
+            
+            # 2. Post grades
+            import urllib.parse
+            grade_data = {}
+            for s in canvas_students:
+                sname = s.get("name")
+                sid = str(s.get("id"))
+                mark = attendance_results.get(sname, {}).get("mark", "P")
+                if "Hyungrok" in sname and "Roy Hyungrok Son" in attendance_results:
+                    mark = attendance_results["Roy Hyungrok Son"]["mark"]
+                
+                score = 100 if mark.upper() in ["P", "."] else 0
+                grade_data[f"grade_data[{sid}][posted_grade]"] = str(score)
+            
+            data_encoded = urllib.parse.urlencode(grade_data).encode("utf-8")
+            url_bulk = f"{BASE_URL}/courses/{COURSE_ID}/assignments/{assign_id}/submissions/update_grades"
+            req_bulk = urllib.request.Request(url_bulk, data=data_encoded, headers={"Authorization": f"Bearer {token}"}, method="POST")
+            with urllib.request.urlopen(req_bulk) as resp:
+                print("✓ Successfully synchronized Week 1 attendance scores directly to Canvas Gradebook!")
+        except Exception as e:
+            print("Canvas sync error:", e)
     else:
         print("Local ledger recorded.")
         
