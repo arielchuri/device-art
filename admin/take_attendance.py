@@ -77,23 +77,34 @@ def edit_student_bio(student_record):
         print(f"Error: Bio file {bio_path.name} not found.")
         return
 
-    while True:
-        text = bio_path.read_text()
-        
-        def get_field(pattern, default=""):
-            m = re.search(pattern, text)
-            return m.group(1).strip() if m else default
+        def get_field(label, default=""):
+            m = re.search(rf"\*\*({re.escape(label)})\*\*:\s*(.*)", text)
+            if m:
+                val = m.group(2).strip()
+                # strip out any formatting artifacts
+                return val if val != "[Not set]" else ""
+            return default
 
-        pref_name = get_field(r"\*\*Preferred Name\*\*:\s*(.*)", student_record["pref_name"])
-        year = get_field(r"\*\*Year of School\*\*:\s*(.*)")
-        major = get_field(r"\*\*Major\*\*:\s*(.*)")
-        website = get_field(r"\*\*Personal Website\*\*:\s*(.*)")
-        github = get_field(r"\*\*GitHub / GitLab\*\*:\s*(.*)")
-        linkedin = get_field(r"\*\*LinkedIn\*\*:\s*(.*)")
-        socials = get_field(r"\*\*Other Portfolios / Socials\*\*:\s*(.*)")
-        interests = get_field(r"\*\*Interests & Background\*\*:\s*(.*)")
-        experience = get_field(r"\*\*Hardware / Coding Experience\*\*:\s*(.*)")
-        notes = get_field(r"\*\*Studio Observations\*\*:\s*(.*)")
+        def set_field(label, new_val):
+            nonlocal text
+            pattern = rf"- \*\*({re.escape(label)})\*\*:\s*.*"
+            replacement = f"- **{label}**: {new_val}"
+            if re.search(pattern, text):
+                text = re.sub(pattern, replacement, text)
+            else:
+                # If field missing, append
+                text += f"\n- **{label}**: {new_val}"
+
+        pref_name = get_field("Preferred Name", student_record["pref_name"])
+        year = get_field("Year of School")
+        major = get_field("Major")
+        website = get_field("Personal Website")
+        github = get_field("GitHub / GitLab")
+        linkedin = get_field("LinkedIn")
+        socials = get_field("Other Portfolios / Socials")
+        interests = get_field("Interests & Background")
+        experience = get_field("Hardware / Coding Experience")
+        notes = get_field("Studio Observations")
 
         print("\n=======================================================")
         print(f"      EDIT DOSSIER: {student_record['roster_name']}")
@@ -121,46 +132,56 @@ def edit_student_bio(student_record):
             break
 
         if choice in ["", "1"]:
-            val = input(f"New Preferred Name [{pref_name}]: ").strip()
+            prompt_str = f"New Preferred Name [{pref_name}]: " if pref_name else "New Preferred Name: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Preferred Name\*\*:\s*.*", f"**Preferred Name**: {val}", text)
+                set_field("Preferred Name", val)
                 student_record["pref_name"] = val
         elif choice == "2":
-            val = input(f"New Year of School [{year}]: ").strip()
+            prompt_str = f"New Year of School [{year}]: " if year else "New Year of School: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Year of School\*\*:\s*.*", f"**Year of School**: {val}", text)
+                set_field("Year of School", val)
         elif choice == "3":
-            val = input(f"New Major [{major}]: ").strip()
+            prompt_str = f"New Major [{major}]: " if major else "New Major: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Major\*\*:\s*.*", f"**Major**: {val}", text)
+                set_field("Major", val)
         elif choice == "4":
-            val = input(f"New Personal Website [{website}]: ").strip()
+            prompt_str = f"New Personal Website [{website}]: " if website else "New Personal Website: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Personal Website\*\*:\s*.*", f"**Personal Website**: {val}", text)
+                set_field("Personal Website", val)
         elif choice == "5":
-            val = input(f"New GitHub / GitLab [{github}]: ").strip()
+            prompt_str = f"New GitHub / GitLab [{github}]: " if github else "New GitHub / GitLab: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*GitHub / GitLab\*\*:\s*.*", f"**GitHub / GitLab**: {val}", text)
+                set_field("GitHub / GitLab", val)
         elif choice == "6":
-            val = input(f"New LinkedIn [{linkedin}]: ").strip()
+            prompt_str = f"New LinkedIn [{linkedin}]: " if linkedin else "New LinkedIn: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*LinkedIn\*\*:\s*.*", f"**LinkedIn**: {val}", text)
+                set_field("LinkedIn", val)
         elif choice == "7":
-            val = input(f"New Other Portfolios/Socials [{socials}]: ").strip()
+            prompt_str = f"New Other Portfolios/Socials [{socials}]: " if socials else "New Other Portfolios/Socials: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Other Portfolios / Socials\*\*:\s*.*", f"**Other Portfolios / Socials**: {val}", text)
+                set_field("Other Portfolios / Socials", val)
         elif choice == "8":
-            val = input(f"New Interests [{interests}]: ").strip()
+            prompt_str = f"New Interests [{interests}]: " if interests else "New Interests: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Interests & Background\*\*:\s*.*", f"**Interests & Background**: {val}", text)
+                set_field("Interests & Background", val)
         elif choice == "9":
-            val = input(f"New Experience [{experience}]: ").strip()
+            prompt_str = f"New Experience [{experience}]: " if experience else "New Experience: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Hardware / Coding Experience\*\*:\s*.*", f"**Hardware / Coding Experience**: {val}", text)
+                set_field("Hardware / Coding Experience", val)
         elif choice == "10":
-            val = input(f"New Studio Notes [{notes}]: ").strip()
+            prompt_str = f"New Studio Notes [{notes}]: " if notes else "New Studio Notes: "
+            val = input(prompt_str).strip()
             if val:
-                text = re.sub(r"\*\*Studio Observations\*\*:\s*.*", f"**Studio Observations**: {val}", text)
+                set_field("Studio Observations", val)
 
         bio_path.write_text(text)
         print("✓ Dossier updated successfully.")
