@@ -219,7 +219,7 @@ def main():
             print("   [No photo available]")
         
         try:
-            choice = input(f"\n{s['pref_name']} [Present] ('e'=Edit Dossier): ").strip().lower()
+            choice = input(f"\n{s['pref_name']} ({s['roster_name']}) [Present] ('e'=Edit Dossier): ").strip().lower()
         except (KeyboardInterrupt, EOFError):
             print("\n\nAttendance cancelled. Exiting without saving.")
             sys.exit(0)
