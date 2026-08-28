@@ -117,18 +117,23 @@ cat file-list.txt
 2. Save and write it to a file called `fruits.txt`, then exit `nano`.
 3. In a **single command line**: `cat` the contents of `fruits.txt`, pipe (`|`) the output into `sort`, and redirect (`>`) the sorted output into `sorted-fruits.txt`.
 
-<details>
-<summary><b>Click to reveal solution</b></summary>
+---
 
+### 🕵️ Decoder Challenge: Reveal the Solution in Your Terminal
+
+The solution has been encoded. To reveal the answer, copy and run either command directly in your terminal!
+
+#### Option A: ROT13 Decoder (using `tr`)
 ```bash
-# Step 1 & 2:
-nano fruits.txt
-# (type apple, banana, orange, etc., then Ctrl+O, Enter, Ctrl+X)
-
-# Step 3:
-cat fruits.txt | sort > sorted-fruits.txt
-
-# Verify:
-cat sorted-fruits.txt
+echo "png sehvgf.gkg | fbeg > fbegrq-sehvgf.gkg" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
-</details>
+
+#### Option B: Base64 Decoder (Built-in on Mac/Linux/Windows)
+- **macOS / Linux**:
+  ```bash
+  echo "Y2F0IGZydWl0cy50eHQgfCBzb3J0ID4gc29ydGVkLWZydWl0cy50eHQ=" | base64 --decode
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("Y2F0IGZydWl0cy50eHQgfCBzb3J0ID4gc29ydGVkLWZydWl0cy50eHQ="))
+  ```
