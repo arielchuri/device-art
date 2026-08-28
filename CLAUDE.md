@@ -20,7 +20,7 @@
    - **Do NOT edit existing files without being explicitly asked to.**
    - **Do NOT publish to Canvas (pages, announcements, assignments, discussions) without being explicitly asked to.**
    - **Git Push**: You **may** commit and push local changes to GitHub when you think it is needed to preserve history and backup work.
-   - **Session Verification**: At the start of new sessions, verify/confirm if these boundaries remain active before taking autonomous actions.
+   - **Session Verification**: At the start of future sessions, **ask whether to set these boundaries** before beginning work.
 
 4. **Behavior & Style**:
    - Be terse, precise, and completely faithful to the instructor's raw materials.
