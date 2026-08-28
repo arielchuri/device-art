@@ -1,52 +1,150 @@
-# Python Cheat Sheet & Quick Intro
+# Python Cheat Sheet & REPL Quick Intro
 
 ---
 
 ## 1. What is Python?
-Python is a plain-text, human-readable programming language. The exact same Python syntax we use in the terminal will run on your **Raspberry Pi Pico** (via CircuitPython) to control hardware sensors, lights, and motors.
+Python is a plain-text, human-readable programming language. The exact same Python syntax we type here will run on your **Raspberry Pi Pico** (via CircuitPython) to control hardware sensors, lights, and motors.
 
 ---
 
-## 2. Interactive Python REPL (No Files Needed)
-The **REPL** (Read-Eval-Print Loop) lets you test code instantly line-by-line.
+## 2. Interactive Python in the Terminal (No Files Needed)
+The **REPL** (Read-Eval-Print Loop) lets you run Python commands line-by-line directly inside your terminal window.
 
-### Launch REPL:
-- **macOS / Linux**: Type `python3` $\to$ press `Enter`.
-- **Windows**: Type `python` (or `py`) $\to$ press `Enter`.
+### Step 1: Open Your Terminal & Start Python
+Open your Terminal application (or PowerShell on Windows). In the terminal prompt, type:
 
-*(You will see the `>>>` prompt appear).*
+- **macOS / Linux**:
+```bash
+python3
+```
+- **Windows**:
+```bash
+python
+```
+*Press `Return` (Enter). Your prompt will change from `$` to `>>>`. You are now inside Python!*
 
-### Quick Commands to Try in REPL:
+---
+
+### Step 2: Running Commands Line-by-Line in REPL
+
+#### A. Storing a Voltage Variable
+Type this into the `>>>` prompt and press `Return`:
 ```python
-# 1. Math & Variables
 voltage = 3.3
+```
+- **What this does**: Creates a memory variable named `voltage` and stores the number `3.3` (the standard operating voltage of our Raspberry Pi Pico).
+- **Response**: None (Python silently remembers the value).
+
+---
+
+#### B. Storing a Resistor Value
+Type this into the `>>>` prompt and press `Return`:
+```python
 resistor = 220
+```
+- **What this does**: Creates a variable named `resistor` holding `220` (the Ohms rating of our LED protective resistors).
+- **Response**: None (Python silently stores it).
+
+---
+
+#### C. Calculating Current (Ohm's Law)
+Type this into the `>>>` prompt and press `Return`:
+```python
 current = voltage / resistor
-print(current)
+```
+- **What this does**: Divides voltage by resistance to calculate electrical current ($I = V / R$) and stores the result in `current`.
+- **Response**: None.
 
-# 2. Text (Strings)
+---
+
+#### D. Inspecting the Result
+Type this into the `>>>` prompt and press `Return`:
+```python
+current
+```
+- **Response**:
+```python
+0.015
+```
+- **What this does**: Prints the stored value. `0.015` Amperes (or 15 milliamps)—the exact safe current for powering an LED!
+
+---
+
+#### E. Storing and Printing Text (Strings)
+Type this into the `>>>` prompt and press `Return`:
+```python
 name = "Ada"
-print("Hello, " + name + "!")
+```
+- **What this does**: Stores the text string `"Ada"` in a variable named `name`.
 
-# 3. Lists (Arrays of Sensors/Pins)
+Now print a greeting:
+```python
+print("Hello, " + name + "!")
+```
+- **Response**:
+```python
+Hello, Ada!
+```
+- **What this does**: Combines the text strings and prints the output to your terminal screen.
+
+---
+
+#### F. Storing a List of Microcontroller Pins
+Type this into the `>>>` prompt and press `Return`:
+```python
 pins = ["GP0", "GP1", "GP2"]
-print(pins[0])
-print(len(pins))
+```
+- **What this does**: Creates a list containing three Raspberry Pi Pico pin names.
+
+Ask Python for the first pin (computers start counting at 0):
+```python
+pins[0]
+```
+- **Response**:
+```python
+'GP0'
 ```
 
-### Exit REPL:
-Type `exit()` or press `Ctrl + D` (`Ctrl + Z` then `Enter` on Windows).
+Ask Python how many pins are in the list:
+```python
+len(pins)
+```
+- **Response**:
+```python
+3
+```
 
 ---
 
-## 3. Writing & Running a Script via `nano`
+### Step 3: How to Exit Python
+When you are done testing in Python, return back to your regular terminal prompt:
 
-### Step 1: Create a Script
+Type this and press `Return`:
+```python
+exit()
+```
+*(Or press `Ctrl + D` on Mac/Linux, `Ctrl + Z` then `Enter` on Windows).*
+
+Your prompt will change back to `$` (or `%`). You are now back in the standard terminal shell.
+
+---
+
+## 3. Writing & Running a Standalone Script via `nano`
+
+When you want to save your Python instructions permanently into a file rather than typing them line-by-line, use `nano`.
+
+### Step 1: Create a New File in `nano`
+From your regular terminal prompt (`$`), type:
 ```bash
 nano age_check.py
 ```
+*Press `Return`. The `nano` text editor will open inside your terminal.*
 
-### Step 2: Write Minimal Script
+---
+
+### Step 2: Type Your Python Script
+Type or paste the following code into the editor:
+
 ```python
 # Prompt the user for input
 user_input = input("Enter your age: ")
@@ -63,21 +161,34 @@ except ValueError:
     print("Error: Please enter a whole number.")
 ```
 
-### Step 3: Save & Exit `nano`
-- **Save**: `Ctrl + O` $\to$ press `Enter`
-- **Exit**: `Ctrl + X`
+---
 
-### Step 4: Run the Script
-- **macOS / Linux**: `python3 age_check.py`
-- **Windows**: `python age_check.py`
+### Step 3: Save and Exit `nano`
+1. Press `Ctrl + O` $\to$ press `Return` (to write/save the file).
+2. Press `Ctrl + X` (to exit `nano` and return to the terminal prompt).
 
 ---
 
-## 4. Summary Table
+### Step 4: Run the Script in the Terminal
+Run your saved script by telling Python to execute the file:
 
-| Goal | macOS / Linux | Windows |
+- **macOS / Linux**:
+```bash
+python3 age_check.py
+```
+- **Windows**:
+```bash
+python age_check.py
+```
+
+---
+
+## 4. Summary Quick Reference
+
+| Action | What You Type | Where You Type It |
 | :--- | :--- | :--- |
-| **Launch REPL** | `python3` | `python` or `py` |
-| **Exit REPL** | `exit()` or `Ctrl + D` | `exit()` or `Ctrl + Z` + `Enter` |
-| **Edit File** | `nano filename.py` | `nano filename.py` (or `notepad filename.py`) |
-| **Run Script** | `python3 filename.py` | `python filename.py` |
+| **Enter Python** | `python3` (Mac/Linux) or `python` (Win) | Terminal Prompt (`$`) |
+| **Run Python Line** | `voltage = 3.3` + press `Return` | Python Prompt (`>>>`) |
+| **Exit Python** | `exit()` | Python Prompt (`>>>`) |
+| **Create/Edit Script** | `nano age_check.py` | Terminal Prompt (`$`) |
+| **Run Script File** | `python3 age_check.py` | Terminal Prompt (`$`) |
