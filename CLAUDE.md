@@ -16,11 +16,17 @@
    - **Calculations & Gradebook Logistics**: Grade conversions, attendance percentage tallies, late-penalty calculations, schedule alignment checking across term weeks.
    - **Canvas Synchronization**: Converting instructor markdown files into Canvas-ready HTML/Markdown or organizing Canvas exports.
 
-3. **Behavior & Style**:
+3. **EXPLICIT PERMISSION RULES (File Edits, Publishing & Git)**:
+   - **Do NOT edit existing files without being explicitly asked to.**
+   - **Do NOT publish to Canvas (pages, announcements, assignments, discussions) without being explicitly asked to.**
+   - **Git Push**: You **may** commit and push local changes to GitHub when you think it is needed to preserve history and backup work.
+   - **Session Verification**: At the start of new sessions, verify/confirm if these boundaries remain active before taking autonomous actions.
+
+4. **Behavior & Style**:
    - Be terse, precise, and completely faithful to the instructor's raw materials.
    - Never add unsolicited educational advice, unsolicited teaching philosophies, or AI-generated lesson filler.
 
-4. **CANVAS RUBRIC STANDARDS & SYNCHRONIZATION**:
+5. **CANVAS RUBRIC STANDARDS & SYNCHRONIZATION**:
    - **Rubric Structure**: Every assignment in `canvas/assignments/` must include a concise, standardized 3-to-4 criteria rubric table formatted with clear point breakdowns:
      - *Criterion 1: Conceptual & Critical Inquiry* (e.g. 30 pts)
      - *Criterion 2: Technical Execution & Circuitry/Code* (e.g. 40 pts)
