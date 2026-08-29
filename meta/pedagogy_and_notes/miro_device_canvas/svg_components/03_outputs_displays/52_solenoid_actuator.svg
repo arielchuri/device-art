@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">OUTPUT</text>
+
+
+  <!-- Solenoid coil body -->
+  <rect x="60" y="65" width="60" height="40" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Coil winding hashes -->
+  <line x1="72" y1="65" x2="72" y2="105" stroke="#888888" stroke-width="1"/>
+  <line x1="84" y1="65" x2="84" y2="105" stroke="#888888" stroke-width="1"/>
+  <line x1="96" y1="65" x2="96" y2="105" stroke="#888888" stroke-width="1"/>
+  <line x1="108" y1="65" x2="108" y2="105" stroke="#888888" stroke-width="1"/>
+  <!-- Extended metal plunger -->
+  <rect x="120" y="78" width="35" height="14" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <line x1="155" y1="85" x2="168" y2="85" stroke="#000000" stroke-width="1"/>
+  <polygon points="168,85 160,80 160,90" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">SOLENOID</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">linear push / pull plunger</text>
+</svg>
