@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Connector card boundary -->
+  <rect x="5" y="5" width="290" height="90" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="9" fill="#888888">BUS</text>
+
+
+  <!-- Dual trace SDA/SCL lines -->
+  <line x1="40" y1="38" x2="260" y2="38" stroke="#000000" stroke-width="1"/>
+  <line x1="40" y1="52" x2="260" y2="52" stroke="#000000" stroke-width="1"/>
+  <!-- I2C Tag -->
+  <rect x="130" y="30" width="40" height="30" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+  <text x="150" y="49" font-family="Andale Mono, monospace" font-size="9" fill="#000000" text-anchor="middle">I2C</text>
+  <text x="150" y="75" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">I2C BUS</text>
+  <text x="150" y="88" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">SDA / SCL multi-sensor line</text>
+</svg>

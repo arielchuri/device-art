@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Connector card boundary -->
+  <rect x="5" y="5" width="290" height="90" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="9" fill="#888888">NETWORK</text>
+
+
+  <line x1="40" y1="45" x2="105" y2="45" stroke="#000000" stroke-width="1"/>
+  <!-- Mini Cloud icon in center -->
+  <path d="M 120 52 C 112 52, 112 40, 122 38 C 122 28, 140 25, 150 34 C 158 28, 172 32, 172 40 C 178 44, 178 52, 170 52 Z" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <line x1="185" y1="45" x2="260" y2="45" stroke="#000000" stroke-width="1"/>
+  <text x="150" y="75" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">INTERNET CLOUD LINK</text>
+  <text x="150" y="88" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">web API / MQTT / cloud stream</text>
+</svg>

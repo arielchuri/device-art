@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Connector card boundary -->
+  <rect x="5" y="5" width="290" height="90" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="9" fill="#888888">WIRELESS</text>
+
+
+  <line x1="40" y1="45" x2="70" y2="45" stroke="#000000" stroke-width="1"/>
+  <!-- Center radio wave packet -->
+  <path d="M 75 45 Q 90 30 105 45 T 135 45 T 165 45 T 195 45 T 225 45" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <line x1="230" y1="45" x2="260" y2="45" stroke="#000000" stroke-width="1"/>
+  <text x="150" y="75" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">RADIO / RF LINK</text>
+  <text x="150" y="88" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">over-the-air packet broadcast</text>
+</svg>
