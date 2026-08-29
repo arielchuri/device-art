@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Translucent card background: 10% opacity white + thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.10" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="24" y="30" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
+
+
+  <circle cx="100" cy="85" r="28" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 85 85 Q 92 75 100 85 T 115 85" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <line x1="60" y1="45" x2="75" y2="60" stroke="#888888" stroke-width="0.5"/>
+  <polyline points="70,60 75,60 75,55" fill="none" stroke="#888888" stroke-width="0.5"/>
+  <line x1="75" y1="35" x2="90" y2="50" stroke="#888888" stroke-width="0.5"/>
+  <polyline points="85,50 90,50 90,45" fill="none" stroke="#888888" stroke-width="0.5"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">LIGHT SENSOR</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">measures brightness</text>
+</svg>

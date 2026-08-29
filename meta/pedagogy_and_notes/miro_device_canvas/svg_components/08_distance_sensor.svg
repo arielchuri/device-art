@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Translucent card background: 10% opacity white + thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.10" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="24" y="30" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
+
+
+  <rect x="40" y="60" width="120" height="50" fill="none" stroke="#000000" stroke-width="1"/>
+  <circle cx="70" cy="85" r="18" fill="none" stroke="#000000" stroke-width="1"/>
+  <circle cx="130" cy="85" r="18" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 70 50 A 28 28 0 0 1 70 30" fill="none" stroke="#888888" stroke-width="0.5"/>
+  <path d="M 130 50 A 28 28 0 0 1 130 30" fill="none" stroke="#888888" stroke-width="0.5"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">DISTANCE SENSOR</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">detects nearby objects</text>
+</svg>
