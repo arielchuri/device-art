@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="6" y="6" width="108" height="108" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="7.5" fill="#888888">MCU ACTION</text>
+
+
+  <!-- Triangle / Sawtooth oscillator wave with tuning note -->
+  <polyline points="25,55 40,35 55,55 70,35 85,55 95,35" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <!-- Frequency tuning arrow -->
+  <path d="M 40 68 Q 60 62 80 68" fill="none" stroke="#888888" stroke-width="0.8"/>
+  <text x="60" y="76" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">440 Hz</text>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="60" y="94" font-family="Andale Mono, monospace" font-size="9" fill="#000000" text-anchor="middle">SYNTH / TONE GEN</text>
+  <text x="60" y="106" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">oscillates audio frequency</text>
+</svg>
