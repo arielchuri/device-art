@@ -16,17 +16,37 @@ In this hands-on studio exercise, you will create and diagram a speculative phys
 You can run the generator in your terminal in two ways:
 
 ### Option A: Direct One-Line Terminal Run (No Cloning Needed)
+Open your Terminal (macOS Terminal or Ghostty) and paste:
 ```bash
 curl -s https://raw.githubusercontent.com/arielchuri/device-art/main/admin/generate_prompts.py | python3
 ```
 
+#### 🔍 How This Terminal Command Works:
+* **`curl`**: A command-line tool that downloads files or fetches data over the internet (`https://`).
+* **`-s`** (*silent*): Hides the progress meter and download speed so your terminal stays clean.
+* **`|`** (*pipe*): Takes the downloaded Python code from `curl` and streams it directly into the next program without saving a permanent file to your hard drive.
+* **`python3`**: The Python interpreter that reads the streamed code and executes it immediately in your terminal window.
+
+---
+
 ### Option B: Run from Local Repo
+If you have already cloned the course repository to your laptop:
 ```bash
+# 1. Navigate into your local course folder:
 cd ~/device-art
+
+# 2. Run the Python generator script:
 python3 admin/generate_prompts.py
 ```
 
-*Your output will establish three poetic layers:*
+#### 🔍 How This Terminal Command Works:
+* **`cd ~/device-art`** (*change directory*): Moves your terminal's current location into the `device-art` project folder inside your home directory (`~`).
+* **`python3 admin/generate_prompts.py`**: Tells the Python 3 interpreter to open, read, and run the Python script located in the `admin/` subfolder.
+
+---
+
+### 📖 Understanding Your 3-Layer Generated Prompt:
+When you run the command, you will receive a 3-paragraph narrative:
 1. **The World**: The atmospheric, dystopian, or utopian reality your user inhabits.
 2. **The Human Tension**: What your user is secretly desiring, resisting, or navigating.
 3. **The Object Ritual**: The physical constraints and tactile interactions governing your device.
