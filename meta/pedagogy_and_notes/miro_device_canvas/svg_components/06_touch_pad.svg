@@ -1,15 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Card background: 15% opacity white + thick dotted outline -->
+  <!-- Card boundary: thick dotted outline -->
   <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
 
   <!-- Top-left category label (tight to border) -->
   <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
 
 
+  <!-- Touch surface rectangle -->
   <rect x="45" y="45" width="110" height="80" fill="none" stroke="#000000" stroke-width="1"/>
-  <path d="M 65 85 C 65 70, 135 70, 135 85 C 135 100, 65 100, 65 85" fill="none" stroke="#888888" stroke-width="0.5"/>
-  <circle cx="100" cy="85" r="12" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <!-- Finger coming in from outside (open bottom, rounded tip contact) -->
+  <path d="M 90 135 L 90 85 A 10 10 0 0 1 110 85 L 110 135" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Small touch contact point -->
+  <circle cx="100" cy="85" r="2.5" fill="#000000"/>
   <!-- Typography: Andale Mono, 2 sizes, regular only -->
   <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">TOUCH PAD</text>
-  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">skin contact touch</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">capacitive surface touch</text>
 </svg>

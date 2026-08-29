@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Card background: 15% opacity white + thick dotted outline -->
+  <!-- Card boundary: thick dotted outline -->
   <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
 
   <!-- Top-left category label (tight to border) -->
   <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">OUTPUT</text>
 
 
-  <circle cx="100" cy="85" r="30" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Central buzzer body -->
+  <circle cx="100" cy="85" r="24" fill="none" stroke="#000000" stroke-width="1"/>
   <circle cx="100" cy="85" r="8" fill="none" stroke="#888888" stroke-width="0.5"/>
-  <line x1="85" y1="115" x2="85" y2="135" stroke="#888888" stroke-width="0.5"/>
-  <line x1="115" y1="115" x2="115" y2="135" stroke="#888888" stroke-width="0.5"/>
+  <!-- Buzzy zigzag vibration waves radiating outward -->
+  <polyline points="48,70 54,76 48,82 54,88 48,94 54,100" fill="none" stroke="#000000" stroke-width="1"/>
+  <polyline points="152,70 146,76 152,82 146,88 152,94 146,100" fill="none" stroke="#000000" stroke-width="1"/>
+  <polyline points="75,46 81,52 87,46 93,52 99,46 105,52 111,46 117,52 123,46" fill="none" stroke="#000000" stroke-width="0.5"/>
   <!-- Typography: Andale Mono, 2 sizes, regular only -->
   <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">BUZZER</text>
-  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">makes beeps & tones</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">sharp beeps & buzzing tones</text>
 </svg>

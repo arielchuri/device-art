@@ -1,14 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Translucent card background: 15% opacity white + thick dotted outline -->
+  <!-- Card boundary: thick dotted outline -->
   <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
 
   <!-- Top-left category label (tight to border) -->
   <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
 
 
-  <circle cx="100" cy="85" r="32" fill="none" stroke="#000000" stroke-width="1"/>
-  <line x1="100" y1="85" x2="100" y2="57" stroke="#000000" stroke-width="0.5"/>
-  <circle cx="100" cy="85" r="4" fill="#000000"/>
+  <!-- Knob body -->
+  <circle cx="100" cy="85" r="28" fill="none" stroke="#000000" stroke-width="1"/>
+  <line x1="100" y1="85" x2="100" y2="60" stroke="#000000" stroke-width="1"/>
+  <circle cx="100" cy="85" r="3" fill="#000000"/>
+  <!-- 5 equidistant radiating tick lines around perimeter -->
+  <!-- Top Left (225° / -135°) -->
+  <line x1="72" y1="57" x2="64" y2="49" stroke="#888888" stroke-width="0.5"/>
+  <!-- Mid Left (270° / -90°) -->
+  <line x1="62" y1="85" x2="50" y2="85" stroke="#888888" stroke-width="0.5"/>
+  <!-- Top Center (0° / 90°) -->
+  <line x1="100" y1="47" x2="100" y2="35" stroke="#888888" stroke-width="0.5"/>
+  <!-- Mid Right (90° / 0°) -->
+  <line x1="138" y1="85" x2="150" y2="85" stroke="#888888" stroke-width="0.5"/>
+  <!-- Top Right (45° / -45°) -->
+  <line x1="128" y1="57" x2="136" y2="49" stroke="#888888" stroke-width="0.5"/>
   <!-- Typography: Andale Mono, 2 sizes, regular only -->
   <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ROTARY DIAL</text>
   <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">smooth continuous turn</text>
