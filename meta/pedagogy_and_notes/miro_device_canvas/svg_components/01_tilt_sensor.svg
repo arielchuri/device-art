@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Translucent card background: 15% opacity white + thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.15" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
+
+
+  <!-- Horizontal baseline reference -->
+  <line x1="40" y1="85" x2="160" y2="85" stroke="#888888" stroke-width="0.5" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <!-- Tilted rectangle object -->
+  <rect x="75" y="55" width="50" height="60" fill="none" stroke="#000000" stroke-width="1" transform="rotate(22 100 85)"/>
+  <!-- Level gravity indicator line -->
+  <line x1="60" y1="85" x2="140" y2="85" stroke="#000000" stroke-width="1"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">TILT</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">detects angle or tip</text>
+</svg>

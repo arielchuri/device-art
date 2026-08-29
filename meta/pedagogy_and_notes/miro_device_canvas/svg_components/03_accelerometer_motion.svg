@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Translucent card background: 15% opacity white + thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.15" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
+
+
+  <!-- Figure-8 infinity motion loop -->
+  <path d="M 65 85 C 65 70, 90 70, 100 85 C 110 100, 135 100, 135 85 C 135 70, 110 70, 100 85 C 90 100, 65 100, 65 85" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Motion arrows -->
+  <polyline points="74,70 65,70 67,79" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <polyline points="126,100 135,100 133,91" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ACCELERATION</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">figure-8 / shake motion</text>
+</svg>

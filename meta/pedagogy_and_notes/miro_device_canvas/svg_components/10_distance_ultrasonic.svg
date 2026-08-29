@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Translucent card background: 15% opacity white + thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.15" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INPUT</text>
+
+
+  <!-- Emitter / sensor base -->
+  <rect x="50" y="70" width="30" height="30" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Radiating sonar wave arcs -->
+  <path d="M 95 65 A 25 25 0 0 1 95 105" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <path d="M 115 55 A 40 40 0 0 1 115 115" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <path d="M 135 45 A 55 55 0 0 1 135 125" fill="none" stroke="#000000" stroke-width="0.5"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">RANGE FINDER</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">ultrasonic sonar waves</text>
+</svg>
