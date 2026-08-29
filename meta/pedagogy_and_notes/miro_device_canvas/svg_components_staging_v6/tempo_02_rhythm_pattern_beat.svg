@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="6" y="6" width="108" height="108" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="7.5" fill="#888888">RHYTHM</text>
+
+
+  <!-- Step sequencer beat grid with active hits -->
+  <line x1="25" y1="50" x2="95" y2="50" stroke="#888888" stroke-width="0.8"/>
+  <rect x="28" y="42" width="10" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.8"/>
+  <rect x="45" y="42" width="10" height="16" fill="none" stroke="#000000" stroke-width="1"/>
+  <rect x="62" y="42" width="10" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.8"/>
+  <rect x="79" y="42" width="10" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.8"/>
+  <!-- Accent marker over beat 1 -->
+  <polygon points="33,32 30,38 36,38" fill="#000000"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="60" y="94" font-family="Andale Mono, monospace" font-size="9" fill="#000000" text-anchor="middle">BEAT / PATTERN</text>
+  <text x="60" y="106" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">syncopated 4/4 time grid</text>
+</svg>
