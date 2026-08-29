@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">PORT</text>
+
+  <circle cx="100" cy="85" r="38" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <rect x="84" y="65" width="4" height="18" fill="#000000"/>
+  <rect x="112" y="68" width="4" height="15" fill="#000000"/>
+  <path d="M 96 98 A 5 5 0 0 1 104 98 Z" fill="#000000"/>
+  <polygon points="154,30 144,44 152,44 148,58 162,42 154,42" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">AC MAINS OUTLET</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">120V/240V wall plug receptacle</text>
+</svg>

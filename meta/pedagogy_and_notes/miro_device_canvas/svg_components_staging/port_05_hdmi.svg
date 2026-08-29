@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">PORT</text>
+
+  <polygon points="55,68 145,68 145,86 135,100 65,100 55,86" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="65,76 135,76 135,84 128,93 72,93 65,84" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <rect x="140" y="32" width="24" height="16" fill="none" stroke="#000000" stroke-width="1"/>
+  <text x="152" y="44" font-family="Andale Mono, monospace" font-size="8" fill="#000000" text-anchor="middle">HD</text>
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">HDMI PORT</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">digital video &amp; multi-channel audio</text>
+</svg>
