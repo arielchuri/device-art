@@ -4,21 +4,25 @@ In this hands-on studio exercise, you will create and diagram a speculative phys
 
 ---
 
-## 🔗 Exercise Links
+## 🔗 Exercise Links & Downloads
 * **Shared Class Miro Board**: `[INSERT_MIRO_BOARD_SHARE_LINK_HERE]`
-* **Local Prompt Generator Script**: [`admin/generate_prompts.py`](https://github.com/arielchuri/device-art/blob/main/admin/generate_prompts.py)
+* **Prompt Generator Code (View on GitHub)**: [admin/generate_prompts.py](https://github.com/arielchuri/device-art/blob/main/admin/generate_prompts.py)
+* **Direct Raw Download**: [Download `generate_prompts.py`](https://raw.githubusercontent.com/arielchuri/device-art/main/admin/generate_prompts.py)
 
 ---
 
-## 🛠 Step 1: Generate Your Creative Prompt
+## 🛠 Step 1: Download & Run Your Creative Prompt
 
-Run the prompt generator script on your machine to receive your unique combinatorial narrative:
+You can run the generator in your terminal in two ways:
 
+### Option A: Direct One-Line Terminal Run (No Cloning Needed)
 ```bash
-# Clone or navigate to your local repo:
-cd ~/device-art
+curl -s https://raw.githubusercontent.com/arielchuri/device-art/main/admin/generate_prompts.py | python3
+```
 
-# Run the prompt generator (outputs your personal 3-layer narrative):
+### Option B: Run from Local Repo
+```bash
+cd ~/device-art
 python3 admin/generate_prompts.py
 ```
 
