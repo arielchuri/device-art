@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <!-- Translucent card background: 15% opacity white + thick dotted outline -->
-  <rect x="10" y="10" width="180" height="180" fill="#ffffff" fill-opacity="0.15" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
 
   <!-- Top-left category label (tight to border) -->
   <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">OUTPUT</text>
 
-
-  <rect x="35" y="45" width="130" height="75" fill="none" stroke="#000000" stroke-width="1"/>
-  <rect x="45" y="55" width="110" height="55" fill="none" stroke="#888888" stroke-width="0.5"/>
-  <line x1="55" y1="70" x2="115" y2="70" stroke="#000000" stroke-width="0.5"/>
-  <line x1="55" y1="82" x2="145" y2="82" stroke="#000000" stroke-width="1" stroke-dasharray="0, 3" stroke-linecap="round"/>
-  <line x1="55" y1="94" x2="95" y2="94" stroke="#000000" stroke-width="0.5"/>
+  <!-- Standardized 120x75 screen frame -->
+  <rect x="40" y="45" width="120" height="75" fill="none" stroke="#000000" stroke-width="1"/>
+  <rect x="48" y="53" width="104" height="59" fill="none" stroke="#888888" stroke-width="0.5"/>
+  <line x1="56" y1="68" x2="110" y2="68" stroke="#000000" stroke-width="0.5"/>
+  <line x1="56" y1="80" x2="136" y2="80" stroke="#000000" stroke-width="1" stroke-dasharray="0, 3" stroke-linecap="round"/>
+  <line x1="56" y1="92" x2="92" y2="92" stroke="#000000" stroke-width="0.5"/>
   <!-- Typography: Andale Mono, 2 sizes, regular only -->
   <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">OLED SCREEN</text>
   <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">monochrome text / telemetry</text>
