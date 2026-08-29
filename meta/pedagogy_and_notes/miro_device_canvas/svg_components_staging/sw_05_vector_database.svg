@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">MEMORY</text>
+
+
+  <!-- 3D Vector Coordinate Plane / Database Cylinder -->
+  <ellipse cx="100" cy="55" rx="35" ry="12" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 65 55 L 65 105 A 35 12 0 0 0 135 105 L 135 55" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 65 80 A 35 12 0 0 0 135 80" fill="none" stroke="#888888" stroke-width="0.5" stroke-dasharray="0, 3" stroke-linecap="round"/>
+  <!-- Vector point clusters in space -->
+  <circle cx="85" cy="75" r="2.5" fill="url(#hatch)"/>
+  <circle cx="115" cy="68" r="2.5" fill="url(#hatch)"/>
+  <circle cx="95" cy="95" r="2.5" fill="url(#hatch)"/>
+  <!-- Vector trajectory arrow -->
+  <line x1="85" y1="75" x2="115" y2="68" stroke="#000000" stroke-width="1"/>
+  <polygon points="115,68 107,66 110,72" fill="#000000"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">VECTOR DATABASE</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">semantic embedding search (RAG)</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">MEMORY</text>
+
+
+  <!-- Stacked RAM memory registers -->
+  <rect x="55" y="52" width="90" height="18" fill="none" stroke="#000000" stroke-width="1"/>
+  <rect x="55" y="74" width="90" height="18" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <rect x="55" y="96" width="90" height="18" fill="none" stroke="#000000" stroke-width="1"/>
+  <circle cx="68" cy="61" r="2" fill="#000000"/>
+  <circle cx="68" cy="105" r="2" fill="#000000"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">LOCAL CACHE</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">ephemeral state / RAM buffer</text>
+</svg>
