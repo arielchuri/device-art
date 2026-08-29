@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">PHYSICAL</text>
+
+
+  <!-- Human lips profile -->
+  <path d="M 50 75 Q 65 85 50 95" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Dynamic breath air current streams -->
+  <path d="M 65 78 Q 95 68 125 82 T 155 78" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 65 85 Q 95 78 125 90 T 155 85" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <path d="M 65 92 Q 95 88 125 98 T 155 92" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">BLOW / BREATHE</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">exhales air onto device</text>
+</svg>
