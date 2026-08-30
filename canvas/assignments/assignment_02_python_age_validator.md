@@ -3,7 +3,7 @@
 - **Due Date**: Wednesday, September 2, 2026 at 7:00 PM
 - **Points**: 20 Points (+ Extra Credit)
 - **Submission Type**: Text Entry (Paste your code formatted as a code block) & File Upload (`.py`)
-- **Quick Reference**: 📖 **[Python Cheatsheet & Syntax Guide](https://github.com/arielchuri/device-art/blob/main/canvas/files/cheatsheets/python_cheatsheet.md)**
+- **Quick Reference**: 📖 **[Python Cheatsheet & Syntax Guide (Canvas Page)](https://canvas.newschool.edu/courses/1929836/pages/python-cheat-sheet-and-repl-quick-intro-2)** | **[View on GitHub](https://github.com/arielchuri/device-art/blob/main/canvas/files/cheatsheets/python_cheatsheet.md)**
 
 ---
 
