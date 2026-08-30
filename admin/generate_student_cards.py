@@ -172,3 +172,56 @@ combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w}
 grid_file = OUTPUT_DIR / 'all_students_roster_grid.svg'
 grid_file.write_text(combined_svg)
 print(f'Generated combined grid: {grid_file.name} ({grid_w}x{grid_h})')
+
+# Generate Instructor Card for Ariel Churi (Color: Black)
+ariel_photo = PEOPLE_DIR / 'ariel_churi.jpg'
+ariel_avatar_svg = ''
+if ariel_photo.exists():
+    img_bytes = ariel_photo.read_bytes()
+    img_b64 = base64.b64encode(img_bytes).decode('utf-8')
+    ariel_avatar_svg = f'''  <!-- Photo circle -->
+  <defs>
+    <clipPath id="avatar-clip-ariel_churi">
+      <circle cx="100" cy="82" r="32" />
+    </clipPath>
+  </defs>
+  <circle cx="100" cy="82" r="33" fill="none" stroke="#000000" stroke-width="1.5" />
+  <image href="data:image/jpeg;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-ariel_churi)" preserveAspectRatio="xMidYMid slice" />
+  <circle cx="100" cy="82" r="32" fill="none" stroke="#000000" stroke-width="0.5" />'''
+else:
+    ariel_avatar_svg = f'''  <!-- Monogram circle -->
+  <circle cx="100" cy="82" r="33" fill="none" stroke="#000000" stroke-width="1.5" />
+  <circle cx="100" cy="82" r="32" fill="#F0F0F0" stroke="#000000" stroke-width="0.5" />
+  <text x="100" y="89" font-family="Andale Mono, monospace" font-size="20" fill="#000000" text-anchor="middle">AC</text>'''
+
+ariel_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Slight subtle drop shadow -->
+    <filter id="card-shadow-ariel_churi" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Solid white card background with slight shadow -->
+  <rect x="10" y="10" width="180" height="180" fill="#FFFFFF" filter="url(#card-shadow-ariel_churi)" />
+
+  <!-- Distinct top black color bar (sharp, no corner rounding) -->
+  <rect x="10" y="10" width="180" height="5" fill="#000000" />
+
+  <!-- Card boundary: thick dotted outline (Device Art symbol signature) -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label & Top-right term tag -->
+  <text x="16" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INSTRUCTOR</text>
+  <text x="184" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="end">FA26</text>
+
+{ariel_avatar_svg}
+
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ARIEL CHURI</text>
+  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">he/him • instructor</text>
+</svg>
+'''
+ariel_out = OUTPUT_DIR / 'ariel_churi.svg'
+ariel_out.write_text(ariel_svg)
+print(f'Generated: {ariel_out.name} [Black / Instructor]')
