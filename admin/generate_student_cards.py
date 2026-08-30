@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
-Generate Miro/Figma compatible student SVG cards matching the Device Art symbol language.
-- White card background with subtle drop shadow
-- Characteristic thick dotted card boundary (stroke-dasharray="0, 4" stroke-linecap="round")
-- Andale Mono typography with category label ("STUDENT")
-- Unique color bar & accent ring per student (bright yet toned down)
-- Self-contained embedded Base64 photos (or monogram avatar for students without photo)
+Generate Miro/Figma compatible student SVG cards strictly matching the Device Art symbol template:
+- Dimensions: 200x200 (exact symbol square size)
+- Sharp corners (no rx corner rounding anywhere)
+- Solid white card background with subtle drop shadow
+- Thick dotted card boundary: stroke="#888888" stroke-dasharray="0, 4" stroke-linecap="round"
+- Monospace typography (Andale Mono)
+- Top-left category label: "STUDENT"
+- Top-right term label: "FA26"
+- Color bar along the top edge (bright yet toned down)
+- Self-contained embedded Base64 photo (or monogram for students without photo)
+- Name at y=152 (12px uppercase) and subtitle at y=170 (9px #888888)
 """
 
 import base64
@@ -65,99 +70,90 @@ for i, s in enumerate(students):
     preferred = s.get('Preferred Name', '')
     pronouns = s.get('Pronouns', '')
     email = s.get('Email', '')
-    sis_id = s.get('N# / SIS ID', '')
     
-    # Subtitle details (symbols style)
+    # Subtitle matching symbols 9px #888888 style
     subtitles = []
     if preferred and preferred != name:
-        subtitles.append(f'goes by "{preferred}"')
+        subtitles.append(f'"{preferred}"')
     if pronouns:
         subtitles.append(pronouns.lower())
-    sub_line = ' • '.join(subtitles) if subtitles else 'student'
+    sub_line = ' • '.join(subtitles) if subtitles else 'design and technology'
 
+    # Avatar element centered at (100, 82)
     if s['has_photo'] and s['photo_path']:
         img_bytes = s['photo_path'].read_bytes()
         img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-        avatar_svg = f'''  <!-- Photo circle with color accent stroke -->
-  <g transform="translate(100, 85)">
-    <defs>
-      <clipPath id="avatar-clip-{slug}">
-        <circle cx="0" cy="0" r="35" />
-      </clipPath>
-    </defs>
-    <circle cx="0" cy="0" r="37" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
-    <image href="data:image/jpeg;base64,{img_b64}" x="-35" y="-35" width="70" height="70" clip-path="url(#avatar-clip-{slug})" preserveAspectRatio="xMidYMid slice" />
-  </g>'''
+        avatar_svg = f'''  <!-- Photo circle -->
+  <defs>
+    <clipPath id="avatar-clip-{slug}">
+      <circle cx="100" cy="82" r="32" />
+    </clipPath>
+  </defs>
+  <circle cx="100" cy="82" r="33" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
+  <image href="data:image/jpeg;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-{slug})" preserveAspectRatio="xMidYMid slice" />
+  <circle cx="100" cy="82" r="32" fill="none" stroke="#000000" stroke-width="0.5" />'''
     else:
         initials = get_initials(name)
-        avatar_svg = f'''  <!-- Monogram circle with color accent stroke -->
-  <g transform="translate(100, 85)">
-    <circle cx="0" cy="0" r="37" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
-    <circle cx="0" cy="0" r="35" fill="{color['bg_tint']}" />
-    <text x="0" y="8" font-family="Andale Mono, monospace" font-size="22" fill="{color['bar']}" text-anchor="middle">{initials}</text>
-  </g>'''
+        avatar_svg = f'''  <!-- Monogram circle -->
+  <circle cx="100" cy="82" r="33" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
+  <circle cx="100" cy="82" r="32" fill="{color['bg_tint']}" stroke="#000000" stroke-width="0.5" />
+  <text x="100" y="89" font-family="Andale Mono, monospace" font-size="20" fill="{color['bar']}" text-anchor="middle">{initials}</text>'''
 
-    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" width="200" height="230">
+    # Name font size adjust if long
+    font_size = 12
+    if len(name) > 17:
+        font_size = 10.5
+    elif len(name) > 14:
+        font_size = 11
+
+    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
     <!-- Slight subtle drop shadow -->
     <filter id="card-shadow-{slug}" x="-10%" y="-10%" width="125%" height="130%">
       <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
     </filter>
-    <clipPath id="card-clip-{slug}">
-      <rect x="10" y="10" width="180" height="210" rx="4" />
-    </clipPath>
   </defs>
 
   <!-- Solid white card background with slight shadow -->
-  <rect x="10" y="10" width="180" height="210" rx="4" fill="#FFFFFF" filter="url(#card-shadow-{slug})" />
+  <rect x="10" y="10" width="180" height="180" fill="#FFFFFF" filter="url(#card-shadow-{slug})" />
 
-  <!-- Distinct top color bar -->
-  <g clip-path="url(#card-clip-{slug})">
-    <rect x="10" y="10" width="180" height="6" fill="{color['bar']}" />
-  </g>
+  <!-- Distinct top color bar (sharp, no corner rounding) -->
+  <rect x="10" y="10" width="180" height="5" fill="{color['bar']}" />
 
   <!-- Card boundary: thick dotted outline (Device Art symbol signature) -->
-  <rect x="10" y="10" width="180" height="210" rx="4" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
 
-  <!-- Top category label -->
-  <text x="16" y="27" font-family="Andale Mono, monospace" font-size="8.5" fill="#888888">STUDENT</text>
-  <text x="184" y="27" font-family="Andale Mono, monospace" font-size="8" fill="#AAAAAA" text-anchor="end">FA26</text>
+  <!-- Top-left category label & Top-right term tag -->
+  <text x="16" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888">STUDENT</text>
+  <text x="184" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="end">FA26</text>
 
 {avatar_svg}
 
-  <!-- Typography: Andale Mono in symbol hierarchy -->
-  <text x="100" y="145" font-family="Andale Mono, monospace" font-size="11" fill="#000000" text-anchor="middle">{name.upper()}</text>
-  <text x="100" y="160" font-family="Andale Mono, monospace" font-size="8.5" fill="#888888" text-anchor="middle">{sub_line}</text>
-  <text x="100" y="174" font-family="Andale Mono, monospace" font-size="7.5" fill="#555555" text-anchor="middle">{email}</text>
-
-  <!-- Dotted divider -->
-  <line x1="25" y1="188" x2="175" y2="188" stroke="#888888" stroke-width="0.75" stroke-dasharray="0, 3" stroke-linecap="round" />
-
-  <!-- Footer ID / Course tag -->
-  <text x="100" y="204" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">DEVICE ART • {sis_id if sis_id else "PARSONS DT"}</text>
+  <!-- Typography: Andale Mono, 2 sizes, regular only (exact symbol standard) -->
+  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="{font_size}" fill="#000000" text-anchor="middle">{name.upper()}</text>
+  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">{sub_line}</text>
 </svg>
 '''
     out_file = OUTPUT_DIR / f'{slug}.svg'
     out_file.write_text(svg_content)
     print(f'Generated: {out_file.name} [{color["name"]}]')
 
-# Generate combined grid (5 columns)
+# Generate combined grid (5 columns, 200x200 symbol grid)
 cols = 5
-card_w = 200
-card_h = 230
+card_size = 200
 gap = 20
 padding = 30
 rows = (len(students) + cols - 1) // cols
-grid_w = padding * 2 + cols * card_w + (cols - 1) * gap
-grid_h = padding * 2 + rows * card_h + (rows - 1) * gap
+grid_w = padding * 2 + cols * card_size + (cols - 1) * gap
+grid_h = padding * 2 + rows * card_size + (rows - 1) * gap
 
 grid_elements = []
 for idx, s in enumerate(students):
     slug = s['slug']
     r = idx // cols
     c = idx % cols
-    x = padding + c * (card_w + gap)
-    y = padding + r * (card_h + gap)
+    x = padding + c * (card_size + gap)
+    y = padding + r * (card_size + gap)
     card_svg = (OUTPUT_DIR / f"{slug}.svg").read_text()
     inner = card_svg.split("<svg", 1)[1].split(">", 1)[1].rsplit("</svg>", 1)[0]
     grid_elements.append(f'<g transform="translate({x}, {y})">\n{inner}\n</g>')
@@ -167,7 +163,7 @@ combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w}
   <rect width="{grid_w}" height="{grid_h}" fill="#F4F5F7" />
   
   <!-- Header -->
-  <text x="{padding}" y="22" font-family="Andale Mono, monospace" font-size="12" fill="#888888">DEVICE ART / FALL 2026 / STUDENT ROSTER</text>
+  <text x="{padding}" y="20" font-family="Andale Mono, monospace" font-size="10" fill="#888888">DEVICE ART / FALL 2026 / STUDENT ROSTER CARDS (200x200)</text>
 
   <!-- Cards Grid -->
   {''.join(grid_elements)}
