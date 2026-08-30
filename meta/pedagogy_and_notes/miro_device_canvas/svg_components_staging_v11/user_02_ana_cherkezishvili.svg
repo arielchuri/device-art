@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="6" y="6" width="268" height="108" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category tag -->
+  <text x="14" y="20" font-family="Andale Mono, monospace" font-size="8" fill="#888888">STUDENT</text>
+
+  <!-- Left: Human User Avatar Icon -->
+  <circle cx="50" cy="56" r="14" fill="none" stroke="#000000" stroke-width="1.2"/>
+  <circle cx="50" cy="56" r="8" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <path d="M 28 88 C 28 72, 72 72, 72 88" fill="url(#hatch)" stroke="#000000" stroke-width="1"/>
+
+  <!-- Right: Identity Typography -->
+  <text x="96" y="50" font-family="Andale Mono, monospace" font-size="12" fill="#000000">Ana Cherkezishvili</text>
+  <text x="96" y="68" font-family="Andale Mono, monospace" font-size="9" fill="#000000">MFA DT Candidate</text>
+  <text x="96" y="84" font-family="Andale Mono, monospace" font-size="8" fill="#888888">she/her · Fall 2026</text>
+</svg>
