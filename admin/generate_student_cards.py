@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
-Generate Miro/Figma compatible student & instructor SVG cards matching Device Art symbol specifications:
+Generate Miro/Figma compatible student SVG cards matching the user's edited style:
 - 200x200 square dimensions with sharp 90-degree corners (no rx)
-- White card background with subtle drop shadow
-- Characteristic thick dotted card boundary (stroke-dasharray="0, 4" stroke-linecap="round")
+- Outer border: 2px solid stroke in student's theme color (x=1, y=1, w=198, h=198)
+- Bottom color bar: filled rect (x=1, y=172, w=198, h=27) in student's theme color
+- Large circular avatar: radius=49.4 centered at (100, 82) with 2px theme color stroke
 - Monospace typography (Andale Mono)
-- Top-left category: "STUDENT" (or "INSTRUCTOR" for Ariel)
-- Top-right term: "FA26"
-- Color bar along top edge (bright yet toned down for students, solid black for instructor)
-- Self-contained embedded Base64 photo/gif
-- Headline (y=150): Full legal/roster name in uppercase
-- Subheadline (y=168): Preferred name IF present and distinct from full name; otherwise left completely blank
+- Top-left category: "STUDENT" at (4.7, 12.3)
+- Top-right term: "FA26" at (194.7, 12.3)
+- Main name at y=154
+- Subheadline (preferred name if present) at y=166 (or inside banner if needed)
 """
 
 import base64
@@ -69,126 +68,154 @@ for i, s in enumerate(students):
     name = s.get('Legal / Roster Name') or s['slug'].replace('_', ' ').title()
     preferred = s.get('Preferred Name', '').strip()
 
-    # If preferred name exists and differs from full legal name, use it; otherwise blank
+    # Subheadline for preferred name
     sub_element = ''
     if preferred and preferred.lower() != name.lower():
-        sub_element = f'\n  <!-- Subheadline: Preferred Name -->\n  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">{preferred}</text>'
+        sub_element = f'''  <text
+     x="100"
+     y="166"
+     font-family="'Andale Mono', monospace"
+     font-size="8.5px"
+     fill="#888888"
+     text-anchor="middle">{preferred}</text>'''
 
-    # Avatar element centered at (100, 82)
+    # Avatar (radius 49.39)
     if s['has_photo'] and s['photo_path']:
         img_bytes = s['photo_path'].read_bytes()
         img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-        avatar_svg = f'''  <!-- Photo circle -->
-  <defs>
+        avatar_svg = f'''  <defs id="defs-{slug}">
     <clipPath id="avatar-clip-{slug}">
-      <circle cx="100" cy="82" r="32" />
+      <circle cx="100" cy="82" r="49.388664" />
     </clipPath>
   </defs>
-  <circle cx="100" cy="82" r="33" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
-  <image href="data:image/jpeg;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-{slug})" preserveAspectRatio="xMidYMid slice" />
-  <circle cx="100" cy="82" r="32" fill="none" stroke="#000000" stroke-width="0.5" />'''
+  <image
+     href="data:image/jpeg;base64,{img_b64}"
+     x="50.611336"
+     y="32.611336"
+     width="98.777328"
+     height="98.777328"
+     clip-path="url(#avatar-clip-{slug})"
+     preserveAspectRatio="xMidYMid slice" />
+  <circle
+     cx="100"
+     cy="82"
+     r="49.388664"
+     fill="none"
+     stroke="{color['bar']}"
+     stroke-width="2"
+     style="stroke:{color['bar']};stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />'''
     else:
         initials = get_initials(name)
-        avatar_svg = f'''  <!-- Monogram circle -->
-  <circle cx="100" cy="82" r="33" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
-  <circle cx="100" cy="82" r="32" fill="{color['bg_tint']}" stroke="#000000" stroke-width="0.5" />
-  <text x="100" y="89" font-family="Andale Mono, monospace" font-size="20" fill="{color['bar']}" text-anchor="middle">{initials}</text>'''
+        avatar_svg = f'''  <circle
+     cx="100"
+     cy="82"
+     r="49.388664"
+     fill="{color['bg_tint']}"
+     stroke="{color['bar']}"
+     stroke-width="2"
+     style="stroke:{color['bar']};stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="100"
+     y="92"
+     font-family="'Andale Mono', monospace"
+     font-size="28px"
+     font-weight="normal"
+     fill="{color['bar']}"
+     text-anchor="middle">{initials}</text>'''
 
-    # Name font size adjust if long
+    # Font size for name
     font_size = 12
     if len(name) > 17:
         font_size = 10.5
     elif len(name) > 14:
         font_size = 11
 
-    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    svg_content = f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 200 200"
+   width="200"
+   height="200"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Slight subtle drop shadow -->
-    <filter id="card-shadow-{slug}" x="-10%" y="-10%" width="125%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
+    <filter
+       id="card-shadow-{slug}"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feDropShadow
+         dx="0"
+         dy="3"
+         stdDeviation="4"
+         flood-color="#000000"
+         flood-opacity="0.08" />
     </filter>
   </defs>
 
   <!-- Solid white card background with slight shadow -->
-  <rect x="10" y="10" width="180" height="180" fill="#FFFFFF" filter="url(#card-shadow-{slug})" />
+  <rect
+     x="1"
+     y="1"
+     width="198"
+     height="198"
+     fill="#FFFFFF"
+     filter="url(#card-shadow-{slug})" />
 
-  <!-- Distinct top color bar (sharp, no corner rounding) -->
-  <rect x="10" y="10" width="180" height="5" fill="{color['bar']}" />
+  <!-- Distinct bottom color bar (sharp, matching edited style) -->
+  <rect
+     x="1"
+     y="171.95454"
+     width="198"
+     height="27.045454"
+     fill="{color['bar']}"
+     style="fill:{color['bar']};stroke-width:1" />
 
-  <!-- Card boundary: thick dotted outline (Device Art symbol signature) -->
-  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+  <!-- Card boundary: 2px solid colored outline -->
+  <rect
+     x="1"
+     y="1"
+     width="198"
+     height="198"
+     fill="none"
+     stroke="{color['bar']}"
+     stroke-width="2"
+     style="stroke-width:2;stroke-dasharray:none;fill:none;stroke:{color['bar']}" />
 
   <!-- Top-left category label & Top-right term tag -->
-  <text x="16" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888">STUDENT</text>
-  <text x="184" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="end">FA26</text>
+  <text
+     x="4.7387695"
+     y="12.319336"
+     font-family="'Andale Mono', monospace"
+     font-size="9px"
+     fill="#888888">STUDENT</text>
+  <text
+     x="194.71191"
+     y="12.319336"
+     font-family="'Andale Mono', monospace"
+     font-size="9px"
+     fill="#888888"
+     text-anchor="end">FA26</text>
 
 {avatar_svg}
 
   <!-- Typography: Andale Mono (Main Name) -->
-  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="{font_size}" fill="#000000" text-anchor="middle">{name.upper()}</text>{sub_element}
+  <text
+     x="100"
+     y="154"
+     font-family="'Andale Mono', monospace"
+     font-size="{font_size}px"
+     fill="#000000"
+     text-anchor="middle">{name.upper()}</text>
+{sub_element}
 </svg>
 '''
     out_file = OUTPUT_DIR / f'{slug}.svg'
     out_file.write_text(svg_content)
-    pref_note = f' (Preferred: "{preferred}")' if (preferred and preferred.lower() != name.lower()) else ' (No preferred name)'
-    print(f'Generated: {out_file.name} [{color["name"]}]{pref_note}')
+    print(f'Generated: {out_file.name} [{color["name"]}]')
 
-# Generate Instructor Card for Ariel Churi using ariel_churi.gif (Color: Black)
-ariel_gif = PEOPLE_DIR / 'ariel_churi.gif'
-if not ariel_gif.exists():
-    ariel_gif = Path('/Users/arielchuri/Downloads/ariel.gif')
-
-ariel_avatar_svg = ''
-if ariel_gif.exists():
-    img_bytes = ariel_gif.read_bytes()
-    img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-    ariel_avatar_svg = f'''  <!-- GIF/Photo circle -->
-  <defs>
-    <clipPath id="avatar-clip-ariel_churi">
-      <circle cx="100" cy="82" r="32" />
-    </clipPath>
-  </defs>
-  <circle cx="100" cy="82" r="33" fill="none" stroke="#000000" stroke-width="1.5" />
-  <image href="data:image/gif;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-ariel_churi)" preserveAspectRatio="xMidYMid slice" />
-  <circle cx="100" cy="82" r="32" fill="none" stroke="#000000" stroke-width="0.5" />'''
-else:
-    ariel_avatar_svg = f'''  <!-- Monogram circle -->
-  <circle cx="100" cy="82" r="33" fill="none" stroke="#000000" stroke-width="1.5" />
-  <circle cx="100" cy="82" r="32" fill="#F0F0F0" stroke="#000000" stroke-width="0.5" />
-  <text x="100" y="89" font-family="Andale Mono, monospace" font-size="20" fill="#000000" text-anchor="middle">AC</text>'''
-
-ariel_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <defs>
-    <!-- Slight subtle drop shadow -->
-    <filter id="card-shadow-ariel_churi" x="-10%" y="-10%" width="125%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
-    </filter>
-  </defs>
-
-  <!-- Solid white card background with slight shadow -->
-  <rect x="10" y="10" width="180" height="180" fill="#FFFFFF" filter="url(#card-shadow-ariel_churi)" />
-
-  <!-- Distinct top black color bar (sharp, no corner rounding) -->
-  <rect x="10" y="10" width="180" height="5" fill="#000000" />
-
-  <!-- Card boundary: thick dotted outline (Device Art symbol signature) -->
-  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
-
-  <!-- Top-left category label & Top-right term tag -->
-  <text x="16" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888">INSTRUCTOR</text>
-  <text x="184" y="24" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="end">FA26</text>
-
-{ariel_avatar_svg}
-
-  <!-- Typography: Andale Mono (Main Name) -->
-  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ARIEL CHURI</text>
-</svg>
-'''
-ariel_out = OUTPUT_DIR / 'ariel_churi.svg'
-ariel_out.write_text(ariel_svg)
-print(f'Generated: {ariel_out.name} [Black / Instructor / GIF Embedded]')
-
-# Generate combined grid (including instructor as first card + 14 students in 5 cols)
+# Generate combined grid (5 columns, all 15 cards)
 all_cards = [{'slug': 'ariel_churi'}] + students
 cols = 5
 card_size = 200
@@ -214,7 +241,7 @@ combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w}
   <rect width="{grid_w}" height="{grid_h}" fill="#F4F5F7" />
   
   <!-- Header -->
-  <text x="{padding}" y="20" font-family="Andale Mono, monospace" font-size="10" fill="#888888">DEVICE ART / FALL 2026 / ROSTER CARDS (200x200)</text>
+  <text x="{padding}" y="20" font-family="'Andale Mono', monospace" font-size="10" fill="#888888">DEVICE ART / FALL 2026 / ROSTER CARDS (200x200)</text>
 
   <!-- Cards Grid -->
   {''.join(grid_elements)}
