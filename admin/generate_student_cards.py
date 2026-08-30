@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Generate Miro/Figma compatible student SVG cards matching Device Art symbol specifications:
+Generate Miro/Figma compatible student & instructor SVG cards matching Device Art symbol specifications:
 - 200x200 square dimensions with sharp 90-degree corners (no rx)
 - White card background with subtle drop shadow
 - Characteristic thick dotted card boundary (stroke-dasharray="0, 4" stroke-linecap="round")
 - Monospace typography (Andale Mono)
 - Top-left category: "STUDENT" (or "INSTRUCTOR" for Ariel)
 - Top-right term: "FA26"
-- Color bar along top edge (bright yet toned down, black for instructor)
-- Self-contained embedded Base64 photo (or monogram circle)
+- Color bar along top edge (bright yet toned down for students, solid black for instructor)
+- Self-contained embedded Base64 photo/gif
 - Headline (y=150): Full legal/roster name in uppercase
 - Subheadline (y=168): Preferred name IF present and distinct from full name; otherwise left completely blank
 """
@@ -133,20 +133,23 @@ for i, s in enumerate(students):
     pref_note = f' (Preferred: "{preferred}")' if (preferred and preferred.lower() != name.lower()) else ' (No preferred name)'
     print(f'Generated: {out_file.name} [{color["name"]}]{pref_note}')
 
-# Generate Instructor Card for Ariel Churi (Color: Black)
-ariel_photo = PEOPLE_DIR / 'ariel_churi.jpg'
+# Generate Instructor Card for Ariel Churi using ariel_churi.gif (Color: Black)
+ariel_gif = PEOPLE_DIR / 'ariel_churi.gif'
+if not ariel_gif.exists():
+    ariel_gif = Path('/Users/arielchuri/Downloads/ariel.gif')
+
 ariel_avatar_svg = ''
-if ariel_photo.exists():
-    img_bytes = ariel_photo.read_bytes()
+if ariel_gif.exists():
+    img_bytes = ariel_gif.read_bytes()
     img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-    ariel_avatar_svg = f'''  <!-- Photo circle -->
+    ariel_avatar_svg = f'''  <!-- GIF/Photo circle -->
   <defs>
     <clipPath id="avatar-clip-ariel_churi">
       <circle cx="100" cy="82" r="32" />
     </clipPath>
   </defs>
   <circle cx="100" cy="82" r="33" fill="none" stroke="#000000" stroke-width="1.5" />
-  <image href="data:image/jpeg;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-ariel_churi)" preserveAspectRatio="xMidYMid slice" />
+  <image href="data:image/gif;base64,{img_b64}" x="68" y="50" width="64" height="64" clip-path="url(#avatar-clip-ariel_churi)" preserveAspectRatio="xMidYMid slice" />
   <circle cx="100" cy="82" r="32" fill="none" stroke="#000000" stroke-width="0.5" />'''
 else:
     ariel_avatar_svg = f'''  <!-- Monogram circle -->
@@ -183,7 +186,7 @@ ariel_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" wi
 '''
 ariel_out = OUTPUT_DIR / 'ariel_churi.svg'
 ariel_out.write_text(ariel_svg)
-print(f'Generated: {ariel_out.name} [Black / Instructor]')
+print(f'Generated: {ariel_out.name} [Black / Instructor / GIF Embedded]')
 
 # Generate combined grid (including instructor as first card + 14 students in 5 cols)
 all_cards = [{'slug': 'ariel_churi'}] + students
