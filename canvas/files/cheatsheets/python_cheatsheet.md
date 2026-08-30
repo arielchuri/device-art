@@ -180,12 +180,27 @@ if fred == 42:
     print("Hello World")
 ```
 
+### Comment Lines (`#`): All Code Must Be Commented!
+Comments are notes written directly in your code that Python ignores during execution. They begin with a `#` symbol:
+
+```python
+# Calculate LED current using Ohm's Law (I = V / R)
+voltage = 3.3   # Pico logic level
+resistor = 220  # Current limiting resistor in Ohms
+current = voltage / resistor
+```
+
+- **Why use comments?**
+  - **Self-Documentation**: Explains your logic so future-you and collaborators understand *why* you wrote the code a certain way.
+  - **Debugging**: Helps you trace where values change and temporarily disable lines of code without deleting them.
+  - **Course Requirement**: **All code submitted for homework and studio projects must include clear comments** explaining each major variable, calculation, condition, and function.
+
 ### How to Format Code Blocks on Canvas:
 To make sure Canvas preserves your indentation and displays syntax highlighting properly, wrap your code in triple backticks with the `python` tag:
 
 ````markdown
 ```python
-# Paste your code here:
+# Prompt user for their age and validate input
 age = int(input("Enter your age: "))
 print(f"You are {age} years old.")
 ```
