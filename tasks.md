@@ -14,6 +14,8 @@
 ## Unpublished Materials Queue (Awaiting Final Review Before Publishing)
 - [ ] Review & Publish Assignment 03: GitHub Account & Desktop Setup (`canvas/assignments/assignment_03_github_account_and_desktop.md`) +device-art #assignment #canvas @computer
 - [ ] Review & Publish Git, GitHub & GitHub Desktop Cheat Sheet (`canvas/files/cheatsheets/git_and_github_cheatsheet.md`) +device-art #cheatsheet #canvas @computer
+- [ ] Review & Publish Assignment 04: 3D Modeling Speculative Device in Blender (`canvas/assignments/assignment_04_blender_device_modeling.md`) +device-art #assignment #canvas @computer
+- [ ] Review & Publish Blender 3D Cheat Sheet (Primitives & Booleans) (`canvas/files/cheatsheets/blender_cheatsheet.md`) +device-art #cheatsheet #canvas @computer
 - [ ] Review & Publish In-Class Speculative Device Miro Exercise (`canvas/assignments/in_class_exercise_speculative_device_miro.md`) +device-art #studio #canvas @computer
 - [ ] Review & Publish Week 02 Module: Electricity Fundamentals (`canvas/modules/week-02/`) +device-art #module #canvas @computer
 
