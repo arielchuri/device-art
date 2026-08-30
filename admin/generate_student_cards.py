@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Generate Miro/Figma compatible student SVG cards strictly matching the Device Art symbol template:
-- Dimensions: 200x200 (exact symbol square size)
-- Sharp corners (no rx corner rounding anywhere)
-- Solid white card background with subtle drop shadow
-- Thick dotted card boundary: stroke="#888888" stroke-dasharray="0, 4" stroke-linecap="round"
+Generate Miro/Figma compatible student SVG cards matching Device Art symbol specifications:
+- 200x200 square dimensions with sharp 90-degree corners (no rx)
+- White card background with subtle drop shadow
+- Characteristic thick dotted card boundary (stroke-dasharray="0, 4" stroke-linecap="round")
 - Monospace typography (Andale Mono)
-- Top-left category label: "STUDENT"
-- Top-right term label: "FA26"
-- Color bar along the top edge (bright yet toned down)
-- Self-contained embedded Base64 photo (or monogram for students without photo)
-- Name at y=152 (12px uppercase) and subtitle at y=170 (9px #888888)
+- Top-left category: "STUDENT" (or "INSTRUCTOR" for Ariel)
+- Top-right term: "FA26"
+- Color bar along top edge (bright yet toned down, black for instructor)
+- Self-contained embedded Base64 photo (or monogram circle)
+- Headline (y=150): Full legal/roster name in uppercase
+- Subheadline (y=168): Preferred name IF present and distinct from full name; otherwise left completely blank
 """
 
 import base64
@@ -67,17 +67,12 @@ for i, s in enumerate(students):
     color = PALETTE[i % len(PALETTE)]
     slug = s['slug']
     name = s.get('Legal / Roster Name') or s['slug'].replace('_', ' ').title()
-    preferred = s.get('Preferred Name', '')
-    pronouns = s.get('Pronouns', '')
-    email = s.get('Email', '')
-    
-    # Subtitle matching symbols 9px #888888 style
-    subtitles = []
-    if preferred and preferred != name:
-        subtitles.append(f'"{preferred}"')
-    if pronouns:
-        subtitles.append(pronouns.lower())
-    sub_line = ' • '.join(subtitles) if subtitles else 'design and technology'
+    preferred = s.get('Preferred Name', '').strip()
+
+    # If preferred name exists and differs from full legal name, use it; otherwise blank
+    sub_element = ''
+    if preferred and preferred.lower() != name.lower():
+        sub_element = f'\n  <!-- Subheadline: Preferred Name -->\n  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">{preferred}</text>'
 
     # Avatar element centered at (100, 82)
     if s['has_photo'] and s['photo_path']:
@@ -129,49 +124,14 @@ for i, s in enumerate(students):
 
 {avatar_svg}
 
-  <!-- Typography: Andale Mono, 2 sizes, regular only (exact symbol standard) -->
-  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="{font_size}" fill="#000000" text-anchor="middle">{name.upper()}</text>
-  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">{sub_line}</text>
+  <!-- Typography: Andale Mono (Main Name) -->
+  <text x="100" y="150" font-family="Andale Mono, monospace" font-size="{font_size}" fill="#000000" text-anchor="middle">{name.upper()}</text>{sub_element}
 </svg>
 '''
     out_file = OUTPUT_DIR / f'{slug}.svg'
     out_file.write_text(svg_content)
-    print(f'Generated: {out_file.name} [{color["name"]}]')
-
-# Generate combined grid (5 columns, 200x200 symbol grid)
-cols = 5
-card_size = 200
-gap = 20
-padding = 30
-rows = (len(students) + cols - 1) // cols
-grid_w = padding * 2 + cols * card_size + (cols - 1) * gap
-grid_h = padding * 2 + rows * card_size + (rows - 1) * gap
-
-grid_elements = []
-for idx, s in enumerate(students):
-    slug = s['slug']
-    r = idx // cols
-    c = idx % cols
-    x = padding + c * (card_size + gap)
-    y = padding + r * (card_size + gap)
-    card_svg = (OUTPUT_DIR / f"{slug}.svg").read_text()
-    inner = card_svg.split("<svg", 1)[1].split(">", 1)[1].rsplit("</svg>", 1)[0]
-    grid_elements.append(f'<g transform="translate({x}, {y})">\n{inner}\n</g>')
-
-combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w} {grid_h}" width="{grid_w}" height="{grid_h}" fill="none">
-  <!-- Board Background -->
-  <rect width="{grid_w}" height="{grid_h}" fill="#F4F5F7" />
-  
-  <!-- Header -->
-  <text x="{padding}" y="20" font-family="Andale Mono, monospace" font-size="10" fill="#888888">DEVICE ART / FALL 2026 / STUDENT ROSTER CARDS (200x200)</text>
-
-  <!-- Cards Grid -->
-  {''.join(grid_elements)}
-</svg>'''
-
-grid_file = OUTPUT_DIR / 'all_students_roster_grid.svg'
-grid_file.write_text(combined_svg)
-print(f'Generated combined grid: {grid_file.name} ({grid_w}x{grid_h})')
+    pref_note = f' (Preferred: "{preferred}")' if (preferred and preferred.lower() != name.lower()) else ' (No preferred name)'
+    print(f'Generated: {out_file.name} [{color["name"]}]{pref_note}')
 
 # Generate Instructor Card for Ariel Churi (Color: Black)
 ariel_photo = PEOPLE_DIR / 'ariel_churi.jpg'
@@ -217,11 +177,46 @@ ariel_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" wi
 
 {ariel_avatar_svg}
 
-  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <!-- Typography: Andale Mono (Main Name) -->
   <text x="100" y="150" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ARIEL CHURI</text>
-  <text x="100" y="168" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">he/him • instructor</text>
 </svg>
 '''
 ariel_out = OUTPUT_DIR / 'ariel_churi.svg'
 ariel_out.write_text(ariel_svg)
 print(f'Generated: {ariel_out.name} [Black / Instructor]')
+
+# Generate combined grid (including instructor as first card + 14 students in 5 cols)
+all_cards = [{'slug': 'ariel_churi'}] + students
+cols = 5
+card_size = 200
+gap = 20
+padding = 30
+rows = (len(all_cards) + cols - 1) // cols
+grid_w = padding * 2 + cols * card_size + (cols - 1) * gap
+grid_h = padding * 2 + rows * card_size + (rows - 1) * gap
+
+grid_elements = []
+for idx, s in enumerate(all_cards):
+    slug = s['slug']
+    r = idx // cols
+    c = idx % cols
+    x = padding + c * (card_size + gap)
+    y = padding + r * (card_size + gap)
+    card_svg = (OUTPUT_DIR / f"{slug}.svg").read_text()
+    inner = card_svg.split("<svg", 1)[1].split(">", 1)[1].rsplit("</svg>", 1)[0]
+    grid_elements.append(f'<g transform="translate({x}, {y})">\n{inner}\n</g>')
+
+combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w} {grid_h}" width="{grid_w}" height="{grid_h}" fill="none">
+  <!-- Board Background -->
+  <rect width="{grid_w}" height="{grid_h}" fill="#F4F5F7" />
+  
+  <!-- Header -->
+  <text x="{padding}" y="20" font-family="Andale Mono, monospace" font-size="10" fill="#888888">DEVICE ART / FALL 2026 / ROSTER CARDS (200x200)</text>
+
+  <!-- Cards Grid -->
+  {''.join(grid_elements)}
+</svg>'''
+
+grid_file = OUTPUT_DIR / 'all_students_roster_grid.svg'
+grid_file.write_text(combined_svg)
+print(f'Generated combined grid: {grid_file.name} ({grid_w}x{grid_h})')
