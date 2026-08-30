@@ -4,31 +4,31 @@
 
 ## 1. What is Python?
 
-Python is a plain-text, human-readable programming language. The exact same Python syntax we type here will run on your **Raspberry Pi Pico** (via CircuitPython) to control hardware sensors, lights, and motors.
+Python is a plain-text, human-readable programming language. The exact same Python syntax we type here will run on your <strong>Raspberry Pi Pico</strong> (via CircuitPython) to control hardware sensors, lights, and motors.
 
 ---
 
 ## 2. Interactive Python in the Terminal (No Files Needed)
 
-The **REPL** (Read-Eval-Print Loop) lets you run Python commands line-by-line directly inside your terminal window.
+The <strong>REPL</strong> (Read-Eval-Print Loop) lets you run Python commands line-by-line directly inside your terminal window.
 
 ### Step 1: Open Your Terminal & Start Python
 
 Open your Terminal application (or PowerShell on Windows). In the terminal prompt, type:
 
-- **macOS / Linux**:
+- macOS / Linux:
 
 ```bash
 python3
 ```
 
-- **Windows**:
+- Windows:
 
 ```bash
 python
 ```
 
-*Press `Return` (Enter). Your prompt will change from `$` to `>>>`. You are now inside Python!*
+<em>Press `Return` (Enter). Your prompt will change from `$` to `>>>`. You are now inside Python!</em>
 
 ---
 
@@ -42,8 +42,8 @@ Type this into the `>>>` prompt and press `Return`:
 voltage = 3.3
 ```
 
-- **What this does**: Creates a memory variable named `voltage` and stores the number `3.3` (the standard operating voltage of our Raspberry Pi Pico).
-- **Response**: None (Python silently remembers the value).
+- What this does: Creates a memory variable named `voltage` and stores the number `3.3` (the standard operating voltage of our Raspberry Pi Pico).
+- Response: None (Python silently remembers the value).
 
 ---
 
@@ -55,8 +55,8 @@ Type this into the `>>>` prompt and press `Return`:
 resistor = 220
 ```
 
-- **What this does**: Creates a variable named `resistor` holding `220` (the Ohms rating of our LED protective resistors).
-- **Response**: None (Python silently stores it).
+- What this does: Creates a variable named `resistor` holding `220` (the Ohms rating of our LED protective resistors).
+- Response: None (Python silently stores it).
 
 ---
 
@@ -68,8 +68,8 @@ Type this into the `>>>` prompt and press `Return`:
 current = voltage / resistor
 ```
 
-- **What this does**: Divides voltage by resistance to calculate electrical current ($I = V / R$) and stores the result in `current`.
-- **Response**: None.
+- What this does: Divides voltage by resistance to calculate electrical current ($I = V / R$) and stores the result in `current`.
+- Response: None.
 
 ---
 
@@ -81,13 +81,13 @@ Type this into the `>>>` prompt and press `Return`:
 current
 ```
 
-- **Response**:
+- Response:
 
 ```python
 0.015
 ```
 
-- **What this does**: Prints the stored value. `0.015` Amperes (or 15 milliamps)—the exact safe current for powering an LED!
+- What this does: Prints the stored value. `0.015` Amperes (or 15 milliamps)—the exact safe current for powering an LED!
 
 ---
 
@@ -99,7 +99,7 @@ Type this into the `>>>` prompt and press `Return`:
 name = "Ada"
 ```
 
-- **What this does**: Stores the text string `"Ada"` in a variable named `name`.
+- What this does: Stores the text string `"Ada"` in a variable named `name`.
 
 Now print a greeting:
 
@@ -107,13 +107,13 @@ Now print a greeting:
 print("Hello, " + name + "!")
 ```
 
-- **Response**:
+- Response:
 
 ```python
 Hello, Ada!
 ```
 
-- **What this does**: Combines the text strings and prints the output to your terminal screen.
+- What this does: Combines the text strings and prints the output to your terminal screen.
 
 ---
 
@@ -125,7 +125,7 @@ Type this into the `>>>` prompt and press `Return`:
 pins = ["GP0", "GP1", "GP2"]
 ```
 
-- **What this does**: Creates a list containing three Raspberry Pi Pico pin names.
+- What this does: Creates a list containing three Raspberry Pi Pico pin names.
 
 Ask Python for the first pin (computers start counting at 0):
 
@@ -133,7 +133,7 @@ Ask Python for the first pin (computers start counting at 0):
 pins[0]
 ```
 
-- **Response**:
+- Response:
 
 ```python
 'GP0'
@@ -145,7 +145,7 @@ Ask Python how many pins are in the list:
 len(pins)
 ```
 
-- **Response**:
+- Response:
 
 ```python
 3
@@ -163,7 +163,7 @@ Type this and press `Return`:
 exit()
 ```
 
-*(Or press `Ctrl + D` on Mac/Linux, `Ctrl + Z` then `Enter` on Windows).*
+<em>(Or press `Ctrl + D` on Mac/Linux, `Ctrl + Z` then `Enter` on Windows).</em>
 
 Your prompt will change back to `$` (or `%`). You are now back in the standard terminal shell.
 
@@ -190,10 +190,10 @@ resistor = 220  # Current limiting resistor in Ohms
 current = voltage / resistor
 ```
 
-- **Why use comments?**
-  - **Self-Documentation**: Explains your logic so future-you and collaborators understand *why* you wrote the code a certain way.
-  - **Debugging**: Helps you trace where values change and temporarily disable lines of code without deleting them.
-  - **Course Requirement**: **All code submitted for homework and studio projects must include clear comments** explaining each major variable, calculation, condition, and function.
+- Why use comments?
+  - Self-Documentation: Explains your logic so future-you and collaborators understand <em>why</em> you wrote the code a certain way.
+  - Debugging: Helps you trace where values change and temporarily disable lines of code without deleting them.
+  - Course Requirement: All code submitted for homework and studio projects must include clear comments explaining each major variable, calculation, condition, and function.
 
 ### How to Format Code Blocks on Canvas:
 To make sure Canvas preserves your indentation and displays syntax highlighting properly, wrap your code in triple backticks with the `python` tag:
@@ -220,7 +220,7 @@ From your regular terminal prompt (`$`), type:
 nano age_check.py
 ```
 
-*Press `Return`. The `nano` text editor will open inside your terminal.*
+<em>Press `Return`. The `nano` text editor will open inside your terminal.</em>
 
 ---
 
@@ -248,7 +248,7 @@ except ValueError:
 
 ### Step 3: Save and Exit `nano`
 
-1. Press `Ctrl + O` $\to$ press `Return` (to write/save the file).
+1. Press `Ctrl + O` → press `Return` (to write/save the file).
 2. Press `Ctrl + X` (to exit `nano` and return to the terminal prompt).
 
 ---
@@ -257,13 +257,13 @@ except ValueError:
 
 Run your saved script by telling Python to execute the file:
 
-- **macOS / Linux**:
+- macOS / Linux:
 
 ```bash
 python3 age_check.py
 ```
 
-- **Windows**:
+- Windows:
 
 ```bash
 python age_check.py
@@ -275,8 +275,8 @@ python age_check.py
 
 | Action | What You Type | Where You Type It |
 | :--- | :--- | :--- |
-| **Enter Python** | `python3` (Mac/Linux) or `python` (Win) | Terminal Prompt (`$`) |
-| **Run Python Line** | `voltage = 3.3` + press `Return` | Python Prompt (`>>>`) |
-| **Exit Python** | `exit()` | Python Prompt (`>>>`) |
-| **Create/Edit Script** | `nano age_check.py` | Terminal Prompt (`$`) |
-| **Run Script File** | `python3 age_check.py` | Terminal Prompt (`$`) |
+| <strong>Enter Python</strong> | `python3` (Mac/Linux) or `python` (Win) | Terminal Prompt (`$`) |
+| <strong>Run Python Line</strong> | `voltage = 3.3` + press `Return` | Python Prompt (`>>>`) |
+| <strong>Exit Python</strong> | `exit()` | Python Prompt (`>>>`) |
+| <strong>Create/Edit Script</strong> | `nano age_check.py` | Terminal Prompt (`$`) |
+| <strong>Run Script File</strong> | `python3 age_check.py` | Terminal Prompt (`$`) |
