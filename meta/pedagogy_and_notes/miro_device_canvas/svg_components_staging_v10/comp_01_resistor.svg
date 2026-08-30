@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Invisible bounding canvas for modular Miro/Figma snapping -->
+  <rect x="0" y="0" width="120" height="120" fill="none" stroke="none"/>
+
+
+  <!-- Left metal wire lead from x=0 -->
+  <line x1="0" y1="52" x2="35" y2="52" stroke="#000000" stroke-width="1.5"/>
+  <!-- Resistor bulbous body -->
+  <path d="M 35 44 C 38 40, 42 44, 45 44 L 75 44 C 78 44, 82 40, 85 44 L 85 60 C 82 64, 78 60, 75 60 L 45 60 C 42 60, 38 64, 35 60 Z" fill="none" stroke="#000000" stroke-width="1.2"/>
+  <!-- 4 Color Code Stripes -->
+  <rect x="42" y="44" width="4" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <rect x="52" y="44" width="4" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <rect x="62" y="44" width="4" height="16" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+  <rect x="74" y="44" width="4" height="16" fill="#000000"/>
+  <!-- Right metal wire lead to x=120 -->
+  <line x1="85" y1="52" x2="120" y2="52" stroke="#000000" stroke-width="1.5"/>
+  <!-- Typography: Andale Mono, placed tight to the component -->
+  <text x="60" y="88" font-family="Andale Mono, monospace" font-size="8.5" fill="#000000" text-anchor="middle">RESISTOR</text>
+</svg>
