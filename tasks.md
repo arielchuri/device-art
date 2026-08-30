@@ -11,6 +11,12 @@
 - [ ] Review Week 02 Module (Electricity Fundamentals & Multimeter Diagnostics) in `canvas/modules/week-02/` +device-art #module #ariel @computer
 - [ ] Prepare physical kits for classroom distribution on Wednesday, Sep 02 +device-art #kits #ariel @physical
 
+## Unpublished Materials Queue (Awaiting Final Review Before Publishing)
+- [ ] Review & Publish Assignment 03: GitHub Account & Desktop Setup (`canvas/assignments/assignment_03_github_account_and_desktop.md`) +device-art #assignment #canvas @computer
+- [ ] Review & Publish Git, GitHub & GitHub Desktop Cheat Sheet (`canvas/files/cheatsheets/git_and_github_cheatsheet.md`) +device-art #cheatsheet #canvas @computer
+- [ ] Review & Publish In-Class Speculative Device Miro Exercise (`canvas/assignments/in_class_exercise_speculative_device_miro.md`) +device-art #studio #canvas @computer
+- [ ] Review & Publish Week 02 Module: Electricity Fundamentals (`canvas/modules/week-02/`) +device-art #module #canvas @computer
+
 ## AI Housekeeping Queue (Calculations & Formatting)
 - [ ] Format Assignment 01 submission page and rubric point table in `canvas/assignments/` +device-art #ai @computer
 - [ ] Run bi-directional sync (`admin/canvas_sync.py`) once syllabus and homework 01 are approved +device-art #ai @computer
