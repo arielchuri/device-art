@@ -2,7 +2,8 @@
 
 - **Due Date**: Wednesday, September 2, 2026 at 7:00 PM
 - **Points**: 20 Points (+ Extra Credit)
-- **Submission Type**: Online File Upload (`.py` file)
+- **Submission Type**: Text Entry (Paste your code formatted as a code block) & File Upload (`.py`)
+- **Quick Reference**: 📖 **[Python Cheatsheet & Syntax Guide](https://github.com/arielchuri/device-art/blob/main/canvas/files/cheatsheets/python_cheatsheet.md)**
 
 ---
 
@@ -15,6 +16,13 @@ Create a standalone Python script (e.g. `age_check.py`) that runs in the termina
 2. **Integer Validation & Output**:
    - If a valid integer is entered, print a clean confirmation message stating their age.
    - If the input is not a valid integer (e.g. text, decimal, empty), handle the error gracefully and print a clear error message (using `try / except ValueError` or string validation).
+
+---
+
+## 📝 How to Submit on Canvas:
+1. Open the Canvas assignment submission.
+2. Select **Text Entry** and paste your Python code directly into the box formatted inside a code block (` ```python ... ``` `).
+3. *(Optional)* You may also attach your raw `age_check.py` file.
 
 ---
 
