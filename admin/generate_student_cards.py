@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+"""
+Generate Miro/Figma compatible student SVG cards matching the Device Art symbol language.
+- White card background with subtle drop shadow
+- Characteristic thick dotted card boundary (stroke-dasharray="0, 4" stroke-linecap="round")
+- Andale Mono typography with category label ("STUDENT")
+- Unique color bar & accent ring per student (bright yet toned down)
+- Self-contained embedded Base64 photos (or monogram avatar for students without photo)
+"""
+
 import base64
 from pathlib import Path
 
@@ -9,20 +18,20 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 
 # 14 distinct bright yet toned-down / sophisticated colors
 PALETTE = [
-    {'name': 'Terracotta Red', 'bar': '#D95C4A', 'bg_tint': '#FDF2F0', 'badge': '#FCE7E4'},
-    {'name': 'Warm Marigold',  'bar': '#D98E28', 'bg_tint': '#FEF9F0', 'badge': '#FDF0DC'},
-    {'name': 'Sage Emerald',   'bar': '#369666', 'bg_tint': '#F0F9F4', 'badge': '#DEF3E7'},
-    {'name': 'Periwinkle',     'bar': '#635CE0', 'bg_tint': '#F3F2FC', 'badge': '#E6E4FA'},
-    {'name': 'Ocean Cobalt',   'bar': '#2F7EB8', 'bg_tint': '#F0F7FC', 'badge': '#DDEEFA'},
-    {'name': 'Rust Tangerine', 'bar': '#D6622E', 'bg_tint': '#FDF3EE', 'badge': '#FCE6DC'},
-    {'name': 'Mint Teal',      'bar': '#289C91', 'bg_tint': '#EFF9F8', 'badge': '#DBF3F1'},
-    {'name': 'Mulberry Berry', 'bar': '#B83E6A', 'bg_tint': '#FDF0F5', 'badge': '#FBE0EC'},
-    {'name': 'Mustard Ochre',  'bar': '#BC901C', 'bg_tint': '#FDF9EE', 'badge': '#F9F1DB'},
-    {'name': 'Slate Indigo',   'bar': '#4E57B8', 'bg_tint': '#F2F3FC', 'badge': '#E3E6F9'},
-    {'name': 'Dusty Rose',     'bar': '#C45474', 'bg_tint': '#FCF1F4', 'badge': '#F9E2E8'},
-    {'name': 'Olive Green',    'bar': '#5C963E', 'bg_tint': '#F3F9EE', 'badge': '#E4F3DA'},
-    {'name': 'Sky Azure',      'bar': '#348BCC', 'bg_tint': '#F1F7FD', 'badge': '#DDEEFC'},
-    {'name': 'Amethyst Purple','bar': '#8B48A8', 'bg_tint': '#F7F1FB', 'badge': '#EDE0F5'}
+    {'name': 'Terracotta Red', 'bar': '#D95C4A', 'bg_tint': '#FDF2F0'},
+    {'name': 'Warm Marigold',  'bar': '#D98E28', 'bg_tint': '#FEF9F0'},
+    {'name': 'Sage Emerald',   'bar': '#369666', 'bg_tint': '#F0F9F4'},
+    {'name': 'Periwinkle',     'bar': '#635CE0', 'bg_tint': '#F3F2FC'},
+    {'name': 'Ocean Cobalt',   'bar': '#2F7EB8', 'bg_tint': '#F0F7FC'},
+    {'name': 'Rust Tangerine', 'bar': '#D6622E', 'bg_tint': '#FDF3EE'},
+    {'name': 'Mint Teal',      'bar': '#289C91', 'bg_tint': '#EFF9F8'},
+    {'name': 'Mulberry Berry', 'bar': '#B83E6A', 'bg_tint': '#FDF0F5'},
+    {'name': 'Mustard Ochre',  'bar': '#BC901C', 'bg_tint': '#FDF9EE'},
+    {'name': 'Slate Indigo',   'bar': '#4E57B8', 'bg_tint': '#F2F3FC'},
+    {'name': 'Dusty Rose',     'bar': '#C45474', 'bg_tint': '#FCF1F4'},
+    {'name': 'Olive Green',    'bar': '#5C963E', 'bg_tint': '#F3F9EE'},
+    {'name': 'Sky Azure',      'bar': '#348BCC', 'bg_tint': '#F1F7FD'},
+    {'name': 'Amethyst Purple','bar': '#8B48A8', 'bg_tint': '#F7F1FB'}
 ]
 
 students = []
@@ -56,123 +65,111 @@ for i, s in enumerate(students):
     preferred = s.get('Preferred Name', '')
     pronouns = s.get('Pronouns', '')
     email = s.get('Email', '')
+    sis_id = s.get('N# / SIS ID', '')
     
-    # Subtitle badges
-    badges = []
+    # Subtitle details (symbols style)
+    subtitles = []
     if preferred and preferred != name:
-        badges.append(f'Goes by "{preferred}"')
+        subtitles.append(f'goes by "{preferred}"')
     if pronouns:
-        badges.append(pronouns)
-    badge_str = ' • '.join(badges)
-    
+        subtitles.append(pronouns.lower())
+    sub_line = ' • '.join(subtitles) if subtitles else 'student'
+
     if s['has_photo'] and s['photo_path']:
         img_bytes = s['photo_path'].read_bytes()
         img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-        avatar_svg = f'''    <g transform="translate(140, 112)">
-      <defs>
-        <clipPath id="avatar-clip-{slug}">
-          <circle cx="0" cy="0" r="52" />
-        </clipPath>
-      </defs>
-      <circle cx="0" cy="0" r="55" fill="none" stroke="{color['bar']}" stroke-width="3.5" />
-      <image href="data:image/jpeg;base64,{img_b64}" x="-52" y="-52" width="104" height="104" clip-path="url(#avatar-clip-{slug})" preserveAspectRatio="xMidYMid slice" />
-    </g>'''
+        avatar_svg = f'''  <!-- Photo circle with color accent stroke -->
+  <g transform="translate(100, 85)">
+    <defs>
+      <clipPath id="avatar-clip-{slug}">
+        <circle cx="0" cy="0" r="35" />
+      </clipPath>
+    </defs>
+    <circle cx="0" cy="0" r="37" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
+    <image href="data:image/jpeg;base64,{img_b64}" x="-35" y="-35" width="70" height="70" clip-path="url(#avatar-clip-{slug})" preserveAspectRatio="xMidYMid slice" />
+  </g>'''
     else:
         initials = get_initials(name)
-        avatar_svg = f'''    <g transform="translate(140, 112)">
-      <circle cx="0" cy="0" r="55" fill="none" stroke="{color['bar']}" stroke-width="3.5" />
-      <circle cx="0" cy="0" r="52" fill="{color['bg_tint']}" />
-      <text x="0" y="12" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="{color['bar']}" text-anchor="middle">{initials}</text>
-    </g>'''
+        avatar_svg = f'''  <!-- Monogram circle with color accent stroke -->
+  <g transform="translate(100, 85)">
+    <circle cx="0" cy="0" r="37" fill="none" stroke="{color['bar']}" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="35" fill="{color['bg_tint']}" />
+    <text x="0" y="8" font-family="Andale Mono, monospace" font-size="22" fill="{color['bar']}" text-anchor="middle">{initials}</text>
+  </g>'''
 
-    badge_svg = ''
-    if badge_str:
-        badge_svg = f'''    <rect x="35" y="226" width="210" height="22" rx="11" fill="{color['badge']}" />
-    <text x="140" y="241" font-family="'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="{color['bar']}" text-anchor="middle">{badge_str}</text>'''
-
-    email_svg = ''
-    if email:
-        email_svg = f'''    <text x="140" y="272" font-family="'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">{email}</text>'''
-
-    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="280" height="350" viewBox="0 0 280 350" fill="none">
+    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" width="200" height="230">
   <defs>
-    <filter id="card-shadow-{slug}" x="-10" y="-6" width="300" height="372" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07" />
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.04" />
+    <!-- Slight subtle drop shadow -->
+    <filter id="card-shadow-{slug}" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
     </filter>
     <clipPath id="card-clip-{slug}">
-      <rect x="0" y="0" width="280" height="350" rx="18" />
+      <rect x="10" y="10" width="180" height="210" rx="4" />
     </clipPath>
   </defs>
 
-  <g filter="url(#card-shadow-{slug})">
-    <!-- Card Base -->
-    <rect x="0" y="0" width="280" height="350" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+  <!-- Solid white card background with slight shadow -->
+  <rect x="10" y="10" width="180" height="210" rx="4" fill="#FFFFFF" filter="url(#card-shadow-{slug})" />
 
-    <!-- Color Bar -->
-    <g clip-path="url(#card-clip-{slug})">
-      <rect x="0" y="0" width="280" height="14" fill="{color['bar']}" />
-      <circle cx="255" cy="7" r="3.5" fill="#FFFFFF" opacity="0.6" />
-    </g>
+  <!-- Distinct top color bar -->
+  <g clip-path="url(#card-clip-{slug})">
+    <rect x="10" y="10" width="180" height="6" fill="{color['bar']}" />
+  </g>
 
-    <!-- Photo or Monogram -->
+  <!-- Card boundary: thick dotted outline (Device Art symbol signature) -->
+  <rect x="10" y="10" width="180" height="210" rx="4" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top category label -->
+  <text x="16" y="27" font-family="Andale Mono, monospace" font-size="8.5" fill="#888888">STUDENT</text>
+  <text x="184" y="27" font-family="Andale Mono, monospace" font-size="8" fill="#AAAAAA" text-anchor="end">FA26</text>
+
 {avatar_svg}
 
-    <!-- Student Name -->
-    <text x="140" y="206" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="middle">{name}</text>
+  <!-- Typography: Andale Mono in symbol hierarchy -->
+  <text x="100" y="145" font-family="Andale Mono, monospace" font-size="11" fill="#000000" text-anchor="middle">{name.upper()}</text>
+  <text x="100" y="160" font-family="Andale Mono, monospace" font-size="8.5" fill="#888888" text-anchor="middle">{sub_line}</text>
+  <text x="100" y="174" font-family="Andale Mono, monospace" font-size="7.5" fill="#555555" text-anchor="middle">{email}</text>
 
-    <!-- Pronouns / Nickname -->
-{badge_svg}
+  <!-- Dotted divider -->
+  <line x1="25" y1="188" x2="175" y2="188" stroke="#888888" stroke-width="0.75" stroke-dasharray="0, 3" stroke-linecap="round" />
 
-    <!-- Email Contact -->
-{email_svg}
-
-    <!-- Course Footer Pill -->
-    <rect x="60" y="304" width="160" height="24" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
-    <text x="140" y="320" font-family="'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle" letter-spacing="0.5">DEVICE ART • FALL 2026</text>
-  </g>
+  <!-- Footer ID / Course tag -->
+  <text x="100" y="204" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">DEVICE ART • {sis_id if sis_id else "PARSONS DT"}</text>
 </svg>
 '''
     out_file = OUTPUT_DIR / f'{slug}.svg'
     out_file.write_text(svg_content)
     print(f'Generated: {out_file.name} [{color["name"]}]')
 
-print(f'Generated {len(students)} student cards in {OUTPUT_DIR}')
-
-# Generate combined grid for 1-click import into Figma / Miro
+# Generate combined grid (5 columns)
 cols = 5
-card_w = 280
-card_h = 350
-gap_x = 24
-gap_y = 28
-padding = 40
-
+card_w = 200
+card_h = 230
+gap = 20
+padding = 30
 rows = (len(students) + cols - 1) // cols
-grid_w = padding * 2 + cols * card_w + (cols - 1) * gap_x
-grid_h = padding * 2 + rows * card_h + (rows - 1) * gap_y
+grid_w = padding * 2 + cols * card_w + (cols - 1) * gap
+grid_h = padding * 2 + rows * card_h + (rows - 1) * gap
 
 grid_elements = []
 for idx, s in enumerate(students):
     slug = s['slug']
     r = idx // cols
     c = idx % cols
-    x = padding + c * (card_w + gap_x)
-    y = padding + r * (card_h + gap_y)
-    
-    # Read the card's inner SVG contents
+    x = padding + c * (card_w + gap)
+    y = padding + r * (card_h + gap)
     card_svg = (OUTPUT_DIR / f"{slug}.svg").read_text()
-    # Extract inner content
     inner = card_svg.split("<svg", 1)[1].split(">", 1)[1].rsplit("</svg>", 1)[0]
     grid_elements.append(f'<g transform="translate({x}, {y})">\n{inner}\n</g>')
 
-combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{grid_w}" height="{grid_h}" viewBox="0 0 {grid_w} {grid_h}" fill="none">
-  <!-- Canvas Background -->
-  <rect width="{grid_w}" height="{grid_h}" fill="#F8FAFC" rx="24" />
+combined_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {grid_w} {grid_h}" width="{grid_w}" height="{grid_h}" fill="none">
+  <!-- Board Background -->
+  <rect width="{grid_w}" height="{grid_h}" fill="#F4F5F7" />
   
-  <!-- Header Title -->
-  <text x="{padding}" y="28" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F172A">Device Art (Fall 2026) — Student Roster Cards</text>
+  <!-- Header -->
+  <text x="{padding}" y="22" font-family="Andale Mono, monospace" font-size="12" fill="#888888">DEVICE ART / FALL 2026 / STUDENT ROSTER</text>
 
-  <!-- Student Cards Grid -->
+  <!-- Cards Grid -->
   {''.join(grid_elements)}
 </svg>'''
 
