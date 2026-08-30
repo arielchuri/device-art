@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="6" y="6" width="108" height="108" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="7.5" fill="#888888">COGNITION</text>
+
+
+  <!-- Wide paragraph funneling down into single bullet point -->
+  <line x1="28" y1="32" x2="92" y2="32" stroke="#888888" stroke-width="1"/>
+  <line x1="28" y1="40" x2="92" y2="40" stroke="#888888" stroke-width="1"/>
+  <line x1="28" y1="48" x2="80" y2="48" stroke="#888888" stroke-width="1"/>
+  <!-- Funnel arrow -->
+  <line x1="60" y1="54" x2="60" y2="64" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="60,64 56,58 64,58" fill="#000000"/>
+  <!-- Single distilled dot result -->
+  <rect x="42" y="68" width="36" height="8" fill="url(#hatch)" stroke="#000000" stroke-width="0.8"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="60" y="94" font-family="Andale Mono, monospace" font-size="9" fill="#000000" text-anchor="middle">SUMMARIZE</text>
+  <text x="60" y="106" font-family="Andale Mono, monospace" font-size="7" fill="#888888" text-anchor="middle">distills long payload into core essence</text>
+</svg>
