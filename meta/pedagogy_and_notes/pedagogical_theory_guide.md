@@ -1,4 +1,6 @@
-# Theoretical Synthesis: The Dialectic of Device Art (Play, Resistance & Hardware Craft)
+# Pedagogical Framework & Critical Theory Guide
+
+> **Primary Use**: A philosophical and conceptual reference explaining how whimsical Chindōgu and political/disobedient design intersect, providing course learning outcomes and theoretical framing for assignment briefs.
 
 ```
                        ┌───────────────────────────────────────────────┐
@@ -53,9 +55,9 @@ In reality, **they share the exact same radical core**:
 
 | Semester Phase | Theoretical Lens | Technical & Prototyping Milestone | Student Project Deliverable |
 | :--- | :--- | :--- | :--- |
-| **Phase 1: Foundations (Weeks 01–05)** | **Chindōgu & Play** (*Kusahara, Kawakami, Homo Ludens*) | Electricity basics, multimeter diagnostics, cardboard engineering, Pico & CircuitPython I/O. | **Project 1: The "Unuseless" Apparatus** (A functional interactive Chindōgu that earnest-engineers an absurd physical solution). |
-| **Phase 2: Subversion & Systems (Weeks 06–10)** | **Resistance & Disobedience** (*Disobedient Objects, Dark Patterns, Design Activism, Fuad-Luke*) | Finite state machines, analog sensors, I2C OLED displays, servos/actuators, casting & molding. | **Project 2: The Adversarial / Disobedient Object** (A device that exposes surveillance, resists algorithmic compliance, or jams commercial systems). |
-| **Phase 3: Synthesis & Exhibition (Weeks 11–15)** | **Device Art Synthesis** (*The Device as Artwork*) | Full iterative prototyping: Breadboard $\to$ Soldered board $\to$ Laser/3D/Cast finished enclosure $\to$ Portfolio docs. | **Final Capstone: The Standalone Interactive Device** (A fully realized, portfolio-grade Device Art exhibit combining technical craft with conceptual provocation). |
+| **Phase 1: Foundations**<br>*(Weeks 01–05)* | **Chindōgu & Play**<br>*(Kusahara, Kawakami,<br>Homo Ludens)* | Electricity basics, multimeter diagnostics,<br>cardboard engineering, Pico & CircuitPython I/O. | **Project 1: The "Unuseless" Apparatus**<br>*(Functional interactive Chindōgu that earnest-<br>engineers an absurd physical solution).* |
+| **Phase 2: Subversion**<br>*(Weeks 06–10)* | **Resistance & Disobedience**<br>*(Disobedient Objects, Dark<br>Patterns, Design Activism)* | Finite state machines, analog sensors, I2C OLED<br>displays, servos/actuators, casting & molding. | **Project 2: The Adversarial Object**<br>*(Device that exposes surveillance, resists algorithmic<br>compliance, or jams commercial systems).* |
+| **Phase 3: Synthesis**<br>*(Weeks 11–15)* | **Device Art Synthesis**<br>*(The Device as Artwork)* | Full iterative prototyping: Breadboard $\to$<br>Soldered board $\to$ Finished enclosure $\to$ Docs. | **Final Capstone: Standalone Device Art**<br>*(Portfolio-grade exhibit combining technical craft<br>with conceptual provocation).* |
 
 ---
 

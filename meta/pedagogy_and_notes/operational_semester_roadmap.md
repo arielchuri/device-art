@@ -1,4 +1,6 @@
-# Course Synthesis: Unifying Device Art, Emergent Objects & Chindōgu
+# Operational Semester Roadmap & Lab Pacing
+
+> **Primary Use**: A chronological, week-by-week operational guide for tracking semester pacing, technical lab milestones, hardware distribution, and fabrication phases (Weeks 01–15).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐

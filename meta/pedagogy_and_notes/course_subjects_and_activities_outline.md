@@ -1,5 +1,7 @@
 # Comprehensive Course Outline: Subject Areas & Associated Activities
 
+> **Primary Use**: A thematic reference mapping all 6 core subject domains (electronics, microcontrollers, sensing/actuation, enclosure craft, critical theory, major projects) to their specific hands-on labs and studio deliverables.
+
 Synthesized across **Device Art**, **Emergent Objects**, and **School Memory Notes**, the curriculum breaks down into **6 core subject areas**. Each area pairs theoretical conceptual lenses with hands-on technical labs, studio exercises, and project deliverables.
 
 ---
