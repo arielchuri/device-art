@@ -17,7 +17,7 @@ To begin our hands-on circuitry and microcontroller labs in Week 02, every stude
 
 1. **Hardware Kit Verification**:
    - Confirm your hardware kit for Week 02.
-   - Either submit confirmation that you have paid for the instructor-provided bundle ($44.50 via Venmo `@arielchuri`, Zelle `ariel@sparklelabs.com`, or PayPal), or confirm that you have ordered and will bring all independently sourced components from the materials list.
+   - Either submit confirmation that you have paid for the instructor-provided bundle ($44.50 via Venmo `@arielchuri`, Zelle `money@sparklelabs.com`, or PayPal), or confirm that you have ordered and will bring all independently sourced components from the materials list.
    - Kits will be handed out in studio at the start of Week 02.
 
 ---

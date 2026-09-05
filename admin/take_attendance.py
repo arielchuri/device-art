@@ -14,7 +14,7 @@ Interactive Flashcard Attendance & Bio Data Manager for Device Art (Fall 2026).
 - Automatically pushes roll call marks to Canvas.
 """
 
-import os, sys, re, subprocess, datetime, urllib.request, json
+import os, sys, re, subprocess, datetime, urllib.request, urllib.parse, json
 from pathlib import Path
 
 # Paths
@@ -77,24 +77,27 @@ def edit_student_bio(student_record):
         print(f"Error: Bio file {bio_path.name} not found.")
         return
 
-        def get_field(label, default=""):
-            m = re.search(rf"\*\*({re.escape(label)})\*\*:\s*(.*)", text)
-            if m:
-                val = m.group(2).strip()
-                # strip out any formatting artifacts
-                return val if val != "[Not set]" else ""
-            return default
+    text = bio_path.read_text()
 
-        def set_field(label, new_val):
-            nonlocal text
-            pattern = rf"- \*\*({re.escape(label)})\*\*:\s*.*"
-            replacement = f"- **{label}**: {new_val}"
-            if re.search(pattern, text):
-                text = re.sub(pattern, replacement, text)
-            else:
-                # If field missing, append
-                text += f"\n- **{label}**: {new_val}"
+    def get_field(label, default=""):
+        m = re.search(rf"\*\*({re.escape(label)})\*\*:\s*(.*)", text)
+        if m:
+            val = m.group(2).strip()
+            # strip out any formatting artifacts
+            return val if val != "[Not set]" else ""
+        return default
 
+    def set_field(label, new_val):
+        nonlocal text
+        pattern = rf"- \*\*({re.escape(label)})\*\*:\s*.*"
+        replacement = f"- **{label}**: {new_val}"
+        if re.search(pattern, text):
+            text = re.sub(pattern, replacement, text)
+        else:
+            # If field missing, append
+            text += f"\n- **{label}**: {new_val}"
+
+    while True:
         pref_name = get_field("Preferred Name", student_record["pref_name"])
         year = get_field("Year of School")
         major = get_field("Major")
@@ -192,7 +195,7 @@ def main():
     print("\n=======================================================")
     print(f"      DEVICE ART ATTENDANCE — WEEK {week_num:02d} ({class_date_ddmm})")
     print("=======================================================\n")
-    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent,  'e' = Edit Bio/Links")
+    print("Codes: [Enter] = Present (.),  'l' = Late,  'a' = Absent,  'n' = Not Joined (N),  'e' = Edit Bio")
     print("Exits: 's' = Save & exit,      'q' or Ctrl+C = Cancel without saving\n")
     
     canvas_students = load_students_from_canvas()
@@ -260,6 +263,9 @@ def main():
         elif choice == "a":
             mark = "A"
             status_text = "ABSENT"
+        elif choice == "n":
+            mark = "N"
+            status_text = "NOT ENROLLED / JOINED YET"
         else:
             mark = "."
             status_text = "PRESENT"
@@ -300,57 +306,39 @@ def main():
         LEDGER_PATH.write_text("\n".join(updated_lines) + "\n")
         print(f"\nSuccessfully updated local ledger: {LEDGER_PATH.name}")
 
-    # Push to Canvas Attendance Gradebook
-    print("\n-------------------------------------------------------")
-    print("Pushing attendance records to Canvas Gradebook...")
+    # Sync to Canvas Gradebook (if an existing Attendance assignment is present)
     if token and canvas_students:
         try:
-            # 1. Get or create Roll Call Attendance assignment
             url_assigns = f"{BASE_URL}/courses/{COURSE_ID}/assignments?per_page=100"
             req_a = urllib.request.Request(url_assigns, headers={"Authorization": f"Bearer {token}"})
             with urllib.request.urlopen(req_a) as resp:
                 assigns = json.loads(resp.read().decode())
             
             att_assign = next((a for a in assigns if "Attendance" in a.get("name", "")), None)
-            if not att_assign:
-                url_new = f"{BASE_URL}/courses/{COURSE_ID}/assignments"
-                payload = {
-                    "assignment": {
-                        "name": "Roll Call Attendance",
-                        "points_possible": 100,
-                        "grading_type": "percent",
-                        "submission_types": ["none"],
-                        "published": True
-                    }
-                }
-                req_new = urllib.request.Request(url_new, data=json.dumps(payload).encode("utf-8"), headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}, method="POST")
-                with urllib.request.urlopen(req_new) as resp:
-                    att_assign = json.loads(resp.read().decode())
-            
-            assign_id = att_assign.get("id")
-            
-            # 2. Post grades
-            import urllib.parse
-            grade_data = {}
-            for s in canvas_students:
-                sname = s.get("name")
-                sid = str(s.get("id"))
-                mark = attendance_results.get(sname, {}).get("mark", "P")
-                if "Hyungrok" in sname and "Roy Hyungrok Son" in attendance_results:
-                    mark = attendance_results["Roy Hyungrok Son"]["mark"]
+            if att_assign:
+                print("\n-------------------------------------------------------")
+                print("Pushing attendance records to existing Canvas Attendance assignment...")
+                assign_id = att_assign.get("id")
                 
-                score = 100 if mark.upper() in ["P", "."] else 0
-                grade_data[f"grade_data[{sid}][posted_grade]"] = str(score)
-            
-            data_encoded = urllib.parse.urlencode(grade_data).encode("utf-8")
-            url_bulk = f"{BASE_URL}/courses/{COURSE_ID}/assignments/{assign_id}/submissions/update_grades"
-            req_bulk = urllib.request.Request(url_bulk, data=data_encoded, headers={"Authorization": f"Bearer {token}"}, method="POST")
-            with urllib.request.urlopen(req_bulk) as resp:
-                print("✓ Successfully synchronized Week 1 attendance scores directly to Canvas Gradebook!")
+                grade_data = {}
+                for s in canvas_students:
+                    sname = s.get("name")
+                    sid = str(s.get("id"))
+                    mark = attendance_results.get(sname, {}).get("mark", ".")
+                    score = 100 if mark in ["P", "."] else (50 if mark == "L" else 0)
+                    grade_data[f"grade_data[{sid}][posted_grade]"] = str(score)
+                
+                data_encoded = urllib.parse.urlencode(grade_data).encode("utf-8")
+                url_bulk = f"{BASE_URL}/courses/{COURSE_ID}/assignments/{assign_id}/submissions/update_grades"
+                req_bulk = urllib.request.Request(url_bulk, data=data_encoded, headers={"Authorization": f"Bearer {token}"}, method="POST")
+                with urllib.request.urlopen(req_bulk) as resp:
+                    print("✓ Successfully updated existing Canvas Attendance assignment grades.")
+            else:
+                print("\n[Canvas Notice] No pre-existing 'Attendance' assignment found on Canvas. Recorded locally only.")
         except Exception as e:
-            print("Canvas sync error:", e)
+            print("\nCanvas sync error (recorded locally only):", e)
     else:
-        print("Local ledger recorded.")
+        print("\nLocal ledger updated.")
         
     print("\nAll done!")
 

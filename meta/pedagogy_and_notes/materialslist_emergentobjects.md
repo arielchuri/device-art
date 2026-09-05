@@ -10,7 +10,7 @@
 - Multimeter
 - OLED screen
 - Light dependent resistor
-- LED
+- LEDs
 - Neopixel (2)
 - Potentiometer
 - Resistors: 100-220 (4), 1k (2), 1m
@@ -22,7 +22,7 @@
 
 **Cost: $44.50**
 
-You must Venmo, Zelle, Paypal or cash before.
+You must Venmo, Zelle, Paypal in time for me to assemble your kit. Please tell me if you will be bringing in cash
 
 ![](images/venmo.png)
 ![](images/chase.jpg)
@@ -118,13 +118,13 @@ All of these are low quality but will work fine for our purposes.
 
 ### Microcontroller
 
-- [Raspberry Pi Pico](https://www.adafruit.com/product/5544)
+- [Raspberry Pi Pico WH](https://www.adafruit.com/product/5544)
 
 ### Examples of premade kits
 
 (These only have the electronic components)
 
-- [Discover Electronics Kit](http://sparklelabs.com/index_store.php) $46.75 - I make these.
+- [Discover Electronics Kit](http://sparklelabs.com/) $46.75 - I make these.
 - [Make Electronics Kit](https://www.amazon.com/Make-Electronics-Intermediate-Component-Experiments/dp/B09HL84X33/) $117.99 - Includes a Multitester and soldering iron.
 
 These two are the most barebones I could find on amazon. The quality maybe low but they should be good enough.

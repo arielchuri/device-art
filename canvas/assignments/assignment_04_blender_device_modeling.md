@@ -32,6 +32,10 @@ To develop strong industrial design modeling habits and prepare for 3D printing,
 If you don't already have it installed, download the free, open-source 3D suite:
 * **[blender.org/download](https://www.blender.org/download/)** (macOS Apple Silicon/Intel or Windows).
 
+> [!NOTE]
+> **Need extra rendering power or hardware access?**
+> You can access high-performance campus lab computers remotely to run Blender and render your scenes via **[remotelab.newschool.edu](https://remotelab.newschool.edu)** using your New School credentials.
+
 ---
 
 ### Step 2: Model Your Device Enclosure

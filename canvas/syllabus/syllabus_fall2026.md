@@ -4,16 +4,20 @@
 **Institution**: The New School | Parsons School of Design | School of Art, Media, and Technology (AMT)  
 **Term**: Fall 2026 (August 26, 2026 – December 09, 2026)  
 **Meeting Time**: Wednesday Evenings, 19:00 – 21:40 (7:00pm – 9:40pm)  
-**Location**: In-Person (Parsons Making Center / Classroom TBD)  
+**Location**: In-Person | 63 Fifth Ave (Albert and Vera List Academic Center)  
 **Instructor**: Ariel Churi  
-**Email**: `ariel@sparklelabs.com` / `churia@newschool.edu`  
+**Email**: `churia@newschool.edu`  
 **Office Hours**: By appointment  
 
 ---
 
 ## Course Description
 
-Device Art is a platform for students to invent new works of art that do not distinguish the object from a tool, the mechanism from the concept; through playfulness these devices are caught between definitions of art, design, and engineering. In this course devices are the artwork themselves; the mechanisms of the piece become part of the concept behind the work and the very essence of “making” and “play” is embedded in each of the pieces. Device Art can break the mold of art commercialization, propelled by the new forms of manufacturing and the ease of prototyping as production tools become more accessible. These artworks are easily replicable and can become commercialized, and even display features of playful utility for everyday life. Students will learn new methods for prototyping by combining new digital fabrication techniques as well as commonly used fabrication processes including repurposing readymades. They will explore their own artistic concepts and develop a deeper understanding of how their ideas can be reproduced. Device Art will challenge students to rethink their ideas of what art can become, and where the threshold lies between playfulness, utility, and conceptual inquiry. They will develop basic electronics and physical computing skills, such as microcontroller programming and circuitry design. They will engage in fabrication experiments to rethink and envision new devices that can facilitate invention from an artistic perspective, gaining new skills in device design, computing media, and device fabrication. They will use physical computing methods to expand on the field of open source hardware, learn interaction design methods and rapid prototyping tools for 3D printing. This course will provide platform to enhance the design process of material experimentation and propel functional and accessible models of device art.
+Device Art is a platform for students to invent new works of art that do not distinguish the object from a tool, the mechanism from the concept; through playfulness these devices are caught between definitions of art, design, and engineering. In this course, devices are the artwork themselves—the mechanisms of the piece become part of the concept behind the work, and the very essence of “making” and “play” is embedded in each piece.
+
+Device Art breaks the mold of art commercialization, propelled by new forms of manufacturing and rapid prototyping as production tools become increasingly accessible. These artworks are easily replicable, can be commercialized, and often display features of playful utility for everyday life.
+
+Students will learn new methods for prototyping by combining digital fabrication techniques with standard fabrication processes, including repurposing readymades. They will develop foundational physical computing skills (microcontroller programming, circuitry design, and physical sensors/actuators) while exploring their own artistic concepts and gaining a deeper understanding of how their ideas can be reproduced and communicated.
 
 - **Open to**: All university undergraduate degree students. Some seats have been reserved for BFA Design & Technology majors.
 

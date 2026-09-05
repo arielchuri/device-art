@@ -1,0 +1,555 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" fill="none">
+  <rect width="1000" height="480" fill="#F8F9FA"/>
+  
+  <text x="24" y="30" font-family="'Andale Mono', monospace" font-size="14" font-weight="bold" fill="#000000">MIRO DEVICE CANVAS / BREADBOARD PACKAGE COMPONENTS</text>
+  <text x="24" y="48" font-family="'Andale Mono', monospace" font-size="9" fill="#888888">Standard 18.593 px breadboard row pitch calibration (0.1" pitch)</text>
+
+  <!-- Row 1: Core Passives & Microcontroller -->
+  <!-- 1. Raspberry Pi Pico -->
+  <g transform="translate(24, 70)">
+    <rect width="140" height="390" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="70" y="20" font-family="'Andale Mono', monospace" font-size="8.5" font-weight="bold" fill="#000000" text-anchor="middle">RASPBERRY PI PICO</text>
+    <g transform="translate(8, 30) scale(0.85)"><g id="raspberry-pi-pico">
+    <!-- Micro-USB / USB-C Connector (Protruding at top) -->
+    <rect x="46.00" y="2" width="32.0" height="24.0" rx="2" ry="2" fill="#F4F5F7" stroke="#000000" stroke-width="1.2" />
+    <rect x="50.00" y="4" width="24" height="6" fill="url(#hatch-usb)" stroke="#888888" stroke-width="0.5" />
+
+    <!-- Main PCB (Green tint with solid stroke & rounded corners) -->
+    <rect x="2.00" y="10.00" width="120.00" height="405.27" rx="4" ry="4" fill="#E8F4EC" stroke="#227744" stroke-width="1.5" />
+
+    <!-- Corner Mounting Holes -->
+    <circle cx="9.00" cy="17.00" r="3.5" fill="#FFFFFF" stroke="#227744" stroke-width="0.8" />
+    <circle cx="115.00" cy="17.00" r="3.5" fill="#FFFFFF" stroke="#227744" stroke-width="0.8" />
+    <circle cx="9.00" cy="408.27" r="3.5" fill="#FFFFFF" stroke="#227744" stroke-width="0.8" />
+    <circle cx="115.00" cy="408.27" r="3.5" fill="#FFFFFF" stroke="#227744" stroke-width="0.8" />
+
+    <!-- Onboard LED -->
+    <rect x="30.00" y="46.00" width="9" height="12" fill="#FFF9E6" stroke="#D98E28" stroke-width="0.8" />
+
+    <!-- BOOTSEL Button -->
+    <rect x="48.00" y="58.00" width="28" height="16" rx="2" ry="2" fill="#F0F0F0" stroke="#000000" stroke-width="0.8" />
+    <circle cx="62.00" cy="66.00" r="4.5" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" />
+
+    <!-- RP2040 Microcontroller Chip (Rotated 45 deg) -->
+    <g transform="translate(62.00, 195.00) rotate(45)">
+      <rect x="-18" y="-18" width="36" height="36" fill="url(#hatch-chip)" stroke="#000000" stroke-width="1" />
+    </g>
+    <rect x="42.00" y="188.00" width="40" height="14" fill="#FFFFFF" fill-opacity="0.95" />
+    <text x="62.00" y="198.00" font-family="'Andale Mono', monospace" font-size="8px" font-weight="bold" fill="#000000" text-anchor="middle">RP2040</text>
+
+    <!-- SPI Flash Memory Chip -->
+    <rect x="48.00" y="270.00" width="28" height="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" />
+    <text x="62.00" y="283.00" font-family="'Andale Mono', monospace" font-size="6.5px" fill="#555555" text-anchor="middle">FLASH</text>
+
+    <!-- Debug Header Pads (Bottom) -->
+    <circle cx="52.00" cy="401.27" r="2.5" fill="#FFFFFF" stroke="#888888" stroke-width="0.8" />
+    <circle cx="62.00" cy="401.27" r="2.5" fill="#FFFFFF" stroke="#888888" stroke-width="0.8" />
+    <circle cx="72.00" cy="401.27" r="2.5" fill="#FFFFFF" stroke="#888888" stroke-width="0.8" />
+
+    <!-- Pin 1 -->
+    <rect x="2.00" y="32.00" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="36.00" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="36.00" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">1</text>
+    <!-- Pin 40 -->
+    <rect x="113.00" y="32.00" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="36.00" r="2" fill="#D40000" />
+    <text x="109.00" y="36.00" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">40</text>
+    <!-- Pin 2 -->
+    <rect x="2.00" y="50.59" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="54.59" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="54.59" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">2</text>
+    <!-- Pin 39 -->
+    <rect x="113.00" y="50.59" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="54.59" r="2" fill="#D40000" />
+    <text x="109.00" y="54.59" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">39</text>
+    <!-- Pin 3 -->
+    <rect x="2.00" y="69.19" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="73.19" r="2" fill="#000000" />
+    <text x="15.00" y="73.19" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">3</text>
+    <!-- Pin 38 -->
+    <rect x="113.00" y="69.19" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="73.19" r="2" fill="#000000" />
+    <text x="109.00" y="73.19" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">38</text>
+    <!-- Pin 4 -->
+    <rect x="2.00" y="87.78" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="91.78" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="91.78" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">4</text>
+    <!-- Pin 37 -->
+    <rect x="113.00" y="87.78" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="91.78" r="2" fill="#D40000" />
+    <text x="109.00" y="91.78" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">37</text>
+    <!-- Pin 5 -->
+    <rect x="2.00" y="106.37" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="110.37" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="110.37" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">5</text>
+    <!-- Pin 36 -->
+    <rect x="113.00" y="106.37" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="110.37" r="2" fill="#D40000" />
+    <text x="109.00" y="110.37" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">36</text>
+    <!-- Pin 6 -->
+    <rect x="2.00" y="124.97" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="128.97" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="128.97" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">6</text>
+    <!-- Pin 35 -->
+    <rect x="113.00" y="124.97" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="128.97" r="2" fill="#D40000" />
+    <text x="109.00" y="128.97" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">35</text>
+    <!-- Pin 7 -->
+    <rect x="2.00" y="143.56" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="147.56" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="147.56" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">7</text>
+    <!-- Pin 34 -->
+    <rect x="113.00" y="143.56" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="147.56" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="147.56" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">34</text>
+    <!-- Pin 8 -->
+    <rect x="2.00" y="162.15" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="166.15" r="2" fill="#000000" />
+    <text x="15.00" y="166.15" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">8</text>
+    <!-- Pin 33 -->
+    <rect x="113.00" y="162.15" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="166.15" r="2" fill="#000000" />
+    <text x="109.00" y="166.15" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">33</text>
+    <!-- Pin 9 -->
+    <rect x="2.00" y="180.74" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="184.74" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="184.74" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">9</text>
+    <!-- Pin 32 -->
+    <rect x="113.00" y="180.74" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="184.74" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="184.74" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">32</text>
+    <!-- Pin 10 -->
+    <rect x="2.00" y="199.34" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="203.34" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="203.34" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">10</text>
+    <!-- Pin 31 -->
+    <rect x="113.00" y="199.34" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="203.34" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="203.34" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">31</text>
+    <!-- Pin 11 -->
+    <rect x="2.00" y="217.93" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="221.93" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="221.93" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">11</text>
+    <!-- Pin 30 -->
+    <rect x="113.00" y="217.93" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="221.93" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="221.93" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">30</text>
+    <!-- Pin 12 -->
+    <rect x="2.00" y="236.52" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="240.52" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="240.52" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">12</text>
+    <!-- Pin 29 -->
+    <rect x="113.00" y="236.52" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="240.52" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="240.52" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">29</text>
+    <!-- Pin 13 -->
+    <rect x="2.00" y="255.12" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="259.12" r="2" fill="#000000" />
+    <text x="15.00" y="259.12" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">13</text>
+    <!-- Pin 28 -->
+    <rect x="113.00" y="255.12" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="259.12" r="2" fill="#000000" />
+    <text x="109.00" y="259.12" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">28</text>
+    <!-- Pin 14 -->
+    <rect x="2.00" y="273.71" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="277.71" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="277.71" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">14</text>
+    <!-- Pin 27 -->
+    <rect x="113.00" y="273.71" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="277.71" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="277.71" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">27</text>
+    <!-- Pin 15 -->
+    <rect x="2.00" y="292.30" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="296.30" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="296.30" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">15</text>
+    <!-- Pin 26 -->
+    <rect x="113.00" y="292.30" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="296.30" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="296.30" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">26</text>
+    <!-- Pin 16 -->
+    <rect x="2.00" y="310.89" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="314.89" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="314.89" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">16</text>
+    <!-- Pin 25 -->
+    <rect x="113.00" y="310.89" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="314.89" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="314.89" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">25</text>
+    <!-- Pin 17 -->
+    <rect x="2.00" y="329.49" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="333.49" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="333.49" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">17</text>
+    <!-- Pin 24 -->
+    <rect x="113.00" y="329.49" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="333.49" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="333.49" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">24</text>
+    <!-- Pin 18 -->
+    <rect x="2.00" y="348.08" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="352.08" r="2" fill="#000000" />
+    <text x="15.00" y="352.08" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">18</text>
+    <!-- Pin 23 -->
+    <rect x="113.00" y="348.08" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="352.08" r="2" fill="#000000" />
+    <text x="109.00" y="352.08" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">23</text>
+    <!-- Pin 19 -->
+    <rect x="2.00" y="366.67" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="370.67" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="370.67" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">19</text>
+    <!-- Pin 22 -->
+    <rect x="113.00" y="366.67" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="370.67" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="370.67" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">22</text>
+    <!-- Pin 20 -->
+    <rect x="2.00" y="385.27" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="6.50" cy="389.27" r="2" fill="#2F7EB8" />
+    <text x="15.00" y="389.27" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="start" dominant-baseline="central">20</text>
+    <!-- Pin 21 -->
+    <rect x="113.00" y="385.27" width="9" height="8" rx="1" fill="#FFFFFF" stroke="#000000" stroke-width="0.7" />
+    <circle cx="117.50" cy="389.27" r="2" fill="#2F7EB8" />
+    <text x="109.00" y="389.27" font-family="'Andale Mono', monospace" font-size="7px" fill="#444444" text-anchor="end" dominant-baseline="central">21</text>
+  </g></g>
+  </g>
+
+  <!-- 2. Resistor Top-Down -->
+  <g transform="translate(180, 70)">
+    <rect width="110" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="55" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">RESISTOR (TOP)</text>
+    <g transform="translate(45, 45)"><g id="resistor-topdown">
+    <!-- Wire Lead -->
+    <line x1="10.0" y1="4.0" x2="10.0" y2="78.372" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+    
+    <!-- Pin Contact Rings (Top & Bottom) -->
+    <circle cx="10.0" cy="4.0" r="3" fill="#606F7B" stroke="#000000" stroke-width="0.8"/>
+    <circle cx="10.0" cy="4.0" r="1" fill="#FFFFFF"/>
+    <circle cx="10.0" cy="78.372" r="3" fill="#606F7B" stroke="#000000" stroke-width="0.8"/>
+    <circle cx="10.0" cy="78.372" r="1" fill="#FFFFFF"/>
+
+    <!-- Resistor Body (Tan ceramic) -->
+    <rect x="3.00" y="23.19" width="14.0" height="36.0" rx="4" ry="4" fill="#E6D3B3" stroke="#5A4A32" stroke-width="1.2"/>
+    
+    <!-- 4 Color Bands (220 Ohm: Red, Red, Brown, Gold) -->
+    <rect x="3.00" y="29.19" width="14.0" height="3.5" fill="#D40000"/>
+    <rect x="3.00" y="36.19" width="14.0" height="3.5" fill="#D40000"/>
+    <rect x="3.00" y="43.19" width="14.0" height="3.5" fill="#7B3F00"/>
+    <rect x="3.00" y="50.19" width="14.0" height="3.5" fill="#D4AF37"/>
+  </g></g>
+  </g>
+
+  <!-- 3. Resistor Side -->
+  <g transform="translate(180, 275)">
+    <rect width="110" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="55" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">RESISTOR (SIDE)</text>
+    <g transform="translate(14, 70)"><g id="resistor-sideview">
+    <!-- Bent Wire Leads (Going down into tie points 74.37px apart) -->
+    <path d="M 21.186 10.0 L 8.0 10.0 Q 4.0 10.0 4.0 14.0 L 4.0 40.0" fill="none" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M 61.186 10.0 L 74.372 10.0 Q 78.372 10.0 78.372 14.0 L 78.372 40.0" fill="none" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Resistor Body -->
+    <rect x="21.19" y="2.00" width="40.0" height="16.0" rx="5" ry="5" fill="#E6D3B3" stroke="#5A4A32" stroke-width="1.2"/>
+    <!-- Specular Highlight -->
+    <line x1="25.186" y1="5.0" x2="57.186" y2="5.0" stroke="#FFF5E6" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Color Bands -->
+    <rect x="28.19" y="2.00" width="4" height="16.0" fill="#D40000"/>
+    <rect x="36.19" y="2.00" width="4" height="16.0" fill="#D40000"/>
+    <rect x="44.19" y="2.00" width="4" height="16.0" fill="#7B3F00"/>
+    <rect x="52.19" y="2.00" width="4" height="16.0" fill="#D4AF37"/>
+  </g></g>
+  </g>
+
+  <!-- 4. LED Top-Down -->
+  <g transform="translate(305, 70)">
+    <rect width="110" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="55" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">LED (TOP-DOWN)</text>
+    <g transform="translate(38, 65)"><g id="led-topdown">
+    <!-- LED Outer Flange / Rim with Flat Edge at Bottom (Cathode) -->
+    <path d="M 2.50 26.00
+             A 15.0 15.0 0 1 1 31.50 26.00
+             Z"
+          fill="url(#led-glow-red)"
+          stroke="#7A000A"
+          stroke-width="1.2"/>
+
+    <!-- Inner Lens Dome Ring -->
+    <circle cx="17.0" cy="16.0" r="10" fill="none" stroke="#FFA3AC" stroke-width="0.8" stroke-opacity="0.6"/>
+
+    <!-- Anode (+) Lead Terminal (Top) -->
+    <circle cx="17.0" cy="7.70" r="2.8" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="17.0" cy="7.70" r="1" fill="#D40000"/>
+
+    <!-- Cathode (-) Lead Terminal (Bottom / Flat side) -->
+    <circle cx="17.0" cy="26.30" r="2.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="17.0" cy="26.30" r="1" fill="#000000"/>
+
+    <!-- Specular Highlight -->
+    <ellipse cx="13.0" cy="12.0" rx="3.5" ry="2" transform="rotate(-30 13.0 12.0)" fill="#FFFFFF" fill-opacity="0.7"/>
+  </g></g>
+  </g>
+
+  <!-- 5. LED Side -->
+  <g transform="translate(305, 275)">
+    <rect width="110" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="55" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">LED (SIDE-VIEW)</text>
+    <g transform="translate(42, 50)"><g id="led-sideview">
+    <!-- Longer Anode Lead (+) on Left (spaced 18.59px = 1 row) -->
+    <line x1="3.70" y1="29.0" x2="3.70" y2="66.0" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Shorter Cathode Lead (-) on Right -->
+    <line x1="22.30" y1="29.0" x2="22.30" y2="58.0" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Internal Anode / Cathode Structure -->
+    <path d="M 3.70 26.0 L 3.70 14.0 L 11.0 14.0" stroke="#D1D8E0" stroke-width="1.2" fill="none"/>
+    <path d="M 22.30 26.0 L 22.30 16.0 L 12.0 12.0 L 22.30 9.0 Z" fill="#D1D8E0" stroke="#B0B9C2" stroke-width="0.8"/>
+
+    <!-- LED Epoxy Dome -->
+    <path d="M 3.00 26.0
+             L 3.00 12.0
+             A 10.0 10.0 0 0 1 23.00 12.0
+             L 23.00 26.0
+             Z"
+          fill="url(#led-side-grad)"
+          stroke="#7A000A"
+          stroke-width="1"
+          fill-opacity="0.9"/>
+
+    <!-- Bottom Flange / Rim Ring (Flat right edge) -->
+    <path d="M 1.00 26.0
+             L 24.00 26.0
+             L 24.00 29.0
+             L 1.00 29.0
+             Z"
+          fill="#B80010"
+          stroke="#7A000A"
+          stroke-width="1"/>
+
+    <!-- Specular Highlight -->
+    <path d="M 6.00 24.0 L 6.00 10.0 Q 6.0 5.0 11.0 5.0" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.6"/>
+  </g></g>
+  </g>
+
+  <!-- Row 2: Controls & Sensors -->
+  <!-- 6. Potentiometer -->
+  <g transform="translate(430, 70)">
+    <rect width="125" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="62" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">POTENTIOMETER</text>
+    <g transform="translate(42, 60)"><g id="potentiometer-topdown">
+    <!-- Main Rotary Base (Cylindrical body) -->
+    <circle cx="24.0" cy="22.59" r="15" fill="#2F7EB8" stroke="#1A496B" stroke-width="1.2"/>
+    <!-- Shaft Outer Ring -->
+    <circle cx="24.0" cy="22.59" r="8" fill="#D1D8E0" stroke="#000000" stroke-width="1"/>
+    <!-- Shaft Center Notch / Flat D-shaft -->
+    <path d="M 19.0 19.593 L 29.0 19.593 A 5 5 0 0 1 19.0 19.593 Z" fill="#606F7B"/>
+    <!-- Rotary Dial Indicator Notch -->
+    <line x1="24.0" y1="22.593" x2="31.0" y2="22.593" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- 3 Terminal Pins (Pin 1: VCC/GND, Pin 2: Wiper Output, Pin 3: GND/VCC) -->
+    <!-- Pin 1 -->
+    <line x1="24.0" y1="4.0" x2="4" y2="4.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="4.00" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="4" cy="4.00" r="0.8" fill="#D40000"/>
+
+    <!-- Pin 2 (Wiper) -->
+    <line x1="24.0" y1="22.593" x2="4" y2="22.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="22.59" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+    <circle cx="4" cy="22.59" r="0.8" fill="#2F7EB8"/>
+
+    <!-- Pin 3 -->
+    <line x1="24.0" y1="41.186" x2="4" y2="41.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="41.19" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="4" cy="41.19" r="0.8" fill="#000000"/>
+  </g></g>
+  </g>
+
+  <!-- 7. Pushbutton -->
+  <g transform="translate(430, 275)">
+    <rect width="125" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="62" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">PUSHBUTTON</text>
+    <g transform="translate(38, 65)"><g id="pushbutton-topdown">
+    <!-- Metallic/Black Square Base (6x6mm body) -->
+    <rect x="9.00" y="6.59" width="30" height="30" rx="3" fill="#333333" stroke="#000000" stroke-width="1.2"/>
+    <!-- Metallic Top Plate Ring -->
+    <circle cx="24.0" cy="21.593" r="11" fill="#D1D8E0" stroke="#606F7B" stroke-width="0.8"/>
+    <!-- Round Plunger Button Center -->
+    <circle cx="24.0" cy="21.593" r="8" fill="#D40000" stroke="#900000" stroke-width="1"/>
+
+    <!-- 4 Gull-wing / DIP Pins (2 Left, 2 Right) -->
+    <!-- Left Top Pin -->
+    <line x1="9.0" y1="12.2965" x2="3" y2="12.2965" stroke="#8E99A2" stroke-width="2"/>
+    <circle cx="3" cy="12.30" r="2" fill="#606F7B"/>
+
+    <!-- Left Bottom Pin -->
+    <line x1="9.0" y1="30.889499999999998" x2="3" y2="30.889499999999998" stroke="#8E99A2" stroke-width="2"/>
+    <circle cx="3" cy="30.89" r="2" fill="#606F7B"/>
+
+    <!-- Right Top Pin -->
+    <line x1="39.0" y1="12.2965" x2="45.0" y2="12.2965" stroke="#8E99A2" stroke-width="2"/>
+    <circle cx="45.0" cy="12.30" r="2" fill="#606F7B"/>
+
+    <!-- Right Bottom Pin -->
+    <line x1="39.0" y1="30.889499999999998" x2="45.0" y2="30.889499999999998" stroke="#8E99A2" stroke-width="2"/>
+    <circle cx="45.0" cy="30.89" r="2" fill="#606F7B"/>
+  </g></g>
+  </g>
+
+  <!-- 8. OLED Display -->
+  <g transform="translate(570, 70)">
+    <rect width="195" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="97" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">OLED DISPLAY (SSD1306)</text>
+    <g transform="translate(36, 50)"><g id="oled-ssd1306">
+    <!-- PCB Module (Blue PCB) -->
+    <rect x="24" y="2" width="94" height="75.78" rx="4" fill="#2F7EB8" stroke="#1A496B" stroke-width="1.5"/>
+
+    <!-- Corner Mounting Holes -->
+    <circle cx="30" cy="8" r="2.5" fill="#FFFFFF" stroke="#1A496B" stroke-width="0.8"/>
+    <circle cx="112" cy="8" r="2.5" fill="#FFFFFF" stroke="#1A496B" stroke-width="0.8"/>
+    <circle cx="30" cy="71.78" r="2.5" fill="#FFFFFF" stroke="#1A496B" stroke-width="0.8"/>
+    <circle cx="112" cy="71.78" r="2.5" fill="#FFFFFF" stroke="#1A496B" stroke-width="0.8"/>
+
+    <!-- OLED Glass Screen (Dark Blue/Black Screen) -->
+    <rect x="42" y="12" width="64" height="55.78" rx="2" fill="#111827" stroke="#374151" stroke-width="1.2"/>
+    <!-- Simulated Active OLED Graphics / Text -->
+    <rect x="46" y="16" width="56" height="47.78" fill="#1F2937"/>
+    <text x="74" y="37.89" font-family="'Andale Mono', monospace" font-size="8px" font-weight="bold" fill="#38BDF8" text-anchor="middle">128x64 OLED</text>
+    <text x="74" y="47.89" font-family="'Andale Mono', monospace" font-size="6.5px" fill="#A7F3D0" text-anchor="middle">SSD1306 I2C</text>
+
+    <!-- 4 Header Pins on Left Edge (GND, VCC, SCL, SDA) -->
+    <!-- Pin 1: GND -->
+    <line x1="24" y1="12.0" x2="4" y2="12.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="12.00" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="4" cy="12.00" r="0.8" fill="#000000"/>
+
+    <!-- Pin 2: VCC -->
+    <line x1="24" y1="30.593" x2="4" y2="30.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="30.59" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="4" cy="30.59" r="0.8" fill="#D40000"/>
+
+    <!-- Pin 3: SCL -->
+    <line x1="24" y1="49.186" x2="4" y2="49.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="49.19" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+    <circle cx="4" cy="49.19" r="0.8" fill="#2F7EB8"/>
+
+    <!-- Pin 4: SDA -->
+    <line x1="24" y1="67.779" x2="4" y2="67.779" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="67.78" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+    <circle cx="4" cy="67.78" r="0.8" fill="#2F7EB8"/>
+  </g></g>
+  </g>
+
+  <!-- 9. Ultrasonic HC-SR04 -->
+  <g transform="translate(570, 275)">
+    <rect width="195" height="185" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="97" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">ULTRASONIC (HC-SR04)</text>
+    <g transform="translate(42, 50)"><g id="hcsr04-ultrasonic">
+    <!-- Blue PCB Module -->
+    <rect x="22" y="2" width="86" height="79.78" rx="4" fill="#2F7EB8" stroke="#1A496B" stroke-width="1.5"/>
+
+    <!-- 2 Metallic Transducer Barrels (Emitter T & Receiver R) -->
+    <!-- Emitter T -->
+    <circle cx="48" cy="41.89" r="16" fill="#D1D8E0" stroke="#606F7B" stroke-width="1.2"/>
+    <circle cx="48" cy="41.89" r="12" fill="#333333"/>
+    <text x="48" y="43.89" font-family="'Andale Mono', monospace" font-size="7px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">T</text>
+
+    <!-- Receiver R -->
+    <circle cx="84" cy="41.89" r="16" fill="#D1D8E0" stroke="#606F7B" stroke-width="1.2"/>
+    <circle cx="84" cy="41.89" r="12" fill="#333333"/>
+    <text x="84" y="43.89" font-family="'Andale Mono', monospace" font-size="7px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
+
+    <!-- 4 Header Pins (VCC, Trig, Echo, GND) -->
+    <!-- Pin 1: VCC -->
+    <line x1="22" y1="14.0" x2="4" y2="14.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="14.00" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="4" cy="14.00" r="0.8" fill="#D40000"/>
+
+    <!-- Pin 2: Trig -->
+    <line x1="22" y1="32.593" x2="4" y2="32.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="32.59" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+    <circle cx="4" cy="32.59" r="0.8" fill="#2F7EB8"/>
+
+    <!-- Pin 3: Echo -->
+    <line x1="22" y1="51.186" x2="4" y2="51.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="51.19" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+    <circle cx="4" cy="51.19" r="0.8" fill="#2F7EB8"/>
+
+    <!-- Pin 4: GND -->
+    <line x1="22" y1="69.779" x2="4" y2="69.779" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="69.78" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="4" cy="69.78" r="0.8" fill="#000000"/>
+  </g></g>
+  </g>
+
+  <!-- Row 3: Modules & Peripherals -->
+  <!-- 10. Real-Time Clock -->
+  <g transform="translate(780, 70)">
+    <rect width="195" height="115" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="97" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">RTC CLOCK (DS3231)</text>
+    <g transform="translate(50, 30)"><g id="rtc-ds3231">
+    <!-- Blue PCB -->
+    <rect x="22" y="2" width="66" height="71.78" rx="4" fill="#2F7EB8" stroke="#1A496B" stroke-width="1.5"/>
+
+    <!-- CR2032 Coin Cell Battery Holder -->
+    <circle cx="55" cy="37.89" r="14" fill="#D1D8E0" stroke="#606F7B" stroke-width="1"/>
+    <text x="55" y="39.89" font-family="'Andale Mono', monospace" font-size="7px" font-weight="bold" fill="#333333" text-anchor="middle">CR2032</text>
+
+    <!-- DS3231 High-Precision Real-Time Clock IC -->
+    <rect x="28" y="27.89" width="14" height="20" fill="#333333" stroke="#000000" stroke-width="0.8"/>
+
+    <!-- 4 Pins (32K, SQW, SCL, SDA or GND, VCC, SDA, SCL) -->
+    <line x1="22" y1="10.0" x2="4" y2="10.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="10.00" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+
+    <line x1="22" y1="28.593" x2="4" y2="28.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="28.59" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+
+    <line x1="22" y1="47.186" x2="4" y2="47.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="47.19" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+
+    <line x1="22" y1="65.779" x2="4" y2="65.779" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="65.78" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+  </g></g>
+  </g>
+
+  <!-- 11. Touch Sensor -->
+  <g transform="translate(780, 200)">
+    <rect width="195" height="120" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="97" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">TOUCH SENSOR (TTP223)</text>
+    <g transform="translate(65, 35)"><g id="touch-sensor-ttp223">
+    <!-- Red PCB -->
+    <rect x="22" y="2" width="40" height="49.19" rx="3" fill="#D40000" stroke="#900000" stroke-width="1.2"/>
+
+    <!-- Circular Capacitive Touch Pad Surface -->
+    <circle cx="42" cy="26.59" r="11" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    <circle cx="42" cy="26.59" r="7" fill="#FFD700" fill-opacity="0.3"/>
+
+    <!-- 3 Pins (VCC, GND, OUT) -->
+    <line x1="22" y1="8.0" x2="4" y2="8.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="8.00" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+
+    <line x1="22" y1="26.593" x2="4" y2="26.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="26.59" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+
+    <line x1="22" y1="45.186" x2="4" y2="45.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="45.19" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+  </g></g>
+  </g>
+
+  <!-- 12. Piezo Speaker -->
+  <g transform="translate(780, 335)">
+    <rect width="195" height="125" fill="#FFFFFF" stroke="#E2E8F0" rx="6"/>
+    <text x="97" y="20" font-family="'Andale Mono', monospace" font-size="8" font-weight="bold" fill="#000000" text-anchor="middle">PIEZO BUZZER / SPEAKER</text>
+    <g transform="translate(75, 35)"><g id="piezo-speaker-topdown">
+    <!-- Black Plastic Cylindrical Housing -->
+    <circle cx="22.0" cy="23.593" r="15" fill="#333333" stroke="#000000" stroke-width="1.2"/>
+    <!-- Sound Port Hole -->
+    <circle cx="22.0" cy="23.593" r="5" fill="#111827"/>
+    <!-- Brass Disc Rim Accent -->
+    <circle cx="22.0" cy="23.593" r="12" fill="none" stroke="#D4AF37" stroke-width="0.6"/>
+
+    <!-- 2 Pins (Positive +, Negative -) -->
+    <line x1="22.0" y1="5.0" x2="4" y2="5.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="5.00" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="4" cy="5.00" r="0.8" fill="#D40000"/>
+
+    <line x1="22.0" y1="42.186" x2="4" y2="42.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="42.19" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="4" cy="42.19" r="0.8" fill="#000000"/>
+  </g></g>
+  </g>
+</svg>

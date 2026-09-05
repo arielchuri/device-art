@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 65.00 53.19" width="65.00" height="53.19" xmlns="http://www.w3.org/2000/svg">
+  <g id="touch-sensor-ttp223">
+    <!-- Red PCB -->
+    <rect x="22" y="2" width="40" height="49.19" rx="3" fill="#D40000" stroke="#900000" stroke-width="1.2"/>
+
+    <!-- Circular Capacitive Touch Pad Surface -->
+    <circle cx="42" cy="26.59" r="11" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    <circle cx="42" cy="26.59" r="7" fill="#FFD700" fill-opacity="0.3"/>
+
+    <!-- 3 Pins (VCC, GND, OUT) -->
+    <line x1="22" y1="8.0" x2="4" y2="8.0" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="8.00" r="2.5" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+
+    <line x1="22" y1="26.593" x2="4" y2="26.593" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="26.59" r="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+
+    <line x1="22" y1="45.186" x2="4" y2="45.186" stroke="#8E99A2" stroke-width="1.8"/>
+    <circle cx="4" cy="45.19" r="2.5" fill="#FFFFFF" stroke="#2F7EB8" stroke-width="1"/>
+  </g>
+</svg>

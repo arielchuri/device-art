@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 42.00 50.00" width="42.00" height="50.00" xmlns="http://www.w3.org/2000/svg">
+  <g id="potentiometer-sideview">
+    <!-- Metallic Shaft -->
+    <rect x="20.00" y="2" width="8" height="18" fill="#D1D8E0" stroke="#606F7B" stroke-width="1"/>
+    <!-- Threaded Collar & Nut -->
+    <rect x="17.00" y="18" width="14" height="6" fill="#A0ABBA" stroke="#333333" stroke-width="0.8"/>
+
+    <!-- Main Blue Body Case -->
+    <rect x="10.00" y="24" width="28" height="16" rx="2" fill="#2F7EB8" stroke="#1A496B" stroke-width="1.2"/>
+
+    <!-- 3 Descending Solder/Breadboard Pins -->
+    <line x1="14.00" y1="40" x2="14.00" y2="48" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="24.00" y1="40" x2="24.00" y2="48" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="34.00" y1="40" x2="34.00" y2="48" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Pin Tips -->
+    <circle cx="14.00" cy="48" r="1.5" fill="#D40000"/>
+    <circle cx="24.00" cy="48" r="1.5" fill="#2F7EB8"/>
+    <circle cx="34.00" cy="48" r="1.5" fill="#000000"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label (tight to border) -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">PORT</text>
+
+
+  <!-- Classic trapezoidal micro-USB shell -->
+  <polygon points="65,70 135,70 128,98 72,98" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <!-- Internal bottom tongue -->
+  <polygon points="76,86 124,86 120,95 80,95" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
+
+  <!-- Small USB Trident symbol at top right -->
+  <line x1="155" y1="52" x2="155" y2="34" stroke="#000000" stroke-width="1"/>
+  <polygon points="155,30 152,36 158,36" fill="#000000"/>
+  <circle cx="155" cy="52" r="2" fill="#000000"/>
+  <path d="M 155 45 Q 146 44 146 39" fill="none" stroke="#000000" stroke-width="0.8"/>
+  <rect x="144" y="36" width="4" height="4" fill="#000000"/>
+  <path d="M 155 42 Q 164 41 164 38" fill="none" stroke="#000000" stroke-width="0.8"/>
+  <circle cx="164" cy="36" r="2" fill="#000000"/>
+  <!-- Typography: Andale Mono, 2 sizes, regular only -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">MICRO-USB PORT</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">trapezoidal 5-pin socket</text>
+</svg>

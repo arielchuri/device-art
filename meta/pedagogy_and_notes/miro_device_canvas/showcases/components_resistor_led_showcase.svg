@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" width="520" height="250" fill="none">
+  <rect width="520" height="250" fill="#F8F9FA"/>
+  
+  <!-- Header -->
+  <text x="20" y="24" font-family="'Andale Mono', monospace" font-size="11" font-weight="bold" fill="#000000">MIRO DEVICE CANVAS / BREADBOARD-SCALED HARDWARE COMPONENTS</text>
+  <text x="20" y="38" font-family="'Andale Mono', monospace" font-size="8" fill="#888888">Standard 18.593 px breadboard row pitch calibration</text>
+
+  <!-- 1. Resistor Top-Down -->
+  <rect x="20" y="55" width="105" height="175" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1" rx="4"/>
+  <text x="72" y="72" font-family="'Andale Mono', monospace" font-size="7.5" font-weight="bold" fill="#000000" text-anchor="middle">RESISTOR</text>
+  <text x="72" y="83" font-family="'Andale Mono', monospace" font-size="6" fill="#888888" text-anchor="middle">TOP-DOWN (4 ROWS)</text>
+  <g transform="translate(42, 95)">
+    <g id="resistor-topdown" class="component-resistor">
+    <!-- Wire Leads (spanning 4 breadboard rows = 74.37px) -->
+    <line x1="30.0" y1="15.0" x2="30.0" y2="89.372" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+    
+    <!-- Pin Contact Terminals (align directly to breadboard holes) -->
+    <circle cx="30.0" cy="15.0" r="3" fill="#606F7B" stroke="#000000" stroke-width="0.8"/>
+    <circle cx="30.0" cy="15.0" r="1" fill="#FFFFFF"/>
+    <circle cx="30.0" cy="89.372" r="3" fill="#606F7B" stroke="#000000" stroke-width="0.8"/>
+    <circle cx="30.0" cy="89.372" r="1" fill="#FFFFFF"/>
+
+    <!-- Resistor Body (Tan / Beige classic ceramic) -->
+    <rect x="23.00" y="34.19" width="14.0" height="36.0" rx="4" ry="4" fill="#E6D3B3" stroke="#5A4A32" stroke-width="1.2"/>
+    
+    <!-- Resistor Bulb End Contours -->
+    <path d="M 23.00 38.186 Q 30.0 35.186 37.00 38.186" fill="none" stroke="#D1BC99" stroke-width="1"/>
+    <path d="M 23.00 66.186 Q 30.0 69.186 37.00 66.186" fill="none" stroke="#BAA582" stroke-width="1"/>
+
+    <!-- 4 Color Bands (220 Ohm: Red, Red, Brown, Gold) -->
+    <!-- Band 1: Red -->
+    <rect x="23.00" y="40.19" width="14.0" height="3.5" fill="#D40000"/>
+    <!-- Band 2: Red -->
+    <rect x="23.00" y="47.19" width="14.0" height="3.5" fill="#D40000"/>
+    <!-- Band 3: Brown (Multiplier x10) -->
+    <rect x="23.00" y="54.19" width="14.0" height="3.5" fill="#7B3F00"/>
+    <!-- Band 4: Gold (Tolerance 5%) -->
+    <rect x="23.00" y="61.19" width="14.0" height="3.5" fill="#D4AF37"/>
+
+    <!-- Label -->
+    <text x="43.00" y="44.00" font-family="'Andale Mono', monospace" font-size="7.5px" font-weight="bold" fill="#333333" dominant-baseline="central">220Ω</text>
+  </g>
+  </g>
+
+  <!-- 2. Resistor Side-View -->
+  <rect x="135" y="55" width="140" height="175" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1" rx="4"/>
+  <text x="205" y="72" font-family="'Andale Mono', monospace" font-size="7.5" font-weight="bold" fill="#000000" text-anchor="middle">RESISTOR</text>
+  <text x="205" y="83" font-family="'Andale Mono', monospace" font-size="6" fill="#888888" text-anchor="middle">SIDE PROFILE</text>
+  <g transform="translate(150, 115)">
+    <g id="resistor-sideview" class="component-resistor-side">
+    <!-- Breadboard reference plane -->
+    <line x1="5" y1="52.0" x2="99.37" y2="52.0" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="2, 2"/>
+    <text x="98.37" y="48.0" font-family="'Andale Mono', monospace" font-size="6px" fill="#AAAAAA" text-anchor="end">Breadboard Surface</text>
+
+    <!-- Bent Wire Leads (Going down into tie points 74.37px apart) -->
+    <!-- Left Lead -->
+    <path d="M 32.186 20.0 L 19.0 20.0 Q 15.0 20.0 15.0 24.0 L 15.0 60.0" fill="none" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Right Lead -->
+    <path d="M 72.186 20.0 L 85.372 20.0 Q 89.372 20.0 89.372 24.0 L 89.372 60.0" fill="none" stroke="#8E99A2" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Lead Pins at Insertion Point -->
+    <circle cx="15.0" cy="52.0" r="2" fill="#606F7B"/>
+    <circle cx="89.372" cy="52.0" r="2" fill="#606F7B"/>
+
+    <!-- Resistor Body -->
+    <rect x="32.19" y="12.00" width="40.0" height="16.0" rx="5" ry="5" fill="#E6D3B3" stroke="#5A4A32" stroke-width="1.2"/>
+    <!-- Highlight Reflection -->
+    <line x1="36.186" y1="15.0" x2="68.186" y2="15.0" stroke="#FFF5E6" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Color Bands (Horizontal) -->
+    <!-- Band 1: Red -->
+    <rect x="39.19" y="12.00" width="4" height="16.0" fill="#D40000"/>
+    <!-- Band 2: Red -->
+    <rect x="47.19" y="12.00" width="4" height="16.0" fill="#D40000"/>
+    <!-- Band 3: Brown -->
+    <rect x="55.19" y="12.00" width="4" height="16.0" fill="#7B3F00"/>
+    <!-- Band 4: Gold -->
+    <rect x="63.19" y="12.00" width="4" height="16.0" fill="#D4AF37"/>
+
+    <!-- Dimension Label -->
+    <text x="52.19" y="8.0" font-family="'Andale Mono', monospace" font-size="7.5px" font-weight="bold" fill="#333333" text-anchor="middle">220Ω (4 Rows = 74.4px)</text>
+  </g>
+  </g>
+
+  <!-- 3. LED Top-Down -->
+  <rect x="285" y="55" width="105" height="175" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1" rx="4"/>
+  <text x="337" y="72" font-family="'Andale Mono', monospace" font-size="7.5" font-weight="bold" fill="#000000" text-anchor="middle">LED (RED)</text>
+  <text x="337" y="83" font-family="'Andale Mono', monospace" font-size="6" fill="#888888" text-anchor="middle">TOP-DOWN (1 ROW)</text>
+  <g transform="translate(300, 110)">
+    <g id="led-topdown" class="component-led">
+    <!-- LED Outer Flange / Rim with Flat Edge at Bottom (Cathode / Negative) -->
+    <path d="M 13.50 39.00
+             A 15.0 15.0 0 1 1 42.50 39.00
+             Z"
+          fill="url(#led-glow-red)"
+          stroke="#7A000A"
+          stroke-width="1.2"/>
+
+    <!-- Inner Lens Dome Ring -->
+    <circle cx="28.0" cy="29.0" r="10" fill="none" stroke="#FFA3AC" stroke-width="0.8" stroke-opacity="0.6"/>
+
+    <!-- Anode (+) Lead Terminal (Top Pin) -->
+    <circle cx="28.0" cy="20.70" r="2.8" fill="#FFFFFF" stroke="#D40000" stroke-width="1"/>
+    <circle cx="28.0" cy="20.70" r="1" fill="#D40000"/>
+    <text x="46.0" y="20.70" font-family="'Andale Mono', monospace" font-size="7px" font-weight="bold" fill="#D40000" dominant-baseline="central">+</text>
+
+    <!-- Cathode (-) Lead Terminal (Bottom Pin / Flat edge) -->
+    <circle cx="28.0" cy="39.30" r="2.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <circle cx="28.0" cy="39.30" r="1" fill="#000000"/>
+    <text x="46.0" y="39.30" font-family="'Andale Mono', monospace" font-size="7px" font-weight="bold" fill="#333333" dominant-baseline="central">-</text>
+
+    <!-- Specular light highlight -->
+    <ellipse cx="24.0" cy="25.0" rx="3.5" ry="2" transform="rotate(-30 24.0 25.0)" fill="#FFFFFF" fill-opacity="0.7"/>
+  </g>
+  </g>
+
+  <!-- 4. LED Side-View -->
+  <rect x="400" y="55" width="100" height="175" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1" rx="4"/>
+  <text x="450" y="72" font-family="'Andale Mono', monospace" font-size="7.5" font-weight="bold" fill="#000000" text-anchor="middle">LED (RED)</text>
+  <text x="450" y="83" font-family="'Andale Mono', monospace" font-size="6" fill="#888888" text-anchor="middle">SIDE PROFILE</text>
+  <g transform="translate(420, 95)">
+    <g id="led-sideview" class="component-led-side">
+    <!-- Breadboard reference surface line -->
+    <line x1="5" y1="68.0" x2="55.00" y2="68.0" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="2, 2"/>
+    <text x="56.0" y="65.0" font-family="'Andale Mono', monospace" font-size="5.5px" fill="#AAAAAA" text-anchor="end">Breadboard</text>
+
+    <!-- Longer Anode Lead (+) on Left (spaced 18.59px = 1 row) -->
+    <line x1="20.70" y1="35.0" x2="20.70" y2="86.0" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Shorter Cathode Lead (-) on Right -->
+    <line x1="39.30" y1="35.0" x2="39.30" y2="78.0" stroke="#8E99A2" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Insertion indicators at breadboard plane -->
+    <circle cx="20.70" cy="68.0" r="1.8" fill="#D40000"/>
+    <circle cx="39.30" cy="68.0" r="1.8" fill="#000000"/>
+
+    <!-- Internal Anode / Cathode Anvil & Post Structure (visible inside resin) -->
+    <path d="M 20.70 32.0 L 20.70 20.0 L 28.0 20.0" stroke="#D1D8E0" stroke-width="1.2" fill="none"/>
+    <path d="M 39.30 32.0 L 39.30 22.0 L 29.0 18.0 L 39.30 15.0 Z" fill="#D1D8E0" stroke="#B0B9C2" stroke-width="0.8"/>
+
+    <!-- LED Epoxy Dome (5mm Cylinder + Hemispherical Top) -->
+    <path d="M 20.00 32.0
+             L 20.00 18.0
+             A 10.0 10.0 0 0 1 40.00 18.0
+             L 40.00 32.0
+             Z"
+          fill="url(#led-side-grad)"
+          stroke="#7A000A"
+          stroke-width="1"
+          fill-opacity="0.88"/>
+
+    <!-- Bottom Flange / Rim Ring with Flat Right Edge (Cathode) -->
+    <path d="M 18.00 32.0
+             L 41.00 32.0
+             L 41.00 35.0
+             L 18.00 35.0
+             Z"
+          fill="#B80010"
+          stroke="#7A000A"
+          stroke-width="1"/>
+
+    <!-- Specular Reflection Highlight -->
+    <path d="M 23.00 30.0 L 23.00 16.0 Q 23.0 11.0 28.0 11.0" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.6"/>
+
+    <!-- Polarity Labels -->
+    <text x="20.70" y="93.0" font-family="'Andale Mono', monospace" font-size="6.5px" font-weight="bold" fill="#D40000" text-anchor="middle">+</text>
+    <text x="39.30" y="93.0" font-family="'Andale Mono', monospace" font-size="6.5px" font-weight="bold" fill="#333333" text-anchor="middle">-</text>
+  </g>
+  </g>
+</svg>
