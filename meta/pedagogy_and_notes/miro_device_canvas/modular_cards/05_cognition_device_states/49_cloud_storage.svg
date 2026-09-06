@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- Card boundary: thick dotted outline -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
+
+  <!-- Top-left category label -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">MEMORY</text>
+
+  <!-- Cloud icon with server database stack inside -->
+  <path d="M 55 90 C 40 90, 40 70, 55 65 C 55 45, 85 40, 100 55 C 115 45, 145 50, 145 65 C 160 70, 160 90, 145 90 Z" fill="none" stroke="#000000" stroke-width="1"/>
+  <!-- Database disk stack -->
+  <ellipse cx="100" cy="72" rx="16" ry="5" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 84 72 v 8 c 0 3, 7 5, 16 5 c 9 0, 16 -2, 16 -5 v -8" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 84 80 v 8 c 0 3, 7 5, 16 5 c 9 0, 16 -2, 16 -5 v -8" fill="none" stroke="#000000" stroke-width="1"/>
+
+  <!-- Typography -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">CLOUD STORAGE</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">remote database / web server</text>
+</svg>
