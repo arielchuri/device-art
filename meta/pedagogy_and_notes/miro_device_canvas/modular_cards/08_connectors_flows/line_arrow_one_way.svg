@@ -1,22 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <pattern id="hatch" width="200" height="200" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="200"/>
+    <pattern id="hatch" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#000000" stroke-width="1"/>
     </pattern>
   </defs>
+
+  <!-- Standard 200x200 card border -->
   <rect x="10" y="10" width="180" height="180" fill="none" stroke="#888888" stroke-width="1" stroke-dasharray="0, 4" stroke-linecap="round"/>
-  <g transform="translate(10, 40) scale(0.60)">
 
-  <!-- Connector card boundary -->
-  <rect x="5" y="5" width="200" height="200" fill="none" stroke="#888888" stroke-width="200" stroke-dasharray="0, 4" stroke-linecap="round"/>
-  <text x="12" y="18" font-family="Andale Mono, monospace" font-size="9" fill="#888888">DATA</text>
+  <!-- Top labels -->
+  <text x="16" y="22" font-family="Andale Mono, monospace" font-size="9" fill="#888888">FLOW EXAMPLE</text>
+  <text x="184" y="22" font-family="Andale Mono, monospace" font-size="8" fill="#888888" text-anchor="end">EXAMPLE CARD</text>
 
+  <!-- Line Diagram Graphic (Centered inside 200x200 canvas) -->
+  <g id="line_graphic">
 
-  <circle cx="45" cy="45" r="4" fill="none" stroke="#000000" stroke-width="200"/>
-  <line x1="49" y1="45" x2="245" y2="45" stroke="#000000" stroke-width="200"/>
-  <polygon points="255,45 242,39 242,51" fill="url(#hatch)" stroke="#000000" stroke-width="200"/>
-  <text x="150" y="75" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ONE-WAY SIGNAL</text>
-  <text x="150" y="88" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">unidirectional data / trigger flow</text>
-
+  <circle cx="35" cy="50" r="4" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <line x1="39" y1="50" x2="155" y2="50" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="165,50 152,44 152,56" fill="url(#hatch)" stroke="#000000" stroke-width="0.5"/>
   </g>
+
+  <!-- Typography -->
+  <text x="100" y="152" font-family="Andale Mono, monospace" font-size="12" fill="#000000" text-anchor="middle">ONE-WAY SIGNAL</text>
+  <text x="100" y="170" font-family="Andale Mono, monospace" font-size="9" fill="#888888" text-anchor="middle">unidirectional data / trigger flow</text>
 </svg>
