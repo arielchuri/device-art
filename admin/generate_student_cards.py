@@ -38,6 +38,12 @@ PALETTE = [
     {'name': 'Amethyst Purple','bar': '#8B48A8', 'bg_tint': '#F7F1FB'}
 ]
 
+# Active Canvas student IDs/names filter
+ACTIVE_CANVAS_NAMES = [
+    "Ana Cherkezishvili", "Audrey Yip", "Coral Song", "Evelyn Wang",
+    "John O'Donovan", "Karina Umekubo", "Pinkgua Mao", "Tahisha Jain"
+]
+
 students = []
 for f in sorted(PEOPLE_DIR.glob('*.md')):
     if f.name == 'TEMPLATE_student.md':
@@ -49,10 +55,18 @@ for f in sorted(PEOPLE_DIR.glob('*.md')):
             k, v = l.split(':', 1)
             k = k.replace('- **', '').replace('**', '').strip()
             data[k] = v.strip().replace('`', '')
+    
+    roster_name = data.get('Legal / Roster Name', data.get('Name', f.stem.replace('_', ' ').title()))
+    data['is_active_canvas'] = any(cn.lower() in roster_name.lower() or roster_name.lower() in cn.lower() for cn in ACTIVE_CANVAS_NAMES)
+    
+    # Check photo
     photo_file = PEOPLE_DIR / f'{f.stem}.jpg'
     data['has_photo'] = photo_file.exists()
     data['photo_path'] = photo_file if photo_file.exists() else None
     students.append(data)
+
+# Sort so active Canvas students are first, followed by dropped/unlisted students
+students.sort(key=lambda s: (not s['is_active_canvas'], s.get('Name', s['slug'])))
 
 def get_initials(name):
     parts = name.strip().split()

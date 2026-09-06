@@ -6,9 +6,41 @@ Document for sketching out the syllabus
 
 ### 1 - 8/26
 
+Code 1
+
+- Navigating the terminal
+- Create files and folders
+- Write code in Nano
+- Run code in Python
+- Print to the screen
+- Variables and mathematical operations
+
+Exercises
+
+- Print "Hello world!"
+- 
+
 ### 2 - 9/2
 
+Code 2
+
+- Syntax
+- Comments
+- Variable types
+- Lists
+- Interaction
+- Conditionals
+- Loops
+
+- Paper Prototype
+
 ### 3 - 9/9
+
+Electronics
+  - Create a circuit
+  - What is electricity?
+  - Volts, Amps, & Ohms
+  - Paper prototyping in Miro
 
 ### 4 - 9/16
 
