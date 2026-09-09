@@ -16,7 +16,7 @@
    - The AI must **never** invent synthetic creative projects, fictional devices, or course philosophies.
    - When illustrating technical possibilities, refer only to established historic artworks (e.g., Maywa Denki, Natalie Jeremijenko, Kenji Kawakami, Bill Vorn) or describe capabilities in abstract engineering terms.
 2. **Relegated AI Responsibilities**:
-   - **Housekeeping**: Formatting tables, organizing assets, linting, mirroring files.
+   - **Housekeeping**: Formatting tables, organizing assets, linting, mirroring files, keeping `meta/INDEX.md` catalog updated.
    - **Management**: Structuring announcements, sorting rosters, updating attendance ledgers.
    - **Calculations**: Grade conversions, attendance percentage tallies, schedule date alignment.
    - **Canvas Sync**: Updating assignments, rubrics, pages, and discussions via Canvas LMS API.
@@ -24,6 +24,8 @@
    - Do **NOT** publish to Canvas or modify existing curriculum files without explicit user instruction.
 4. **No Emojis**:
    - Do **NOT** use emojis in course documents, Canvas pages, markdown files, or CLI artifacts unless explicitly requested by the instructor.
+5. **Internal Index Maintenance**:
+   - Always maintain and update `meta/INDEX.md` whenever non-student facing files, notes, scripts, or dossiers are added, moved, or updated.
 
 ---
 

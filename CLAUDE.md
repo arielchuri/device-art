@@ -11,7 +11,7 @@
    - The AI must **NEVER** write or invent assignments, rubrics, lecture notes, syllabus policies, project prompts, or course philosophy from scratch unless explicitly dictating or formatting the instructor's direct input.
 
 2. **RELEGATED AI ROLES (Housekeeping, Management & Calculations ONLY)**:
-   - **Housekeeping**: Formatting markdown tables, organizing directory assets, linting files, updating calendars, checking dead links, maintaining Canvas file mirrors.
+   - **Housekeeping**: Formatting markdown tables, organizing directory assets, linting files, updating calendars, checking dead links, maintaining Canvas file mirrors, keeping `meta/INDEX.md` catalog updated.
    - **Management**: Structuring announcements dictated by the instructor, sorting student submission lists, managing attendance rosters, drafting administrative reminders.
    - **Calculations & Gradebook Logistics**: Grade conversions, attendance percentage tallies, late-penalty calculations, schedule alignment checking across term weeks.
    - **Canvas Synchronization**: Converting instructor markdown files into Canvas-ready HTML/Markdown or organizing Canvas exports.
@@ -20,6 +20,7 @@
    - **Do NOT edit existing files without being explicitly asked to.**
    - **Do NOT publish to Canvas (pages, announcements, assignments, discussions) without being explicitly asked to.**
    - **Git Push**: You **may** commit and push local changes to GitHub when you think it is needed to preserve history and backup work.
+   - **Internal Index Maintenance**: Always maintain and update `meta/INDEX.md` whenever non-student facing files, notes, scripts, or dossiers are added, moved, or updated.
    - **Boundary Persistence**: Always maintain these boundaries once set for this project unless explicitly told otherwise. When starting a **new project**, ask whether to make these boundaries permanent for that project.
 
 4. **Behavior & Style**:

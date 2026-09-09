@@ -37,10 +37,11 @@ Code 2
 ### 3 - 9/9
 
 Electronics
-  - Create a circuit
-  - What is electricity?
-  - Volts, Amps, & Ohms
-  - Paper prototyping in Miro
+   - [Electricity Fundamentals](/meta/pedagogy_and_notes/lectures/electricity-fundamentals.md)
+   - Create a circuit
+   - What is electricity?
+   - Volts, Amps, & Ohms
+   - Paper prototyping in Miro
 
 ### 4 - 9/16
 
