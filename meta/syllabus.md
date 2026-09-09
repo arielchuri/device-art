@@ -58,20 +58,10 @@ Students are required to have a physical computing prototyping kit.
 
 ### Phase 1: Foundations & Electronics (Weeks 01–05)
 - **Week 01 (Aug 26)**: Introductions & What is Device Art?
-  - Navigating the terminal
-  - Create files and folders
-  - Write code in Nano
-  - Run code in Python
-  - Print to the screen
-  - Variables and mathematical operations
 - **Week 02 (Sep 02)**: Programming & Materials Distribution (Kits handed out in class)
   - Thinking like a computer
   - Conditional and loops
 - **Week 03 (Sep 09)**: Electricity Fundamentals & powering you breadboard
-  - Create a circuit
-  - What is electricity?
-  - Volts, Amps, & Ohms
-  - Paper prototyping in Miro
 - **Week 04 (Sep 16)**: Microcontroller Programming & Circuitry
 - **Week 05 (Sep 23)**: Prototyping & Sensor Labs
 - **Week 06 (Sep 30)**: Project 1 Reviews & Critiques
