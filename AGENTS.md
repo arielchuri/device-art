@@ -22,6 +22,8 @@
    - **Canvas Sync**: Updating assignments, rubrics, pages, and discussions via Canvas LMS API.
 3. **Explicit Permissions**:
    - Do **NOT** publish to Canvas or modify existing curriculum files without explicit user instruction.
+4. **No Emojis**:
+   - Do **NOT** use emojis in course documents, Canvas pages, markdown files, or CLI artifacts unless explicitly requested by the instructor.
 
 ---
 
