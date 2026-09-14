@@ -54,7 +54,7 @@
 - **Review Course Structure**:
   - Show Canvas site and syllabus overview.
   - Explain grading (1/3 Projects, 1/3 Labs, 1/3 Participation).
-- **Explain the Hardware Kit ($44.50)**:
+- **Explain the Hardware Kit ($50.00)**:
   - Show the physical parts list.
   - Explain that kits will be handed out in **Week 2**.
   - Show payment options (Venmo/Zelle/PayPal/Cash) and clarify self-sourcing option on Canvas.

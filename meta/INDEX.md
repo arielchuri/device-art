@@ -69,6 +69,9 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [meta/pedagogy_and_notes/parts/audio.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/audio.md) — Piezo and PWM sound synthesis guide.
 - [meta/pedagogy_and_notes/parts/piano.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/piano.md) — Capacitive touch musical keyboard reference.
 
+### Project & Prototype Research Notes
+- [notes/projects/platypus-amoeba.md](file:///Users/arielchuri/Life/projects/work/device-art/notes/projects/platypus-amoeba.md) — Technical research and hardware architecture for soft silicone virtual pet (TinyML touch classification, internal barometric squish sensing, flexible LED matrix, Adafruit Metro ESP32-S3).
+
 ---
 
 ## 5. Miro Device Canvas Vector Assets

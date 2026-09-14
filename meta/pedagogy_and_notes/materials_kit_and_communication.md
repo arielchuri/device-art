@@ -4,7 +4,7 @@
 
 Students need a dedicated physical computing & prototyping bundle. Instructor provides pre-assembled kits at wholesale/cost:
 
-- **Kit Bundle Cost**: **$44.50** (or cash / Venmo / Zelle / PayPal to instructor)
+- **Kit Bundle Cost**: **$50.00** (or cash / Venmo / Zelle / PayPal to instructor)
 - **Included Components**:
   - Raspberry Pi Pico (with pre-soldered headers)
   - Micro-USB cable + USB-A to USB-C adapter
@@ -27,6 +27,6 @@ Students need a dedicated physical computing & prototyping bundle. Instructor pr
 >
 > Welcome to Device Art! In this course, we will be building functional interactive physical devices, custom enclosures, and embedded systems.
 >
-> To ensure everyone has high-quality, matched components without waiting weeks for separate online deliveries, I have assembled a complete **Hardware Prototyping Kit** available directly from me at cost for **$44.50** (payable via Venmo, Zelle, PayPal, or cash).
+> To ensure everyone has high-quality, matched components without waiting weeks for separate online deliveries, I have assembled a complete **Hardware Prototyping Kit** available directly from me at cost for **$50.00** (payable via Venmo, Zelle, PayPal, or cash).
 >
 > If you prefer to source parts independently, the complete parts list and verified vendor links are posted under **Course Information & Materials**. Kits will be distributed during our next class session!

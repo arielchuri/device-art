@@ -20,7 +20,7 @@
 - Ultrasonic range finder
 - Real Time Clock
 
-**Cost: $44.50**
+**Cost: $50.00**
 
 You must Venmo, Zelle, Paypal in time for me to assemble your kit. Please tell me if you will be bringing in cash
 

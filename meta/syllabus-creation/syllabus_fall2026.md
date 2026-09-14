@@ -43,7 +43,7 @@ By the successful completion of this course, students will be able to:
 
 Students are required to have a physical computing prototyping kit.
 
-- **Instructor Kit Bundle ($44.50)**: A pre-assembled wholesale bundle available directly from the instructor (payable via Venmo, Zelle, PayPal, or cash). Kits will be distributed in **Week 2**.
+- **Instructor Kit Bundle ($50.00)**: A pre-assembled wholesale bundle available directly from the instructor (payable via Venmo, Zelle, PayPal, or cash). Kits will be distributed in **Week 2**.
 - **Independent Sourcing**: A verified parts list with vendor links (Adafruit/Amazon) is provided on Canvas for students who choose to source their own parts.
 
 ---

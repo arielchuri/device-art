@@ -1,8 +1,21 @@
 # Electricity Intro
 
+## Downloads, Cheatsheets & Manuals
+- **[Sparkle Labs Discover Electronics Manual (PDF)](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/readings/manual_wm_s.pdf)**
+- **[DT832 Multimeter Basic Operations Cheatsheet (PDF)](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/multitester_basic_color.pdf)**
+- **[A Designer's Friendly Guide to the Multimeter](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/multimeter-beginner-guide.md)**
+- **[Miro Circuit Playground: The Secret Flow of Electricity](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/breadboard_and_electricity_exercises.md)**
+
+---
+
 - What is electricity?
   - Atoms
     - [Electrical Pressure](https://vimeo.com/channels/sparlelabs/15994602)
+  - Multimeter Diagnostics
+    - Continuity (beep)
+    - Voltage (DC)
+    - Resistance (Ohms)
+
 - The circuit
   - Our development environment.
   - The solderless breadboard
