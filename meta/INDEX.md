@@ -40,6 +40,7 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [admin/send_canvas_announcement.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_canvas_announcement.py) — CLI utility to broadcast announcements to Canvas.
 - [admin/send_canvas_messages.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_canvas_messages.py) — Direct messaging to students via Canvas Conversations API.
 - [admin/send_personalized_messages.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_personalized_messages.py) — Personalized batch messages (e.g. kit payment reminders).
+- [admin/push_microcontroller_module.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/push_microcontroller_module.py) — Builds and publishes the Microcontroller Intro module, pages, and assignment to Canvas.
 - [admin/open_attendance.sh](file:///Users/arielchuri/Life/projects/work/device-art/admin/open_attendance.sh) — Quick-launcher for Canvas Roll Call tool in browser.
 
 ---
@@ -111,3 +112,24 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [meta/old_courses/Emergent_Objects_Sp26/](file:///Users/arielchuri/Life/projects/work/device-art/meta/old_courses/Emergent_Objects_Sp26/) — Emergent Objects Spring 2026 Canvas archive.
 - [meta/old_courses/Core_Lab_Objects_Fa15/](file:///Users/arielchuri/Life/projects/work/device-art/meta/old_courses/Core_Lab_Objects_Fa15/) — Core Lab Objects Fall 2015 archive.
 - [meta/reference_syllabi/web_syllabi_and_links.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/reference_syllabi/web_syllabi_and_links.md) — Links and notes from external peer courses at NYU ITP, MIT Media Lab, and CMU.
+
+---
+
+## 8. Student-Facing Canvas Pages & Technical Resources
+
+- [meta/pico_resources_index.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pico_resources_index.md) — Comprehensive master index of all Raspberry Pi Pico guides, CircuitPython starter code, hardware part recipes, and assignments.
+- [canvas/pages/course_resources.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/course_resources.md) — Central course resources page (microcontroller docs, software, cheatsheets, manifestos, making facilities, component vendors).
+- [canvas/pages/python_led_blink_simulation.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/python_led_blink_simulation.md) — Pure software terminal emulation of LED states and non-blocking timers.
+- [canvas/pages/vscode_circuitpython_setup.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/vscode_circuitpython_setup.md) — Setup guide for VS Code, CircuitPython extension, "Run on Save", USB drive mounting, and live Serial Monitor.
+- [canvas/pages/pico_microcontroller_intro.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/pico_microcontroller_intro.md) — Student setup and programming guide for Raspberry Pi Pico and CircuitPython.
+- [canvas/pages/lecture_code_meets_electricity.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/lecture_code_meets_electricity.md) — Lecture notes bridging electronic circuits with physical microcontroller computation.
+- [canvas/files/materials_list.md](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/materials_list.md) — Hardware kit bill of materials and vendor sourcing links.
+- [canvas/files/cheatsheets/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/) — Student cheatsheets for Python, Terminal, Git/GitHub, Blender, Multimeter diagnostics, and Pico/CircuitPython.
+- [canvas/files/raspberryPiPico/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/raspberryPiPico/) — Pico code examples (`01_hello_world`, `02_digital_inout`, `03_libraries`, `04_time`), library bundles, and diagnostic quizzes.
+- [canvas/files/parts/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/parts/) — Hardware component guides and demo code (OLED display, NeoPixel, RGB LED, capacitive touch).
+- [canvas/files/images/graphics/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/images/graphics/) — Circuit schematic and breadboard wiring vector diagrams.
+- [canvas/assignments/my_first_object/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/assignments/my_first_object/) — Assignment 1 hardware build files, schematics, and non-blocking code.
+- [canvas/assignments/hardware-software-challenge/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/assignments/hardware-software-challenge/) — Hardware and software troubleshooting challenge.
+- [canvas/assignments/moodlight/](file:///Users/arielchuri/Life/projects/work/device-art/canvas/assignments/moodlight/) — Moodlight project enclosure vectors and firmware scripts.
+
+

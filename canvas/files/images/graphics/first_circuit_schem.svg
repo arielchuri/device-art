@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11in"
+   height="8.5in"
+   viewBox="0 0 279.4 215.9"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="first_circuit_schem.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="in"
+     inkscape:zoom="1.1538078"
+     inkscape:cx="540.81795"
+     inkscape:cy="406.48016"
+     inkscape:window-width="1902"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect1"
+       width="279.39999"
+       height="215.89999"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 63.980344,30.39301 V 186.34402"
+       id="path5-3"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26458333;stroke-linecap:round;stroke-dasharray:none"
+       id="rect2"
+       width="43.171165"
+       height="99.223846"
+       x="41.940788"
+       y="54.70615" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';text-align:start;letter-spacing:-0.06085417px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffb700;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none;fill-opacity:1"
+       x="55.511108"
+       y="107.30556"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';fill:#ffb700;stroke:none;stroke-width:1.21894;letter-spacing:-0.06085417px;fill-opacity:1"
+         x="55.511108"
+         y="107.30556">PICO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';text-align:start;letter-spacing:-0.0608542px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ef3fbb;fill-opacity:1;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="28.543978"
+       y="26.962502"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';letter-spacing:-0.0608542px;fill:#ef3fbb;fill-opacity:1;stroke:none;stroke-width:1.21894"
+         x="28.543978"
+         y="26.962502">3.3v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';text-align:start;letter-spacing:-0.0608542px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="28.543978"
+       y="183.66086"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';letter-spacing:-0.0608542px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="28.543978"
+         y="183.66086">Ground</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';text-align:start;letter-spacing:-0.06085417px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#95e400;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none;fill-opacity:1"
+       x="165.29729"
+       y="149.48372"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';fill:#95e400;stroke:none;stroke-width:1.21894;letter-spacing:-0.06085417px;fill-opacity:1"
+         x="165.29729"
+         y="149.48372">LED</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:'Monaspace Krypton Frozen';-inkscape-font-specification:'Monaspace Krypton Frozen Semi-Bold';text-align:start;letter-spacing:-0.06085417px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00caff;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none;fill-opacity:1"
+       x="165.29729"
+       y="169.91788"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="165.29729"
+         y="169.91788">Resistor (100Ω - 220Ω)</tspan></text>
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 28.649149,30.39301 H 248.12654"
+       id="path4" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path6"
+       cx="64.03389"
+       cy="186.99107"
+       r="1.238601" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path6-3"
+       cx="155.05054"
+       cy="186.99107"
+       r="1.238601" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path6-6"
+       cx="64.03389"
+       cy="30.357719"
+       r="1.238601" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path6-3-1"
+       cx="155.05054"
+       cy="30.357719"
+       r="1.238601" />
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 28.649149,187.0914 H 248.12654"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 154.99705,30.39301 V 186.34402"
+       id="path5"
+       sodipodi:nodetypes="cc" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path7"
+       cx="154.90924"
+       cy="147.10179"
+       r="6.3509011" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect7"
+       width="3.9681053"
+       height="11.274021"
+       x="152.96663"
+       y="162.59262" />
+  </g>
+</svg>

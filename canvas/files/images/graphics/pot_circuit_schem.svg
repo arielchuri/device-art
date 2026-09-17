@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11in"
+   height="8.5in"
+   viewBox="0 0 279.4 215.9"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="pot_circuit_schem.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="in"
+     inkscape:zoom="1.067402"
+     inkscape:cx="529.3226"
+     inkscape:cy="407.99999"
+     inkscape:window-width="1878"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Dot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker10"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path10" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="4"
+       markerHeight="4"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path3" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect1"
+       width="279.39999"
+       height="215.89999"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26458333;stroke-linecap:round;stroke-dasharray:none"
+       id="rect2"
+       width="43.171165"
+       height="99.223846"
+       x="41.940788"
+       y="54.70615" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="55.511108"
+       y="107.30556"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="55.511108"
+         y="107.30556">PICO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="28.543978"
+       y="24.845833"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894;font-size:5.64444444px"
+         x="28.543978"
+         y="24.845833">3.3v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="28.543978"
+       y="181.54422"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="28.543978"
+         y="181.54422">Ground</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="117.67224"
+       y="149.48372"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="117.67224"
+         y="149.48372">LED</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="117.67224"
+       y="55.290836"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="117.67224"
+         y="55.290836">BUTTON</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="74.612808"
+       y="134.2686"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="74.612808"
+         y="134.2686">14</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="73.621307"
+       y="77.752869"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';letter-spacing:0.264583px;fill:#37c8ab;stroke:none;stroke-width:1.21894"
+         x="73.621307"
+         y="77.752869">13</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:Inter;-inkscape-font-specification:'Inter Light';text-align:start;letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#37c8ab;stroke:none;stroke-width:1.21894;stroke-linecap:round;stroke-dasharray:none"
+       x="117.67224"
+       y="169.91788"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="117.67224"
+         y="169.91788">Resistor (100Ω - 220Ω)</tspan></text>
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 28.649149,30.39301 H 248.12654"
+       id="path4" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="circle5"
+       cx="107.42553"
+       cy="186.99107"
+       r="0.79270458" />
+    <circle
+       style="fill:#000000;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path6"
+       cx="107.42553"
+       cy="-30.259672"
+       r="0.79270458"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 28.649149,187.0914 H 248.12654"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="m 85.111951,132.28433 h 22.260069 v 54.05969"
+       id="path8" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       d="M 85.111951,75.441407 H 107.37202 V 30.906721"
+       id="path5"
+       sodipodi:nodetypes="ccc" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="path7"
+       cx="107.28422"
+       cy="147.10179"
+       r="6.3509011" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect3"
+       width="3.9681053"
+       height="11.274021"
+       x="103.40391"
+       y="159.31418" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.460583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect7"
+       width="12.237482"
+       height="11.078021"
+       x="101.20631"
+       y="47.92403" />
+    <path
+       style="fill:#31ab6d;fill-opacity:0.691141;stroke:#000000;stroke-width:0.26458333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#marker3)"
+       d="M 85.269341,100.63765 H 138.06693"
+       id="path1" />
+    <path
+       style="fill:#31ab6d;fill-opacity:0.691141;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker10);marker-end:url(#Dot)"
+       d="M 144.01595,186.8985 V 30.488747"
+       id="path9" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dasharray:none"
+       id="rect8"
+       width="3.9681053"
+       height="11.274021"
+       x="141.57683"
+       y="94.618546" />
+  </g>
+</svg>
