@@ -14,6 +14,9 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [AGENTS.md](file:///Users/arielchuri/Life/projects/work/device-art/AGENTS.md) — Master repository specification, AI assistant boundaries, Canvas API endpoints, and Miro visual rules.
 - [CLAUDE.md](file:///Users/arielchuri/Life/projects/work/device-art/CLAUDE.md) — Assistant boundaries, pedagogy rules, and strict no-emoji policy.
 - [meta/syllabus.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/syllabus.md) — Working source copy of the official course syllabus and university policies.
+  - [meta/syllabus-simple.pdf](file:///Users/arielchuri/Life/projects/work/device-art/meta/syllabus-simple.pdf) — Two-column modern sans-serif PDF layout.
+  - [meta/syllabus-single.pdf](file:///Users/arielchuri/Life/projects/work/device-art/meta/syllabus-single.pdf) — Single-column modern sans-serif PDF layout.
+  - [meta/syllabus-editorial.pdf](file:///Users/arielchuri/Life/projects/work/device-art/meta/syllabus-editorial.pdf) — Single-column editorial serif (Georgia) PDF layout.
 - [meta/HUMANS.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/HUMANS.md) — Instructor credentials, contacts, and institutional affiliations.
 - [meta/operational_semester_roadmap.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/operational_semester_roadmap.md) — Master week-by-week timeline and milestone tracker.
 

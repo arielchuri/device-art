@@ -8,14 +8,18 @@ We program our microcontroller by editing a text file on the microcontroller. Th
 
 This guide contains everything you need to set up your microcontroller: [Getting Started with Raspberry Pi Pico and CircuitPython](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython)
 
-1. Download the UF2 file [from this page](https://circuitpython.org/board/raspberry_pi_pico/).
+1. Download the UF2 file [from this page](https://circuitpython.org/board/raspberry_pi_pico2_w/).
 2. Follow the directions [on this page](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython) to load the file on your chip.
 
-Following those steps will cause the Raspberry PI Pico to appear as thumbdrive on your desktop. If you have or create a text file named _code.py_, it will run automatically. You can use the MU editor or Visual Studio Code with the circuitPython extension to edit your _code.py_ file.
+Following those steps will cause the Raspberry PI Pico to appear as thumbdrive on your desktop. If you have or create a text file named _code.py_, it will run automatically. You can use Visual Studio Code with the circuitPython extension (in the VScode marketplace to edit your _code.py_ file.
 
-- [Circuit Playground Quickstart](https://learn.adafruit.com/circuit-playground-express-circuitpython-5-minute-guide)
+Follow the VScode setup guide to let your computer and micro talk to each other. The basic steps are:
 
-- [Mu Editor](https://learn.adafruit.com/welcome-to-circuitpython/installing-mu-editor)
+1. With micro connected via usb and the _CIRCUITPY_ drive on your desktop, open the command menu (Command+Shift+P) and select your board and Serial Port.
+2. Still in the command menu, select Open Serial Port Monitor. This will open a new terminal.
+3. In VScode click _File/Open Folder_, and select the _CIRCUITPY_ drive. This should open your drive and allow you to edit your **CODE.PY** file.
+4. Open code.py and make it contain only <code>print("Hello world!").
+5. Saving the file will run the file and send text to the _Serial Port Monitor_. Read the output carefully. If you see your hello world, all is well.
 
 ### Other microcontrollers
 
@@ -25,11 +29,11 @@ Following those steps will cause the Raspberry PI Pico to appear as thumbdrive o
 
 ## Raspberry Pi Pico Pinout Diagram
 
-![](../../images/graphics/pico_pinout.svg)
+![](../images/graphics/pico_pinout.svg)
 
 ## Connecting to a circuit
 
-The next step is to connect your MC to circuit.
+The next step is to connect your micro to circuit.
 
 ### Circuit illustration
 
@@ -41,20 +45,27 @@ The next step is to connect your MC to circuit.
 
 ### Code
 
-This code is for the above circuit.
+First we will blink an LED on pin GP14.
 
 ```python
-# Setup the pins for the pot, leds and buttons.
-led1 = digitalio.DigitalInOut(board.GP14)
-led1.direction = digitalio.Direction.OUTPUT
+led1 = digitalio.DigitalInOut(board.GP14)    # Make a variable for pin GP14.
+led1.direction = digitalio.Direction.OUTPUT  # Make the pin an output pin.
 
-while True:
-    # This line prints the pot value to the terminal.
-    led1.value = 1
-    time.sleep(0.15)
-    led1.value = 0
-    time.sleep(0.35)
+while True:           # loop
+    led1.value = 1    # turn on
+    time.sleep(0.15)  # wait
+    led1.value = 0    # turn off
+    time.sleep(0.35)  # wait
 ```
+### Troubleshooting
+
+Things not working is normal.
+
+1. Read the terminal output carefully for error messages.
+2. Follow the electricty. Is the circuit complete?
+3. Unplug the circuit and use your multimeter to test for continuity. Is what you want to be connected actually connected?
+4. Plug in your circuit and test for voltage. Is there 3.3 volts (blinking) at the base of the led circuit?
+5. Use a jumper wire to connect the positive leg of the LED to 3.3 volts. Does it light up?
 
 ### Exercises
 

@@ -4,16 +4,22 @@
 **Institution**: The New School | Parsons School of Design | School of Art, Media, and Technology (AMT)  
 **Term**: Fall 2026 (August 26, 2026 – December 09, 2026)  
 **Meeting Time**: Wednesday Evenings, 19:00 – 21:40 (7:00pm – 9:40pm)  
-**Location**: In-Person (Parsons Making Center / Classroom TBD)  
+**Location**: Albert and Vera List Academic Center, 6 E 16th St, New York, NY 10003, USA
 **Instructor**: Ariel Churi  
-**Email**: `ariel@sparklelabs.com` / `churia@newschool.edu`  
+**Email**: `churia@newschool.edu`  
 **Office Hours**: By appointment  
 
 ---
 
 ## Course Description
 
-Device Art is a platform for students to invent new works of art that do not distinguish the object from a tool, the mechanism from the concept; through playfulness these devices are caught between definitions of art, design, and engineering. In this course devices are the artwork themselves; the mechanisms of the piece become part of the concept behind the work and the very essence of “making” and “play” is embedded in each of the pieces. Device Art can break the mold of art commercialization, propelled by the new forms of manufacturing and the ease of prototyping as production tools become more accessible. These artworks are easily replicable and can become commercialized, and even display features of playful utility for everyday life. Students will learn new methods for prototyping by combining new digital fabrication techniques as well as commonly used fabrication processes including repurposing readymades. They will explore their own artistic concepts and develop a deeper understanding of how their ideas can be reproduced. Device Art will challenge students to rethink their ideas of what art can become, and where the threshold lies between playfulness, utility, and conceptual inquiry. They will develop basic electronics and physical computing skills, such as microcontroller programming and circuitry design. They will engage in fabrication experiments to rethink and envision new devices that can facilitate invention from an artistic perspective, gaining new skills in device design, computing media, and device fabrication. They will use physical computing methods to expand on the field of open source hardware, learn interaction design methods and rapid prototyping tools for 3D printing. This course will provide platform to enhance the design process of material experimentation and propel functional and accessible models of device art.
+Device Art is a platform for students to invent new works of art that do not distinguish the object from a tool, the mechanism from the concept; through playfulness these devices are caught between definitions of art, design, and engineering. In this course devices are the artwork themselves; the mechanisms of the piece become part of the concept behind the work and the very essence of “making” and “play” is embedded in each of the pieces.
+
+Device Art can break the mold of art commercialization, propelled by the new forms of manufacturing and the ease of prototyping as production tools become more accessible. These artworks are easily replicable and can become commercialized, and even display features of playful utility for everyday life.
+
+Students will learn new methods for prototyping by combining new digital fabrication techniques as well as commonly used fabrication processes including repurposing readymades. They will explore their own artistic concepts and develop a deeper understanding of how their ideas can be reproduced.
+
+Device Art will challenge students to rethink their ideas of what art can become, and where the threshold lies between playfulness, utility, and conceptual inquiry. They will develop basic electronics and physical computing skills, such as microcontroller programming and circuitry design. They will engage in fabrication experiments to rethink and envision new devices that can facilitate invention from an artistic perspective, gaining new skills in device design, computing media, and device fabrication. They will use physical computing methods to expand on the field of open source hardware, learn interaction design methods and rapid prototyping tools for 3D printing. This course will provide platform to enhance the design process of material experimentation and propel functional and accessible models of device art.
 
 - **Open to**: All university undergraduate degree students. Some seats have been reserved for BFA Design & Technology majors.
 
@@ -28,7 +34,7 @@ By the successful completion of this course, students will be able to:
 3. **Prototype and document circuit designs** composed of thoughtfully selected electronic components, sensors, actuators (motors/servos), and OLED displays.
 4. **Program microcontroller-driven projects** using the Raspberry Pi Pico and CircuitPython.
 5. **Break down a high-level creative idea** into its constituent hardware and software subsystems.
-6. **Apply foundational digital fabrication techniques**, including 3D modeling (Fusion 360) for FDM 3D printing and 2D vector preparation (Adobe Illustrator) for laser cutting.
+6. **Apply foundational digital fabrication techniques**, including 3D modeling and 2D vector preparation for laser cutting.
 7. **Safely work with electricity**, batteries, power supplies, a wide variety of electrical components, and digital fabrication tools.
 8. **Participate in nuanced discussions and critiques** about the relationship between electronic/physical media and current social issues by drawing context from relevant history, critical theory, and contemporary practice.
 9. **Build a final interactive capstone project** that integrates varying media and sensory themes in a creative practice of their own choosing.
@@ -59,8 +65,6 @@ Students are required to have a physical computing prototyping kit.
 ### Phase 1: Foundations & Electronics (Weeks 01–05)
 - **Week 01 (Aug 26)**: Introductions & What is Device Art?
 - **Week 02 (Sep 02)**: Programming & Materials Distribution (Kits handed out in class)
-  - Thinking like a computer
-  - Conditional and loops
 - **Week 03 (Sep 09)**: Electricity Fundamentals & powering you breadboard
 - **Week 04 (Sep 16)**: Microcontroller Programming & Circuitry
 - **Week 05 (Sep 23)**: Prototyping & Sensor Labs
