@@ -57,6 +57,7 @@ while True:           # loop
     led1.value = 0    # turn off
     time.sleep(0.35)  # wait
 ```
+
 ### Troubleshooting
 
 Things not working is normal.
@@ -77,7 +78,6 @@ Things not working is normal.
 ### Code
 
 ```python
-# Setup the pins for the pot, leds and buttons.
 led1 = digitalio.DigitalInOut(board.GP14)
 led1.direction = digitalio.Direction.OUTPUT
 
