@@ -18,7 +18,7 @@ Follow the VScode setup guide to let your computer and micro talk to each other.
 1. With micro connected via usb and the _CIRCUITPY_ drive on your desktop, open the command menu (Command+Shift+P) and select your board and Serial Port.
 2. Still in the command menu, select Open Serial Port Monitor. This will open a new terminal.
 3. In VScode click _File/Open Folder_, and select the _CIRCUITPY_ drive. This should open your drive and allow you to edit your **CODE.PY** file.
-4. Open code.py and make it contain only <code>print("Hello world!").
+4. Open code.py and make it contain only <code>print("Hello world!")</code>.
 5. Saving the file will run the file and send text to the _Serial Port Monitor_. Read the output carefully. If you see your hello world, all is well.
 
 ### Other microcontrollers
@@ -63,10 +63,11 @@ while True:           # loop
 Things not working is normal.
 
 1. Read the terminal output carefully for error messages.
-2. Follow the electricty. Is the circuit complete?
-3. Unplug the circuit and use your multimeter to test for continuity. Is what you want to be connected actually connected?
-4. Plug in your circuit and test for voltage. Is there 3.3 volts (blinking) at the base of the led circuit?
-5. Use a jumper wire to connect the positive leg of the LED to 3.3 volts. Does it light up?
+2. Are you really using pin GP14?
+3. Follow the electricty. Is the circuit complete?
+4. Unplug the circuit and use your multimeter to test for continuity. Is what you want to be connected actually connected?
+5. Plug in your circuit and test for voltage. Is there 3.3 volts (blinking) at the base of the led circuit?
+6. Use a jumper wire to connect the positive leg of the LED to 3.3 volts. Does it light up?
 
 ### Exercises
 
@@ -107,7 +108,7 @@ Try to follow the tutorials for your micro to do the following individually:
 - Sense a potentiometer (analog input)
 - Fade on LED (analog output using PWM)
 
-circuit illo FPO
+![](../images/graphics/pot_circuit.svg)
 
 Here are some tutorials:
 
