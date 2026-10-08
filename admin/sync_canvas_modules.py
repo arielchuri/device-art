@@ -136,8 +136,28 @@ MODULES_DATA = [
         ]
     },
     {
-        "name": "Reading",
+        "name": "Hardware",
         "position": 5,
+        "items": [
+            {"title": "Paper & Cardboard Enclosure Prototyping", "type": "SubHeader"},
+            {"title": "Cardboard Engineering & Rapid Enclosure Prototyping", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/cardboard_engineering_guide.md")},
+            {"title": "Stephanie Houde: What do Prototypes Prototype? (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/houde-prototypes.pdf")},
+            {"title": "Prototyping Methods & Physical Mockups (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/prototyping_tisdd_method_ch07.pdf")},
+            {"title": "3D Modeling & CAD Fabrication", "type": "SubHeader"},
+            {"title": "Blender 3D Modeling Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/blender_cheatsheet.md")},
+            {"title": "Bill of Materials & Hardware Sourcing", "type": "SubHeader"},
+            {"title": "Course Materials & Hardware Kit List (BOM)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/materials_list.md")},
+            {"title": "Parts & Hardware Master Reference", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/parts.md")},
+            {"title": "Sparkle Labs: Bringing Hardware to Market (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/BRINGINGHWTOMARKET.pdf")},
+            {"title": "Mike Kuniavsky: Smart Things Prototyping (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/kuniavsky-smartthings-ch14.pdf")},
+            {"title": "Universal Methods of Design: Simulations (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/Universal_Methods_of_Design_Expanded_and_Revised_----_(98._Simulations).pdf")},
+            {"title": "Facilities & Bench Work", "type": "SubHeader"},
+            {"title": "Course Resources & Making Center Hubs", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/course_resources.md")},
+        ]
+    },
+    {
+        "name": "Reading",
+        "position": 6,
         "items": [
             {"title": "Electronics Readings", "type": "SubHeader"},
             {"title": "Paul Scherz: Switches & Power (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/scherz-switches.pdf")},

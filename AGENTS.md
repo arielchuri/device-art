@@ -114,20 +114,21 @@ device-art/
 - **GitHub Repository Source**: `https://github.com/arielchuri/device-art/blob/main/`
 
 ### Module Section Structure & GitHub External Links
-Canvas Modules are organized into five core course sections:
+Canvas Modules are organized into six core course sections:
 1. **Code**: Python guides, terminal / git cheat sheets, Blender modeling, simulation scripts.
 2. **Electronics**: Electricity intro, breadboard puzzle labs, multimeter guides, PDF reference manuals.
-3. **Microcontroller**: Pico / CircuitPython setup, pinouts, lecture notes, library bundles.
+3. **Microcontroller**: Pico / CircuitPython setup, pinouts, lecture notes, library bundles, multitasking examples.
 4. **Parts**: Materials list and hardware component documentation (sensors, displays, Neopixels, RTC).
-5. **Reading**: Curated readings categorized into Electronics, Prototyping, and Device Art / Critical Theory.
+5. **Hardware**: Cardboard engineering, paper prototyping, 3D modeling, BOM costing, and hardware sourcing.
+6. **Reading**: Curated readings categorized into Electronics, Prototyping, and Device Art / Critical Theory.
 
 ### Content Linking Policy
-- All module items inside these 5 sections use the Canvas **`ExternalUrl`** item type (`"type": "ExternalUrl"`, `"new_tab": true`).
+- All module items inside these 6 sections use the Canvas **`ExternalUrl`** item type (`"type": "ExternalUrl"`, `"new_tab": true`).
 - Each link points directly to the corresponding source file on GitHub (`https://github.com/arielchuri/device-art/blob/main/<path>`).
 - All modules and module items are created and maintained in an **unpublished (draft)** state upon sync to allow instructor review prior to publishing.
 
 ### Canvas Sync Scripts (`admin/`)
-- `admin/sync_canvas_modules.py`: Rebuilds the 5 section modules and populates them with GitHub External Links.
+- `admin/sync_canvas_modules.py`: Rebuilds the 6 section modules and populates them with GitHub External Links.
 - `admin/sync_canvas_all.py`: Synchronizes assignments, wiki pages, discussions, and course syllabus.
 
 ---
