@@ -9,7 +9,7 @@
 
 ## Links
 
-- [ Real Time Clock ]( https://www.adafruit.com/product/5188 )
+- [Real Time Clock](https://www.adafruit.com/product/5188)
   - [Clock project](https://learn.adafruit.com/digital-clock-with-circuitpython)
 
 - [Air pump](https://www.adafruit.com/product/4700) 

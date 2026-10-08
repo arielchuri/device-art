@@ -49,11 +49,10 @@ while True:
 ```
 
 ## Links
-
-- [Python 1](../programming_intro/python_lesson.md)
-- [Python 2](../programming_2/programming_02.md)
-- [Microcontroller 1](../microcontroller_intro/microcontroller_intro.md)
-- [Microcontroller 2](../microcontroller_two/)
+- [Python Cheat Sheet](../cheatsheets/python_cheatsheet.md)
+- [Pico Microcontroller Intro](../../pages/pico_microcontroller_intro.md)
+- [Digital In/Out Code Guide](02_digital_inout/digital_inout.md)
+- [Course Resources](../../pages/course_resources.md)
 
 ## Problem One
 

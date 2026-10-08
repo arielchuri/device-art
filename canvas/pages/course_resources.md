@@ -41,14 +41,14 @@ Welcome to the central resource hub for **Device Art (PSAM 2230)**. Here you wil
 Quick references created specifically for this course:
 
 - **Programming & CLI**:
-  - [Python Cheatsheet](/courses/1929836/files) / [Local Copy](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/python_cheatsheet.md) — Variables, loops, conditionals, functions, and microcontroller I/O syntax.
-  - [Terminal & Command Line Cheatsheet](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/terminal_cheatsheet.md) — Shell navigation, file management, and environment setup.
-  - [Git & GitHub Cheatsheet](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/git_and_github_cheatsheet.md) — Clone, commit, push, pull, branches, and repository best practices.
+  - [Python Cheatsheet](../files/cheatsheets/python_cheatsheet.md) — Variables, loops, conditionals, functions, and microcontroller I/O syntax.
+  - [Terminal & Command Line Cheatsheet](../files/cheatsheets/terminal_cheatsheet.md) — Shell navigation, file management, and environment setup.
+  - [Git & GitHub Cheatsheet](../files/cheatsheets/git_and_github_cheatsheet.md) — Clone, commit, push, pull, branches, and repository best practices.
 - **Electronics & Diagnostics**:
-  - [Multimeter Beginner Diagnostics Guide](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/multimeter-beginner-guide.md) — Measuring DC voltage, resistance, diode test, and continuity debugging.
-  - [Breadboard & Electricity Exercises](file:///Users/arielchuri/Life/projects/work/device-art/canvas/pages/breadboard_and_electricity_exercises.md) — Step-by-step circuit puzzles, power rails, and LED polarity.
+  - [Multimeter Beginner Diagnostics Guide](multimeter-beginner-guide.md) — Measuring DC voltage, resistance, diode test, and continuity debugging.
+  - [Breadboard & Electricity Exercises](breadboard_and_electricity_exercises.md) — Step-by-step circuit puzzles, power rails, and LED polarity.
 - **3D Modeling & Mechanisms**:
-  - [Blender 3D Modeling Cheatsheet](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/cheatsheets/blender_cheatsheet.md) — Viewport navigation, transformations, modifiers, and boolean modeling for device enclosures.
+  - [Blender 3D Modeling Cheatsheet](../files/cheatsheets/blender_cheatsheet.md) — Viewport navigation, transformations, modifiers, and boolean modeling for device enclosures.
 
 ---
 
@@ -81,7 +81,7 @@ Foundational texts and international archives exploring the intersection of art,
 ## 6. Hardware Sourcing & Electronic Suppliers
 
 - **Course Hardware Kit**:
-  - [Materials List & Kit Component Guide](file:///Users/arielchuri/Life/projects/work/device-art/canvas/files/materials_list.md) — Complete breakdown of the $50 instructor bundle and self-sourcing vendor links.
+  - [Materials List & Kit Component Guide](../files/materials_list.md) — Complete breakdown of the $50 instructor bundle and self-sourcing vendor links.
 - **Electronic Component Vendors**:
   - [Adafruit Industries](https://www.adafruit.com/) (NYC-based) — High quality microcontrollers, breakout boards, sensors, and beginner tutorials.
   - [SparkFun Electronics](https://www.sparkfun.com/) — Physical computing sensors, motors, and hardware tools.

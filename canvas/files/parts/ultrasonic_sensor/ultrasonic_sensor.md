@@ -25,4 +25,4 @@ while True:
     time.sleep(0.01)
 ```
 
-![ultrasonic_schematic](ultrasonic_schematic.svg
+![ultrasonic_schematic](ultrasonic_schematic.svg)

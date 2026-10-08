@@ -2,7 +2,7 @@
 
 SSD1306 Oled displays are small and inexpensive.
 
-You will need copy this file to the _lib_ folder on your _Pico_. [adafruit_displayio_ssd1306i.mpy](adafruit_displayio_ssd1306i.mpy) (2025-04-28 Newer version may be available from [Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries))
+You will need copy this file to the _lib_ folder on your _Pico_. [adafruit_displayio_ssd1306.mpy](adafruit_displayio_ssd1306.mpy) (2025-04-28 Newer version may be available from [Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries))
 
 ![SSD1306 32 pixel screen](AC_SX679.jpg) ![SSD1306 64 pixel display](SX522.jpg)
 
