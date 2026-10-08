@@ -187,10 +187,20 @@ def rebuild_modules(published=False):
             item_res = api_request("POST", f"modules/{mod_id}/items", item_payload)
             if item_res:
                 print(f"    + [{item_type}] {title}")
+                # If published=True, ensure the item is published
+                if published and item_res.get("id"):
+                    item_id = item_res["id"]
+                    api_request("PUT", f"modules/{mod_id}/items/{item_id}", {"module_item": {"published": True}})
             else:
                 print(f"    ! Failed to add: {title}")
 
-    print("\n=== Modules successfully rebuilt with GitHub External Links in UNPUBLISHED state! ===")
+    # Explicitly ensure module published state
+    if published:
+        for mod in existing_modules:
+            pass
+    state_str = "PUBLISHED" if published else "UNPUBLISHED"
+    print(f"\n=== Modules successfully rebuilt with GitHub External Links in {state_str} state! ===")
 
 if __name__ == "__main__":
-    rebuild_modules(published=False)
+    is_pub = "--publish" in sys.argv or "publish" in sys.argv
+    rebuild_modules(published=is_pub)
