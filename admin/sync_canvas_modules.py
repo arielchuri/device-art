@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
 """
 Syncs Course Modules to Canvas LMS as External Links to GitHub.
-Module Sections:
-1. Code
-2. Electronics
-3. Microcontroller
-4. Parts
-5. Reading
+Driven by the human-editable configuration file: canvas/MODULES.md
 
 Content Type: ExternalUrl (External Link to GitHub repository)
 State: Unpublished (Draft)
@@ -14,12 +9,15 @@ State: Unpublished (Draft)
 
 import os
 import sys
+import re
 import json
 import urllib.request
 import urllib.parse
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+CANVAS_DIR = BASE_DIR / "canvas"
+MODULES_MD = CANVAS_DIR / "MODULES.md"
 ENV_FILE = BASE_DIR / ".env"
 GITHUB_REPO_RAW = "https://github.com/arielchuri/device-art/blob/main"
 
@@ -63,139 +61,75 @@ def api_request(method, endpoint, data=None):
         return None
 
 def gh_url(rel_path):
+    if rel_path.startswith("http://") or rel_path.startswith("https://"):
+        return rel_path
     quoted = urllib.parse.quote(rel_path.lstrip("/"), safe="/")
     return f"{GITHUB_REPO_RAW}/{quoted}"
 
-MODULES_DATA = [
-    {
-        "name": "Code",
-        "position": 1,
-        "items": [
-            {"title": "Course Hub & Setup", "type": "SubHeader"},
-            {"title": "Course Resources & Technical References", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/course_resources.md")},
-            {"title": "Course Home & Overview", "type": "ExternalUrl", "external_url": gh_url("canvas/home.md")},
-            {"title": "Cheat Sheets & Reference Guides", "type": "SubHeader"},
-            {"title": "Python Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/python_cheatsheet.md")},
-            {"title": "Terminal & Shell Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/terminal_cheatsheet.md")},
-            {"title": "Git & GitHub Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/git_and_github_cheatsheet.md")},
-            {"title": "Blender 3D Modeling Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/blender_cheatsheet.md")},
-            {"title": "Interactive Code Exercises & Simulations", "type": "SubHeader"},
-            {"title": "Python LED Blink Simulation", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/python_led_blink_simulation.md")},
-            {"title": "Digital In/Out Code Guide", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/02_digital_inout/digital_inout.md")},
-            {"title": "Microcontroller Programming Quiz Guide", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/micro_programming_quiz.md")},
-        ]
-    },
-    {
-        "name": "Electronics",
-        "position": 2,
-        "items": [
-            {"title": "Lessons & Lab Guides", "type": "SubHeader"},
-            {"title": "Electricity Intro & Fundamentals", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/electricity_intro.md")},
-            {"title": "Lab 01: Breadboard Electricity Puzzles", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/lab-01-breadboard-electricity-puzzles.md")},
-            {"title": "Breadboard & Electricity Exercises", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/breadboard_and_electricity_exercises.md")},
-            {"title": "Digital Multimeter Beginner Guide", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/multimeter-beginner-guide.md")},
-            {"title": "Reference Manuals & Charts", "type": "SubHeader"},
-            {"title": "Multitester Basic Color Reference (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/multitester_basic_color.pdf")},
-            {"title": "Sparkle Labs Electronics Manual (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/manual_wm_s.pdf")},
-        ]
-    },
-    {
-        "name": "Microcontroller",
-        "position": 3,
-        "items": [
-            {"title": "Pico & CircuitPython Setup", "type": "SubHeader"},
-            {"title": "Lecture: Code Meets Electricity", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/lecture_code_meets_electricity.md")},
-            {"title": "Microcontroller Intro: Raspberry Pi Pico & CircuitPython", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/pico_microcontroller_intro.md")},
-            {"title": "VS Code & CircuitPython Setup Guide", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/vscode_circuitpython_setup.md")},
-            {"title": "Raspberry Pi Pico & CircuitPython Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/pico_circuitpython_cheatsheet.md")},
-            {"title": "Adafruit CircuitPython 9.x Library Bundle (ZIP)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/adafruit-circuitpython-bundle-9.x-mpy-20250319.zip")},
-            {"title": "Raspberry Pi Pico Pinout Diagram (PNG)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/raspberry_pi_Pico-R3-Pinout-narrow.png")},
-            {"title": "Starter Code & Multitasking Libraries", "type": "SubHeader"},
-            {"title": "Hello World Starter Code (code.py)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/01_hello_world/code.py")},
-            {"title": "Non-Blocking Time & Millis (code.py)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/04_time/code.py")},
-            {"title": "JLED Asynchronous LED Library (jled.py)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/03_libraries/jled.py")},
-            {"title": "Multitasking: Potentiometer + Button + Fading LED", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/03_libraries/fadePotButtonBlink.py")},
-            {"title": "Multitasking: Button Keypad Fade", "type": "ExternalUrl", "external_url": gh_url("canvas/files/raspberryPiPico/03_libraries/buttonKeypadFade.py")},
-        ]
-    },
-    {
-        "name": "Parts",
-        "position": 4,
-        "items": [
-            {"title": "Hardware & Component Documentation", "type": "SubHeader"},
-            {"title": "Course Materials & Hardware Kit List", "type": "ExternalUrl", "external_url": gh_url("canvas/files/materials_list.md")},
-            {"title": "Parts & Hardware Master Reference", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/parts.md")},
-            {"title": "Capacitive Touch Sensor (TTP223)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/captouch_sensor/captouch_sensor.md")},
-            {"title": "Display SSD1306 OLED (I2C)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/display/display.md")},
-            {"title": "Neopixel WS2812B Addressable LED", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/neopixel/neopixel.md")},
-            {"title": "Real Time Clock DS3231 (I2C)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/realTimeClock/realTimeClock_ds3231.md")},
-            {"title": "Ultrasonic Distance Sensor HC-SR04", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/ultrasonic_sensor/ultrasonic_sensor.md")},
-            {"title": "Audio & Piezo Speaker Synthesizer", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/audio.md")},
-            {"title": "Capacitive Touch Piano", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/piano.md")},
-            {"title": "RGB LED Common Cathode", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/RGB_LED/rgb_led.md")},
-        ]
-    },
-    {
-        "name": "Hardware",
-        "position": 5,
-        "items": [
-            {"title": "Paper & Cardboard Enclosure Prototyping", "type": "SubHeader"},
-            {"title": "Cardboard Engineering & Rapid Enclosure Prototyping", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/cardboard_engineering_guide.md")},
-            {"title": "Stephanie Houde: What do Prototypes Prototype? (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/houde-prototypes.pdf")},
-            {"title": "Prototyping Methods & Physical Mockups (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/prototyping_tisdd_method_ch07.pdf")},
-            {"title": "3D Modeling & CAD Fabrication", "type": "SubHeader"},
-            {"title": "Blender 3D Modeling Cheat Sheet", "type": "ExternalUrl", "external_url": gh_url("canvas/files/cheatsheets/blender_cheatsheet.md")},
-            {"title": "Bill of Materials & Hardware Sourcing", "type": "SubHeader"},
-            {"title": "Course Materials & Hardware Kit List (BOM)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/materials_list.md")},
-            {"title": "Parts & Hardware Master Reference", "type": "ExternalUrl", "external_url": gh_url("canvas/files/parts/parts.md")},
-            {"title": "Sparkle Labs: Bringing Hardware to Market (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/BRINGINGHWTOMARKET.pdf")},
-            {"title": "Mike Kuniavsky: Smart Things Prototyping (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/kuniavsky-smartthings-ch14.pdf")},
-            {"title": "Universal Methods of Design: Simulations (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/Universal_Methods_of_Design_Expanded_and_Revised_----_(98._Simulations).pdf")},
-            {"title": "Facilities & Bench Work", "type": "SubHeader"},
-            {"title": "Course Resources & Making Center Hubs", "type": "ExternalUrl", "external_url": gh_url("canvas/pages/course_resources.md")},
-        ]
-    },
-    {
-        "name": "Reading",
-        "position": 6,
-        "items": [
-            {"title": "Electronics Readings", "type": "SubHeader"},
-            {"title": "Paul Scherz: Switches & Power (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/scherz-switches.pdf")},
-            {"title": "Dan O'Sullivan & Tom Igoe: Physical Computing Sensors (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/osullivan-igoe-sensors.pdf")},
-            {"title": "Forrest M. Mims III: Getting Started in Electronics (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/mims-gettingstarted-basics.pdf")},
-            {"title": "Massimo Banzi: Getting Started with Arduino (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/Getting_Started_with_Arduino.pdf")},
-            {"title": "Charles Platt: Make: Electronics (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/electronics/make-electronics.pdf")},
-            {"title": "Prototyping Readings", "type": "SubHeader"},
-            {"title": "Mike Kuniavsky: Smart Things Prototyping (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/kuniavsky-smartthings-ch14.pdf")},
-            {"title": "Hugh Beyer & Karen Holtzblatt: Contextual Design (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/beyer-ci.pdf")},
-            {"title": "Universal Methods of Design: Simulations (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/Universal_Methods_of_Design_Expanded_and_Revised_----_(98._Simulations).pdf")},
-            {"title": "Stephanie Houde & Charles Hill: What do Prototypes Prototype? (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/houde-prototypes.pdf")},
-            {"title": "This is Service Design Doing: Prototyping Methods (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/TISDD_methods.pdf")},
-            {"title": "Prototyping TISDD Method Ch07 (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/prototyping_tisdd_method_ch07.pdf")},
-            {"title": "Sparkle Labs: Bringing Hardware to Market (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/prototyping/BRINGINGHWTOMARKET.pdf")},
-            {"title": "Device Art & Critical Theory", "type": "SubHeader"},
-            {"title": "Chindōgu & Device Art Foundations", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/chindogu_and_device_art.md")},
-            {"title": "Machiko Kusahara: Device Art - A New Form of Media Art (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/2006_Kusahara_Device_Art_A_New_Form.pdf")},
-            {"title": "Anthony Dunne & Fiona Raby: Curious Things for Curious People (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/Curious_things_for_curious_people.pdf")},
-            {"title": "Anthony Dunne & Fiona Raby: Speculative Everything (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/speculativeEverything.pdf")},
-            {"title": "Alastair Fuad-Luke: Design Activism (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/designactivism-beautifulstrangenessforasustainableworld_alastairfuadluke.pdf")},
-            {"title": "Harry Brignull: Dark Patterns (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/darkpatterns.pdf")},
-            {"title": "Johan Huizinga: Homo Ludens (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/homoludens.pdf")},
-            {"title": "CHI 2016: Destructive Games (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/2016-chi-destructive-games-paper.pdf")},
-            {"title": "Hiroshi Ishii: Radical Atoms (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/radical atoms.pdf")},
-            {"title": "TaskCam CHI18 (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/TaskCam CHI18 Draft.pdf")},
-            {"title": "Katerina Kamprani: The Uncomfortable (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/uncomfortable.pdf")},
-            {"title": "V&A Museum: Disobedient Objects (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/DisobedientObjects.pdf")},
-            {"title": "John Zerzan: Running on Emptiness (PDF)", "type": "ExternalUrl", "external_url": gh_url("canvas/files/readings/theory_and_art/John_Zerzan__Running_on_Emptiness__The_Failure_of_Symbolic_Thought_a4.pdf")},
-        ]
-    }
-]
+def parse_modules_md(md_path=MODULES_MD):
+    """
+    Parses canvas/MODULES.md into structured module definitions:
+    ## Module Name
+    ### SubHeader Title
+    - [Item Title](target_file_or_url)
+    """
+    if not md_path.exists():
+        raise FileNotFoundError(f"Configuration file not found: {md_path}")
+
+    modules = []
+    current_module = None
+    position = 1
+
+    with open(md_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line_str = line.strip()
+            if not line_str or line_str.startswith("<!--"):
+                continue
+
+            # Check Module header: ## Module Name
+            mod_match = re.match(r"^##\s+(?!#)(.*)", line_str)
+            if mod_match:
+                mod_name = mod_match.group(1).replace("Module:", "").strip()
+                current_module = {
+                    "name": mod_name,
+                    "position": position,
+                    "items": []
+                }
+                modules.append(current_module)
+                position += 1
+                continue
+
+            # Check SubHeader: ### SubHeader Title
+            sub_match = re.match(r"^###\s+(?!#)(.*)", line_str)
+            if sub_match and current_module:
+                sub_title = sub_match.group(1).strip()
+                current_module["items"].append({
+                    "title": sub_title,
+                    "type": "SubHeader"
+                })
+                continue
+
+            # Check Item: - [Title](path)
+            item_match = re.match(r"^-\s+\[(.*?)\]\((.*?)\)", line_str)
+            if item_match and current_module:
+                title = item_match.group(1).strip()
+                target = item_match.group(2).strip()
+                current_module["items"].append({
+                    "title": title,
+                    "type": "ExternalUrl",
+                    "external_url": gh_url(target)
+                })
+                continue
+
+    return modules
 
 def rebuild_modules(published=False):
-    print(f"=== Rebuilding Canvas Modules for Course ID {COURSE_ID} (Published={published}) ===\n")
+    modules_data = parse_modules_md()
+    print(f"=== Rebuilding Canvas Modules from {MODULES_MD.name} for Course ID {COURSE_ID} (Published={published}) ===\n")
+    print(f"Parsed {len(modules_data)} modules from {MODULES_MD.name}.")
 
     # 1. Fetch and delete existing modules
-    print("--- 1. Removing Old Modules ---")
+    print("\n--- 1. Removing Old Modules ---")
     existing_modules = api_request("GET", "modules?per_page=100") or []
     for mod in existing_modules:
         mod_id = mod["id"]
@@ -203,9 +137,9 @@ def rebuild_modules(published=False):
         print(f"  Deleting old module: '{mod_name}' (ID: {mod_id})...")
         api_request("DELETE", f"modules/{mod_id}")
 
-    # 2. Create the 5 new modules and add External Links
+    # 2. Create the new modules and add External Links
     print("\n--- 2. Creating New Section Modules with GitHub External Links ---")
-    for mod_spec in MODULES_DATA:
+    for mod_spec in modules_data:
         mod_name = mod_spec["name"]
         pos = mod_spec["position"]
         items = mod_spec["items"]

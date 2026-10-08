@@ -122,13 +122,14 @@ Canvas Modules are organized into six core course sections:
 5. **Hardware**: Cardboard engineering, paper prototyping, 3D modeling, BOM costing, and hardware sourcing.
 6. **Reading**: Curated readings categorized into Electronics, Prototyping, and Device Art / Critical Theory.
 
-### Content Linking Policy
+### Content Linking Policy & Declarative Configuration (`canvas/MODULES.md`)
+- **Declarative Source (`canvas/MODULES.md`)**: Module names, subheaders, and items are defined in Markdown format in `canvas/MODULES.md`.
 - All module items inside these 6 sections use the Canvas **`ExternalUrl`** item type (`"type": "ExternalUrl"`, `"new_tab": true`).
 - Each link points directly to the corresponding source file on GitHub (`https://github.com/arielchuri/device-art/blob/main/<path>`).
 - All modules and module items are created and maintained in an **unpublished (draft)** state upon sync to allow instructor review prior to publishing.
 
 ### Canvas Sync Scripts (`admin/`)
-- `admin/sync_canvas_modules.py`: Rebuilds the 6 section modules and populates them with GitHub External Links.
+- `admin/sync_canvas_modules.py`: Reads `canvas/MODULES.md`, rebuilds the 6 section modules, and populates them with GitHub External Links.
 - `admin/sync_canvas_all.py`: Synchronizes assignments, wiki pages, discussions, and course syllabus.
 
 ---
