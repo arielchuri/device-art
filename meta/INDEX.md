@@ -43,7 +43,9 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [admin/send_canvas_announcement.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_canvas_announcement.py) — CLI utility to broadcast announcements to Canvas.
 - [admin/send_canvas_messages.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_canvas_messages.py) — Direct messaging to students via Canvas Conversations API.
 - [admin/send_personalized_messages.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/send_personalized_messages.py) — Personalized batch messages (e.g. kit payment reminders).
-- [admin/push_microcontroller_module.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/push_microcontroller_module.py) — Builds and publishes the Microcontroller Intro module, pages, and assignment to Canvas.
+- [admin/sync_canvas_all.py](file:///Users/arielchuri/Life/projects/school/device-art/admin/sync_canvas_all.py) — Full Canvas LMS batch synchronizer for files, pages, assignments, discussions, syllabus, and modules in unpublished state.
+- [admin/sync_canvas_modules.py](file:///Users/arielchuri/Life/projects/school/device-art/admin/sync_canvas_modules.py) — Builds section modules (Code, Electronics, Microcontroller, Parts, Reading) with External Links to GitHub.
+- [admin/push_microcontroller_module.py](file:///Users/arielchuri/Life/projects/school/device-art/admin/push_microcontroller_module.py) — Builds and publishes the Microcontroller Intro module, pages, and assignment to Canvas.
 - [admin/open_attendance.sh](file:///Users/arielchuri/Life/projects/work/device-art/admin/open_attendance.sh) — Quick-launcher for Canvas Roll Call tool in browser.
 
 ---
@@ -51,10 +53,11 @@ This index catalogs backstage instructor notes, planning documents, student doss
 ## 4. Pedagogy, Lesson Plans & Studio Notes
 
 ### Lesson Plans & Studio Prototypes
-- [meta/pedagogy_and_notes/first_class_lesson_plan.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/first_class_lesson_plan.md) — Step-by-step agenda for Day 1.
-- [meta/pedagogy_and_notes/first_class_demo_and_hook.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/first_class_demo_and_hook.md) — Opening interactive hook and demo breakdown.
-- [meta/pedagogy_and_notes/nano_terminal_live_demo.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/nano_terminal_live_demo.md) — Terminal and text-editor live coding script.
-- [meta/pedagogy_and_notes/assignment-ideas.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/assignment-ideas.md) — Raw brainstorming pool for potential course assignments.
+- [meta/pedagogy_and_notes/first_class_lesson_plan.md](file:///Users/arielchuri/Life/projects/school/device-art/meta/pedagogy_and_notes/first_class_lesson_plan.md) — Step-by-step agenda for Day 1.
+- [meta/pedagogy_and_notes/first_class_demo_and_hook.md](file:///Users/arielchuri/Life/projects/school/device-art/meta/pedagogy_and_notes/first_class_demo_and_hook.md) — Opening interactive hook and demo breakdown.
+- [meta/pedagogy_and_notes/nano_terminal_live_demo.md](file:///Users/arielchuri/Life/projects/school/device-art/meta/pedagogy_and_notes/nano_terminal_live_demo.md) — Terminal and text-editor live coding script.
+- [meta/pedagogy_and_notes/project_01_instructor_guide.md](file:///Users/arielchuri/Life/projects/school/device-art/meta/pedagogy_and_notes/project_01_instructor_guide.md) — Two-week studio milestone, troubleshooting, and SpeedGrader guide for Project 1.
+- [meta/pedagogy_and_notes/assignment-ideas.md](file:///Users/arielchuri/Life/projects/school/device-art/meta/assignment-ideas.md) — Raw brainstorming pool for potential course assignments.
 
 ### Lecture Drafts & Discussion Guides
 - [meta/pedagogy_and_notes/lectures/electricity-fundamentals.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/lectures/electricity-fundamentals.md) — Deep-dive lecture notes on circuit physics.

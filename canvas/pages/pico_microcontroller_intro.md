@@ -1,11 +1,5 @@
 # Microcontroller Intro: Raspberry Pi Pico & CircuitPython
 
-> **Before You Start**:
-> - If you want to practice the LED blink logic in pure Python on your laptop first: see [Emulating the LED Blink in Pure Python](python_led_blink_simulation.md).
-> - For step-by-step editor setup, extension installation, and serial monitor debugging: see the [Visual Studio Code & CircuitPython Setup Guide](vscode_circuitpython_setup.md).
-
----
-
 ## Overview
 
 We will connect our microcontroller to any inputs, such as buttons and sensors, and outputs, such a lights, motors, and speakers. We will program our microcontroller to use the devices.
@@ -17,11 +11,15 @@ This guide contains everything you need to set up your microcontroller: [Getting
 1. Download the UF2 file [from this page](https://circuitpython.org/board/raspberry_pi_pico2_w/).
 2. Follow the directions [on this page](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython) to load the file on your chip.
 
-Following those steps will cause the Raspberry PI Pico to appear as thumbdrive on your desktop with the name _circuitpy_. If you have or create a text file named _code.py_, it will run automatically. You can use the MU editor or Visual Studio Code with the circuitPython extension to edit your _code.py_ file.
+Following those steps will cause the Raspberry PI Pico to appear as thumbdrive on your desktop. If you have or create a text file named _code.py_, it will run automatically. You can use Visual Studio Code with the circuitPython extension (in the VScode marketplace to edit your _code.py_ file.
 
-- [Circuit Playground Quickstart](https://learn.adafruit.com/circuit-playground-express-circuitpython-5-minute-guide)
+Follow the VScode setup guide to let your computer and micro talk to each other. The basic steps are:
 
-- [Mu Editor](https://learn.adafruit.com/welcome-to-circuitpython/installing-mu-editor)
+1. With micro connected via usb and the _CIRCUITPY_ drive on your desktop, open the command menu (Command+Shift+P) and select your board and Serial Port.
+2. Still in the command menu, select Open Serial Port Monitor. This will open a new terminal.
+3. In VScode click _File/Open Folder_, and select the _CIRCUITPY_ drive. This should open your drive and allow you to edit your **CODE.PY** file.
+4. Open code.py and make it contain only <code>print("Hello world!")</code>.
+5. Saving the file will run the file and send text to the _Serial Port Monitor_. Read the output carefully. If you see your hello world, all is well.
 
 ### Other microcontrollers
 
@@ -31,13 +29,11 @@ Following those steps will cause the Raspberry PI Pico to appear as thumbdrive o
 
 ## Raspberry Pi Pico Pinout Diagram
 
-We will use GP14 for the first circuit. Find it on the illustration below.
-
 ![](../files/images/graphics/pico_pinout.svg)
 
 ## Connecting to a circuit
 
-The next step is to connect your MC to circuit.
+The next step is to connect your micro to circuit.
 
 ### Circuit illustration
 
@@ -49,48 +45,30 @@ The next step is to connect your MC to circuit.
 
 ### Code
 
-This code is for the above circuit.
+First we will blink an LED on pin GP14.
 
 ```python
-# Setup the pins for the led.
-# this makes a variable for pin GP14
-led1 = digitalio.DigitalInOut(board.GP14)
-# this sets the pin as on output
-led1.direction = digitalio.Direction.OUTPUT
+led1 = digitalio.DigitalInOut(board.GP14)    # Make a variable for pin GP14.
+led1.direction = digitalio.Direction.OUTPUT  # Make the pin an output pin.
 
-print("LED code 1")
-led1.value = 1
+while True:           # loop
+    led1.value = 1    # turn on
+    time.sleep(0.15)  # wait
+    led1.value = 0    # turn off
+    time.sleep(0.35)  # wait
 ```
-Your led should when your code runs.
-If it does not, it is time to _debug_.
 
-- Is there an error message in the terminal?
-    It may say you have a typo in your code.
-- Does the circuit work?
-    Take the connection from GP14 and put it directly to power (or to ground if the other end of the circuit is to power).
-- Do the power rails the circuit is connected to have power? 
-    Use your multimeter. The red probe plugs into the center socket and the black goes to COM. Check the power rails where the circuit plug in. They should read a potential of 3.3volts.
+### Troubleshooting
 
-#### Blinking an LED
+Things not working is normal.
 
-```python
-# first, we need to import a python library to keep track of the time
-import time
-# Setup the pins for the led.
-# this makes a variable for pin GP14
-led1 = digitalio.DigitalInOut(board.GP14)
-# this sets the pin as on output
-led1.direction = digitalio.Direction.OUTPUT
+1. Read the terminal output carefully for error messages.
+2. Are you really using pin GP14?
+3. Follow the electricty. Is the circuit complete?
+4. Unplug the circuit and use your multimeter to test for continuity. Is what you want to be connected actually connected?
+5. Plug in your circuit and test for voltage. Is there 3.3 volts (blinking) at the base of the led circuit?
+6. Use a jumper wire to connect the positive leg of the LED to 3.3 volts. Does it light up?
 
-# code indented under _while True_ runs in a loop
-
-while True:
-    # This line sets pin GP14 to 3.3volts.
-    led1.value = 1
-    time.sleep(0.15) # wait .15 seconds
-    led1.value = 0
-    time.sleep(0.35)
-```
 ### Exercises
 
 1. Blink the led S.O.S
@@ -101,7 +79,6 @@ while True:
 ### Code
 
 ```python
-# Setup the pins for the pot, leds and buttons.
 led1 = digitalio.DigitalInOut(board.GP14)
 led1.direction = digitalio.Direction.OUTPUT
 
@@ -131,7 +108,7 @@ Try to follow the tutorials for your micro to do the following individually:
 - Sense a potentiometer (analog input)
 - Fade on LED (analog output using PWM)
 
-circuit illo FPO
+![](../files/images/graphics/pot_circuit.svg)
 
 Here are some tutorials:
 

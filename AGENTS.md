@@ -99,23 +99,36 @@ device-art/
 │           └── showcases/                  # Grid overview reference sheets
 └── admin/
     ├── canvas_sync.py                      # Canvas LMS REST API synchronization script
+    ├── sync_canvas_all.py                  # Full Canvas batch synchronizer (pages, assignments, syllabus)
+    ├── sync_canvas_modules.py              # Section modules synchronizer (ExternalUrl links to GitHub)
     ├── generate_student_cards.py           # Miro student SVG card generator
     └── take_attendance.py                  # Interactive CLI roll-call with terminal avatars
 ```
 
 ---
 
-## 6. Canvas API Synchronization Protocol
+## 6. Canvas API Synchronization & Module Architecture
 
 - **Course ID**: `1929836` (The New School)
 - **Authentication**: `CANVAS_API_TOKEN` loaded from `.env` or system environment.
-- **Endpoints**:
-  - `GET /api/v1/courses/1929836/assignments`
-  - `PUT /api/v1/courses/1929836/assignments/:id`
-  - `GET /api/v1/courses/1929836/discussion_topics`
-  - `GET /api/v1/courses/1929836/pages`
-  - `GET /api/v1/courses/1929836/users?enrollment_type[]=student`
+- **GitHub Repository Source**: `https://github.com/arielchuri/device-art/blob/main/`
 
+### Module Section Structure & GitHub External Links
+Canvas Modules are organized into five core course sections:
+1. **Code**: Python guides, terminal / git cheat sheets, Blender modeling, simulation scripts.
+2. **Electronics**: Electricity intro, breadboard puzzle labs, multimeter guides, PDF reference manuals.
+3. **Microcontroller**: Pico / CircuitPython setup, pinouts, lecture notes, library bundles.
+4. **Parts**: Materials list and hardware component documentation (sensors, displays, Neopixels, RTC).
+5. **Reading**: Curated readings categorized into Electronics, Prototyping, and Device Art / Critical Theory.
+
+### Content Linking Policy
+- All module items inside these 5 sections use the Canvas **`ExternalUrl`** item type (`"type": "ExternalUrl"`, `"new_tab": true`).
+- Each link points directly to the corresponding source file on GitHub (`https://github.com/arielchuri/device-art/blob/main/<path>`).
+- All modules and module items are created and maintained in an **unpublished (draft)** state upon sync to allow instructor review prior to publishing.
+
+### Canvas Sync Scripts (`admin/`)
+- `admin/sync_canvas_modules.py`: Rebuilds the 5 section modules and populates them with GitHub External Links.
+- `admin/sync_canvas_all.py`: Synchronizes assignments, wiki pages, discussions, and course syllabus.
 
 ---
 

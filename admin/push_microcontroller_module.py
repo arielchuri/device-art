@@ -6,6 +6,7 @@ Publishes the Microcontroller Intro Module, Pages, and Assignment to Canvas LMS.
 import json
 import urllib.request
 import urllib.parse
+import re
 from pathlib import Path
 import markdown
 
@@ -44,6 +45,27 @@ def api_request(method, endpoint, data=None):
         print(f"[API ERROR {e.code}] {method} {url}: {err_body}")
         return None
 
+_CANVAS_FILES_MAP = None
+
+def get_canvas_files_map():
+    global _CANVAS_FILES_MAP
+    if _CANVAS_FILES_MAP is None:
+        files = api_request("GET", "files?per_page=100") or []
+        _CANVAS_FILES_MAP = {f['display_name']: f['id'] for f in files}
+    return _CANVAS_FILES_MAP
+
+def resolve_image_links(text):
+    img_map = get_canvas_files_map()
+    def sub_func(match):
+        alt = match.group(1)
+        path = match.group(2)
+        filename = path.split("/")[-1]
+        if filename in img_map:
+            file_id = img_map[filename]
+            return f"![{alt}](/courses/{COURSE_ID}/files/{file_id}/preview)"
+        return match.group(0)
+    return re.sub(r"!\[(.*?)\]\((.*?)\)", sub_func, text)
+
 def md_to_html(md_path):
     with open(md_path, "r", encoding="utf-8") as f:
         text = f.read()
@@ -51,6 +73,7 @@ def md_to_html(md_path):
         parts = text.split("---", 2)
         if len(parts) >= 3:
             text = parts[2].strip()
+    text = resolve_image_links(text)
     html = markdown.markdown(text, extensions=['fenced_code', 'tables', 'nl2br'])
     return html
 

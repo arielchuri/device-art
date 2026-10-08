@@ -9,9 +9,6 @@ You will need to drag the _adafruit_hcsr04.mpy_ library file into the _lib_ fold
 - [adafruit learn page](https://learn.adafruit.com/ultrasonic-sonar-distance-sensors)
 
 ```python
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
-
 import board
 import time
 import board
@@ -23,12 +20,9 @@ while True:
     try:
         print(sonar.distance)
         my_distance = sonar.distance
-    except RuntimeError:
+    except RuntimeError: # remove the line and the next to see the output better.
         print("Retrying!")
     time.sleep(0.01)
-
-    if my_distance > 40:
-        print("GET BACK!")
 ```
 
-![ultrasonic_schematic](ultrasonic_schematic.png)
+![ultrasonic_schematic](ultrasonic_schematic.svg

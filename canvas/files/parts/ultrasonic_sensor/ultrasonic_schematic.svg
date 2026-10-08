@@ -1,0 +1,25 @@
+<svg width="426" height="351" viewBox="0 0 426 351" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M322.5 18L322.5 348" stroke="black"/>
+<rect x="44.5" y="92.5" width="105" height="200" stroke="black"/>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="12" font-weight="600" letter-spacing="0em"><tspan x="82.5" y="197">PICO</tspan></text>
+<rect width="35" height="16" transform="translate(110 162.5)" fill="black"/>
+<text fill="white" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="8" font-weight="600" letter-spacing="0em"><tspan x="120" y="173.5">GP5</tspan></text>
+<rect width="35" height="16" transform="translate(110 203)" fill="black"/>
+<text fill="white" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="8" font-weight="600" letter-spacing="0em"><tspan x="120" y="214">GP6</tspan></text>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="10" letter-spacing="0em"><tspan x="3.00781" y="9.75">3.3v</tspan></text>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="10" letter-spacing="0em"><tspan x="9.00391" y="339.75">0v</tspan></text>
+<path d="M0 17.5H423" stroke="black"/>
+<path d="M0 347.5H426" stroke="black"/>
+<path d="M150 171.5H291" stroke="black"/>
+<path d="M150 207.5H322" stroke="black"/>
+<circle cx="322" cy="18" r="3" fill="black"/>
+<circle cx="322" cy="348" r="3" fill="black"/>
+<circle cx="322" cy="208" r="3" fill="black"/>
+<rect x="291.5" y="128.5" width="56" height="119" fill="white"/>
+<rect x="291.5" y="128.5" width="56" height="119" stroke="black"/>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="10" letter-spacing="0em"><tspan x="301.5" y="185.75">&#10;</tspan><tspan x="301.5" y="197.75">HCSR04</tspan></text>
+<rect width="35" height="16" transform="translate(296 162.5)" fill="black"/>
+<text fill="white" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="8" font-weight="600" letter-spacing="0em"><tspan x="303.5" y="173.5">TRIG</tspan></text>
+<rect width="35" height="16" transform="translate(296 203)" fill="black"/>
+<text fill="white" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono" font-size="8" font-weight="600" letter-spacing="0em"><tspan x="303.5" y="214">ECHO</tspan></text>
+</svg>
