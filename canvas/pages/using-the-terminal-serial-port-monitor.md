@@ -26,10 +26,11 @@ Your Pico will appear with a device name such as `/dev/cu.usbmodem14101` or `/de
 
 ### Option A: Built-in `screen` (No Installation Required)
 
-macOS includes the `screen` utility by default:
+macOS includes the `screen` utility by default. Connect using the exact device path found in Step 1 (e.g. `14101` or `1101`) and the baud rate (`115200`):
 
 ```bash
-screen /dev/cu.usbmodem* 115200
+# Replace 14101 with the specific device number found in Step 1
+screen /dev/cu.usbmodem14101 115200
 ```
 
 #### Essential `screen` Shortcuts:
@@ -46,8 +47,8 @@ screen /dev/cu.usbmodem* 115200
 # Install via Homebrew
 brew install tio
 
-# Connect to Pico
-tio /dev/cu.usbmodem*
+# Connect to Pico (replace 14101 with your device number from Step 1)
+tio /dev/cu.usbmodem14101
 ```
 
 #### Essential `tio` Shortcuts:
