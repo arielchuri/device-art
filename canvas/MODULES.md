@@ -44,6 +44,7 @@
 - [Lecture: Code Meets Electricity](canvas/pages/lecture_code_meets_electricity.md)
 - [Microcontroller Intro: Raspberry Pi Pico & CircuitPython](canvas/pages/pico_microcontroller_intro.md)
 - [VS Code & CircuitPython Setup Guide](canvas/pages/vscode_circuitpython_setup.md)
+- [Terminal Serial Port Monitor Guide (macOS, Windows, Linux)](canvas/pages/using-the-terminal-serial-port-monitor.md)
 - [Raspberry Pi Pico & CircuitPython Cheat Sheet](canvas/files/cheatsheets/pico_circuitpython_cheatsheet.md)
 - [Adafruit CircuitPython 9.x Library Bundle (ZIP)](canvas/files/raspberryPiPico/adafruit-circuitpython-bundle-9.x-mpy-20250319.zip)
 - [Raspberry Pi Pico Pinout Diagram (PNG)](canvas/files/raspberryPiPico/raspberry_pi_Pico-R3-Pinout-narrow.png)
