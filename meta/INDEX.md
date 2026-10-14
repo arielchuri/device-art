@@ -73,6 +73,7 @@ This index catalogs backstage instructor notes, planning documents, student doss
 
 ### Hardware Parts & Circuit Docs
 - [meta/pedagogy_and_notes/parts/parts.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/parts.md) — Master technical documentation for kit components.
+- [meta/pedagogy_and_notes/parts/display/display.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/display/display.md) — OLED display (SSD1306) wiring, text labels, and 1-bit BMP image rendering.
 - [meta/pedagogy_and_notes/parts/audio.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/audio.md) — Piezo and PWM sound synthesis guide.
 - [meta/pedagogy_and_notes/parts/piano.md](file:///Users/arielchuri/Life/projects/work/device-art/meta/pedagogy_and_notes/parts/piano.md) — Capacitive touch musical keyboard reference.
 
