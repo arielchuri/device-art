@@ -260,7 +260,7 @@ def sync_all(published=False):
     files_to_upload = list(CANVAS_DIR.rglob("*"))
     for fpath in files_to_upload:
         if fpath.is_file() and not fpath.name.startswith(".") and fpath.suffix.lower() in [
-            ".png", ".jpg", ".jpeg", ".svg", ".pdf", ".zip", ".py", ".mpy", ".mp4", ".odg"
+            ".png", ".jpg", ".jpeg", ".svg", ".pdf", ".zip", ".py", ".mpy", ".mp4", ".odg", ".bmp"
         ]:
             # Calculate folder relative to canvas/
             rel = fpath.parent.relative_to(CANVAS_DIR)
