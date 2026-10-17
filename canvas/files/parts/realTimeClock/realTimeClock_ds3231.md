@@ -4,9 +4,17 @@ A _real time clock_ keeps the actual time once you set it.
 
 Connect the clock chip to power and ground and the SDA to pin GP10 and the SCL GP11.
 
-(This is the RTC I used)[https://www.amazon.com/dp/B09KPC8JZQ]
+- [Adafruit DS3231 Precision RTC Breakout Guide](https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/circuitpython)
+- [Original Module Amazon Reference](https://www.amazon.com/dp/B09KPC8JZQ)
 
-This code is based on this guide: [Adafruit DS3231 Precision RTC Breakout](https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/circuitpython)
+---
+
+## Technical Datasheet & 3D CAD Models
+
+- **Technical Datasheet & Battery Modification Guide:** [ds3231-rtc-module.pdf](ds3231-rtc-module.pdf) (High-precision mechanical dimensioning, pinout specifications, and **critical CR2032 diode-removal hardware safety guide**).
+- **3D STEP CAD Model:** [ds3231_rtc.step](ds3231_rtc.step)
+
+---
 
 
 You will need copy this file to the _lib_ folder on your _Pico_. [adafruit_ds3231.mpy](adafruit_ds3231.mpy) (2025-04-28 Newer version may be available from [Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries))

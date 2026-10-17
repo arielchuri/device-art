@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HC-SR04 Ultrasonic Distance Sensor Technical Datasheet & Dimensional Guide</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 8mm 10mm 8mm 10mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 7.5pt;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #718096;
+    }
+    @bottom-left {
+      content: "HC-SR04 / HC-SR04P Ultrasonic Distance Sensor - Mechanical & Technical Reference";
+      font-size: 7.5pt;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #718096;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.25;
+    font-size: 8pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .title-group h1 {
+    font-size: 14pt;
+    margin: 0 0 1px 0;
+    color: #1a365d;
+    letter-spacing: -0.3px;
+  }
+
+  .title-group h2 {
+    font-size: 8.5pt;
+    font-weight: 500;
+    margin: 0;
+    color: #4a5568;
+  }
+
+  .badge-group {
+    text-align: right;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 5px;
+    background: #edf2f7;
+    color: #2d3748;
+    border: 1px solid #cbd5e0;
+    border-radius: 3px;
+    font-size: 7pt;
+    font-weight: 600;
+    margin-left: 3px;
+  }
+  .badge-primary {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    border-color: #bee3f8;
+  }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #2b6cb0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+    margin: 6px 0 4px 0;
+  }
+
+  .grid-2 {
+    display: flex;
+    gap: 8mm;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    font-size: 7.5pt;
+  }
+
+  th, td {
+    padding: 2px 4px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 600;
+  }
+
+  .note-box {
+    background: #fffaf0;
+    border-left: 3px solid #dd6b20;
+    padding: 4px 6px;
+    margin: 4px 0;
+    font-size: 7.5pt;
+  }
+
+  .note-box strong {
+    color: #c05621;
+  }
+
+  .drawing-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 7pt;
+  }
+
+  pre {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.2;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>HC-SR04 / HC-SR04P Ultrasonic Distance Sensor</h1>
+    <h2>Mechanical Dimensional Guide, Sonar Timing, & RP2040 Integration</h2>
+  </div>
+  <div class="badge-group">
+    <span class="badge badge-primary">2 cm – 400 cm</span>
+    <span class="badge">40 kHz SONAR</span>
+    <span class="badge">3.3V / 5.0V</span>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="col">
+    <div class="section-title">1. Operational Overview & Specifications</div>
+    <p style="margin: 2px 0 4px 0;">The HC-SR04 provides non-contact distance measurement using 40 kHz ultrasonic sound bursts. The module emits an 8-cycle sonic burst upon receiving a 10µs trigger pulse, then outputs an Echo pulse whose duration is proportional to round-trip transit time.</p>
+    
+    <table>
+      <tr><th>Parameter</th><th>Specification</th></tr>
+      <tr><td><strong>Operating Voltage</strong></td><td>5V DC (Classic HC-SR04) / 3.0V–5.5V (HC-SR04P)</td></tr>
+      <tr><td><strong>Quiescent Current</strong></td><td>&lt; 2 mA</td></tr>
+      <tr><td><strong>Working Current</strong></td><td>15 mA</td></tr>
+      <tr><td><strong>Effective Angle</strong></td><td>&lt; 15° measuring cone</td></tr>
+      <tr><td><strong>Ranging Distance</strong></td><td>2 cm – 400 cm (0.8" – 157")</td></tr>
+      <tr><td><strong>Resolution / Accuracy</strong></td><td>0.3 cm</td></tr>
+      <tr><td><strong>Trigger Pulse Width</strong></td><td>10 µs TTL pulse</td></tr>
+      <tr><td><strong>Echo Pulse Output</strong></td><td>TTL pulse width: $T = rac{	ext{Distance (cm)} 	imes 58}{	ext{or Distance (in)} 	imes 148}$</td></tr>
+    </table>
+
+    <div class="section-title">2. Pinout & Interconnect Table</div>
+    <table>
+      <tr><th>Pin</th><th>Name</th><th>Type</th><th>Pico Connection & Electrical Notes</th></tr>
+      <tr><td><strong>1</strong></td><td><code>VCC</code></td><td>Power</td><td>Connect to <code>VBUS (5V)</code> or <code>3V3</code> (HC-SR04P)</td></tr>
+      <tr><td><strong>2</strong></td><td><code>Trig</code></td><td>Input</td><td>Connect to Pico <code>GP5</code> (Trigger pulse)</td></tr>
+      <tr><td><strong>3</strong></td><td><code>Echo</code></td><td>Output</td><td>Connect to Pico <code>GP6</code> *(See 5V Protection Note)*</td></tr>
+      <tr><td><strong>4</strong></td><td><code>GND</code></td><td>Power</td><td>System Ground (Connect to Pico <code>GND</code>)</td></tr>
+    </table>
+
+    <div class="note-box">
+      <strong>Critical 3.3V Logic Protection (Classic HC-SR04):</strong> If powered from 5V (VBUS), the Echo pin outputs a 5V signal. To safely connect to the RP2040's 3.3V-tolerant GPIOs, either use a <strong>1kΩ / 2kΩ voltage divider</strong> on the Echo line, or use the 3.3V-native <strong>HC-SR04P</strong> / <strong>RCWL-1601</strong> variant.
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="section-title">3. Mechanical Dimensions & Enclosure Geometry</div>
+    <div class="drawing-box">
+      <svg width="320" height="175" viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#2b6cb0" />
+          </marker>
+        </defs>
+
+        <!-- PCB: 45.0mm x 20.0mm. Scale: 1mm = 3.6px. 45mm = 162px, 20mm = 72px -->
+        <!-- Center x=90, y=75 -->
+        <rect x="15" y="38" width="162" height="72" rx="4" fill="#0284c7" stroke="#0369a1" stroke-width="1.5" />
+        
+        <!-- Two Transducer Cans: diameter 16.0mm = 57.6px. Center-to-center = 26.0mm = 93.6px -->
+        <!-- Left can: cx = 96 - 46.8 = 49.2. Right can: cx = 96 + 46.8 = 142.8. cy = 74 -->
+        <circle cx="49.2" cy="74" r="28" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+        <circle cx="49.2" cy="74" r="24" fill="#94a3b8" stroke="#334155" stroke-width="0.8" />
+        <text x="49.2" y="78" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">T</text>
+
+        <circle cx="142.8" cy="74" r="28" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+        <circle cx="142.8" cy="74" r="24" fill="#94a3b8" stroke="#334155" stroke-width="0.8" />
+        <text x="142.8" y="78" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">R</text>
+
+        <!-- 4-pin header centered at bottom: 7.62mm span = 27.4px -->
+        <rect x="80" y="98" width="32" height="9" rx="1.5" fill="#0f172a" stroke="#cbd5e0" stroke-width="0.8" />
+        <circle cx="85" cy="102.5" r="1.5" fill="#e2e8f0" />
+        <circle cx="92.5" cy="102.5" r="1.5" fill="#e2e8f0" />
+        <circle cx="100" cy="102.5" r="1.5" fill="#e2e8f0" />
+        <circle cx="107" cy="102.5" r="1.5" fill="#e2e8f0" />
+        <text x="96" y="117" font-size="6" font-weight="700" fill="#2b6cb0" text-anchor="middle">VCC TRIG ECHO GND</text>
+
+        <!-- Dimension: PCB Width 45.0mm -->
+        <line x1="15" y1="130" x2="177" y2="130" stroke="#2b6cb0" stroke-width="0.9" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="96" y="141" font-size="7.5" font-weight="700" fill="#2b6cb0" text-anchor="middle">PCB Width: 45.0 mm [1.77"]</text>
+
+        <!-- Dimension: Center-to-center: 26.0mm -->
+        <line x1="49.2" y1="22" x2="142.8" y2="22" stroke="#475569" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="96" y="17" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">Transducer Centers: 26.0 mm [1.02"]</text>
+
+        <!-- Dimension: PCB Height 20.0mm -->
+        <line x1="7" y1="38" x2="7" y2="110" stroke="#2b6cb0" stroke-width="0.9" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="4" y="74" font-size="7" font-weight="700" fill="#2b6cb0" text-anchor="middle" transform="rotate(-90 4 74)">20.0 mm</text>
+
+        <!-- Side View (Right side) -->
+        <text x="250" y="22" font-size="7.5" font-weight="700" fill="#1a365d" text-anchor="middle">SIDE PROFILE VIEW</text>
+        
+        <!-- Can: depth 12.0mm = 43px. height 16mm = 57.6px -->
+        <rect x="205" y="44" width="43" height="58" fill="#e2e8f0" stroke="#475569" stroke-width="1.2" />
+        <text x="226" y="75" font-size="6.5" fill="#334155" text-anchor="middle">Can (12mm)</text>
+
+        <!-- PCB: 1.6mm = 6px. height 20mm = 72px -->
+        <rect x="248" y="37" width="6" height="72" fill="#0284c7" stroke="#0369a1" />
+        
+        <!-- Rear crystal & header: 7mm = 25px -->
+        <rect x="254" y="78" width="28" height="8" fill="#0f172a" />
+        <text x="285" y="84" font-size="5.5" fill="#64748b">Pin Header</text>
+
+        <!-- Total depth dimension -->
+        <line x1="205" y1="125" x2="282" y2="125" stroke="#2b6cb0" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="243" y="138" font-size="7" font-weight="700" fill="#2b6cb0" text-anchor="middle">Total Depth: ~21.5 mm</text>
+      </svg>
+      <div style="font-size: 6.8pt; color: #64748b; margin-top: 2px;">Figure 1: HC-SR04 Sensor Geometry, Dual Barrel Insets, and Enclosure Cutout Specs.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">4. Enclosure Bezel Design Notes</div>
+<div class="note-box">
+  <strong>Dual Barrel Cutouts:</strong> Drill two circular holes of <strong>Ø 16.5 mm</strong> spaced exactly <strong>26.0 mm center-to-center</strong>. Bevel or chamfer the front aperture edges to prevent acoustic reflections from triggering false near-field echos.
+</div>
+
+<div class="grid-2" style="margin-top: 4px;">
+  <div class="col">
+    <div class="section-title">5. CircuitPython Library Setup</div>
+    <p style="margin: 2px 0;">Install the hardware driver to your Pico's <code>lib/</code> folder:</p>
+    <ul style="margin: 2px 0 4px 15px; padding: 0; font-size: 7.2pt;">
+      <li><code>adafruit_hcsr04.mpy</code> (Available via CircuitPython Bundle)</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <div class="section-title">6. CircuitPython Reading Loop</div>
+<pre>
+import time, board
+import adafruit_hcsr04
+
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.GP5, echo_pin=board.GP6)
+
+while True:
+    try:
+        dist = sonar.distance
+        print(f"Distance: {dist:.1f} cm ({dist / 2.54:.1f} in)")
+    except RuntimeError:
+        pass  # Sensor timed out or echo missed
+    time.sleep(0.05)
+</pre>
+  </div>
+</div>
+
+</body>
+</html>

@@ -6,6 +6,13 @@ SSD1306 OLED displays are small, high-contrast, and inexpensive. They communicat
 
 ---
 
+## Technical Datasheets & Mechanical Drawings
+
+- **Dimensional & Enclosure Guide:** [ssd1306-oled-module.pdf](ssd1306-oled-module.pdf) (High-precision mechanical drawing: 27×27mm PCB outline, 23.5mm hole spacing, active window positioning, and stackup depth).
+- **Official Controller Datasheet:** [SSD1306.pdf](SSD1306.pdf) (Solomon Systech 128×64 Dot Matrix OLED/PLED Segment Driver).
+
+---
+
 ## Required Libraries
 
 To use the SSD1306 display with text labels in CircuitPython, copy **both** of the following into the `lib/` folder on your `CIRCUITPY` drive:

@@ -10,6 +10,10 @@ You can use the neopixel library from Adafruit to control your neopixels. Downlo
 
 ![Pinout diagram of neopixel](neopixel_5mm_diagram.svg)
 
+## Technical Datasheets
+
+- **Official Controller / LED Datasheet:** [WS2812B.pdf](WS2812B.pdf) (Worldsemi Intelligent Control Integrated LED Light Source specifications, data transfer timing, electrical limits).
+
 ## Links
 
 - [Neopixel uber guide](https://learn.adafruit.com/adafruit-neopixel-uberguide)

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SSD1306 0.96" I2C OLED Display Module Technical Datasheet</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 8mm 10mm 8mm 10mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 7.5pt;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #718096;
+    }
+    @bottom-left {
+      content: "SSD1306 0.96\" 128x64 OLED Display Module (I2C) - Mechanical & Technical Reference";
+      font-size: 7.5pt;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #718096;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.25;
+    font-size: 8pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .title-group h1 {
+    font-size: 14pt;
+    margin: 0 0 1px 0;
+    color: #1a365d;
+    letter-spacing: -0.3px;
+  }
+
+  .title-group h2 {
+    font-size: 8.5pt;
+    font-weight: 500;
+    margin: 0;
+    color: #4a5568;
+  }
+
+  .badge-group {
+    text-align: right;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 5px;
+    background: #edf2f7;
+    color: #2d3748;
+    border: 1px solid #cbd5e0;
+    border-radius: 3px;
+    font-size: 7pt;
+    font-weight: 600;
+    margin-left: 3px;
+  }
+  .badge-primary {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    border-color: #bee3f8;
+  }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #2b6cb0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+    margin: 6px 0 4px 0;
+  }
+
+  .grid-2 {
+    display: flex;
+    gap: 8mm;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    font-size: 7.5pt;
+  }
+
+  th, td {
+    padding: 2px 4px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 600;
+  }
+
+  .note-box {
+    background: #fffaf0;
+    border-left: 3px solid #dd6b20;
+    padding: 4px 6px;
+    margin: 4px 0;
+    font-size: 7.5pt;
+  }
+
+  .note-box strong {
+    color: #c05621;
+  }
+
+  .drawing-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 7pt;
+  }
+
+  pre {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.2;
+    overflow-x: hidden;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>SSD1306 0.96" I²C OLED Display Module</h1>
+    <h2>High-Precision Mechanical Dimensional Guide & Multi-View Engineering Specifications</h2>
+  </div>
+  <div class="badge-group">
+    <span class="badge badge-primary">128 × 64 PIXELS</span>
+    <span class="badge">4-PIN I²C</span>
+    <span class="badge">3.3V – 5.0V</span>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="col">
+    <div class="section-title">1. Module Overview & Specifications</div>
+    <p style="margin: 2px 0 4px 0;">The 0.96-inch OLED module is a high-contrast graphic display based on the Solomon Systech SSD1306 controller. Operating over a 2-wire I²C bus, each of the 8,192 organic LEDs emits its own light, eliminating the need for a backlight and offering wide viewing angles (>160°) with minimal power consumption.</p>
+    
+    <table>
+      <tr><th>Parameter</th><th>Specification</th></tr>
+      <tr><td><strong>Display Technology</strong></td><td>Monochrome OLED (White / Blue / Yellow-Blue)</td></tr>
+      <tr><td><strong>Active Resolution</strong></td><td>128 × 64 pixels (0.96" diagonal)</td></tr>
+      <tr><td><strong>Active Area (Glass)</strong></td><td>21.74 mm × 10.86 mm</td></tr>
+      <tr><td><strong>Pixel Pitch / Size</strong></td><td>0.17 mm × 0.17 mm (Pixel Size: 0.15 × 0.15 mm)</td></tr>
+      <tr><td><strong>Operating Voltage</strong></td><td>3.3V to 5.0V DC (Onboard 662K 3.3V regulator)</td></tr>
+      <tr><td><strong>Current Draw</strong></td><td>~15mA typical (all pixels ON ~25mA, standby <10µA)</td></tr>
+      <tr><td><strong>Communication Bus</strong></td><td>I²C Fast Mode (Up to 400 kHz)</td></tr>
+      <tr><td><strong>Default I²C Address</strong></td><td><code>0x3C</code> (Selectable to <code>0x3D</code> via rear resistor)</td></tr>
+    </table>
+
+    <div class="section-title">2. Pinout & Interconnect Table</div>
+    <table>
+      <tr><th>Pin</th><th>Name</th><th>Type</th><th>Description & Raspberry Pi Pico Connection</th></tr>
+      <tr><td><strong>1</strong></td><td><code>GND</code></td><td>Power</td><td>System Ground (Connect to Pico <code>GND</code>)</td></tr>
+      <tr><td><strong>2</strong></td><td><code>VCC</code></td><td>Power</td><td>3.3V to 5V DC Supply (Connect to <code>3V3</code> or <code>VBUS 5V</code>)</td></tr>
+      <tr><td><strong>3</strong></td><td><code>SCL</code></td><td>Input</td><td>I²C Clock (Connect to Pico <code>GP1</code> or <code>GP5</code>)</td></tr>
+      <tr><td><strong>4</strong></td><td><code>SDA</code></td><td>I/O</td><td>I²C Data (Connect to Pico <code>GP0</code> or <code>GP4</code>)</td></tr>
+    </table>
+  </div>
+
+  <div class="col">
+    <div class="section-title">3. Critical Enclosure & Mounting Dimensions</div>
+    <div class="drawing-box">
+      <!-- High-Precision SVG Mechanical Drawing -->
+      <svg width="320" height="175" viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+        <!-- Background grid/dimensions -->
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#2b6cb0" />
+          </marker>
+        </defs>
+
+        <!-- Outer PCB: 27.0mm x 27.0mm -> Scale: 1mm = 4.2px. 27mm = 113.4px -->
+        <!-- Center at x=100, y=85 -->
+        <!-- PCB box: width=114, height=114. x=43, y=28 -->
+        <rect x="43" y="28" width="114" height="114" rx="4" fill="#1a365d" stroke="#0f172a" stroke-width="1.5" />
+        
+        <!-- 4 Mounting Holes: 23.5mm center-to-center = 98.7px. Inset 1.75mm = 7.35px -->
+        <circle cx="50.5" cy="35.5" r="4.5" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
+        <circle cx="149.5" cy="35.5" r="4.5" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
+        <circle cx="50.5" cy="134.5" r="4.5" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
+        <circle cx="149.5" cy="134.5" r="4.5" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
+
+        <!-- 4-Pin Header at top: span 7.62mm = 32px. Center x=100, y=36 -->
+        <rect x="80" y="30" width="40" height="10" rx="1.5" fill="#0f172a" stroke="#cbd5e0" stroke-width="0.8" />
+        <circle cx="86" cy="35" r="1.8" fill="#e2e8f0" />
+        <circle cx="95" cy="35" r="1.8" fill="#e2e8f0" />
+        <circle cx="105" cy="35" r="1.8" fill="#e2e8f0" />
+        <circle cx="114" cy="35" r="1.8" fill="#e2e8f0" />
+        <text x="100" y="26" font-size="6.5" font-weight="700" text-anchor="middle" fill="#2b6cb0">GND VCC SCL SDA</text>
+
+        <!-- Glass Display Outer: 26.7mm x 19.3mm = 112px x 81px. Centered lower on PCB -->
+        <rect x="44" y="48" width="112" height="81" rx="2" fill="#020617" stroke="#334155" stroke-width="1" />
+
+        <!-- Active Matrix: 21.74mm x 10.86mm = 91px x 45.6px -->
+        <rect x="54.5" y="65.7" width="91" height="45.6" fill="#0f172a" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="2,2" />
+        <text x="100" y="90" font-size="7" font-weight="700" fill="#38bdf8" text-anchor="middle">ACTIVE MATRIX</text>
+        <text x="100" y="99" font-size="6" fill="#94a3b8" text-anchor="middle">128 × 64 (21.7 × 10.9 mm)</text>
+
+        <!-- Dimension Lines -->
+        <!-- Width: 27.0mm -->
+        <line x1="43" y1="150" x2="157" y2="150" stroke="#2b6cb0" stroke-width="0.9" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="100" y="160" font-size="7.5" font-weight="700" fill="#2b6cb0" text-anchor="middle">PCB Width: 27.0 mm [1.06"]</text>
+
+        <!-- Height: 27.0mm -->
+        <line x1="28" y1="28" x2="28" y2="142" stroke="#2b6cb0" stroke-width="0.9" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="22" y="88" font-size="7.5" font-weight="700" fill="#2b6cb0" text-anchor="middle" transform="rotate(-90 22 88)">27.0 mm [1.06"]</text>
+
+        <!-- Hole spacing: 23.5mm -->
+        <line x1="50.5" y1="15" x2="149.5" y2="15" stroke="#475569" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="100" y="12" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">Hole Centers: 23.5 mm (4x Ø2.0mm)</text>
+
+        <!-- Side Stackup View (right side) -->
+        <text x="245" y="24" font-size="7.5" font-weight="700" fill="#1a365d" text-anchor="middle">SIDE PROFILE STACKUP</text>
+        
+        <!-- PCB (1.0mm) -->
+        <rect x="235" y="35" width="20" height="95" fill="#1a365d" stroke="#0f172a" />
+        <text x="260" y="85" font-size="6.5" fill="#475569">PCB (1.0 mm)</text>
+
+        <!-- Foam Tape + Glass (2.8mm) -->
+        <rect x="225" y="48" width="10" height="82" fill="#020617" stroke="#64748b" />
+        <text x="218" y="90" font-size="6.5" fill="#475569" text-anchor="end">Glass (2.8 mm)</text>
+
+        <!-- Pin Header at top (straight pins: 8.5mm protrusion rear, 2.5mm plastic front) -->
+        <rect x="255" y="35" width="35" height="8" fill="#e2e8f0" stroke="#64748b" />
+        <text x="295" y="42" font-size="6" fill="#475569">Rear Pins (8.5 mm)</text>
+
+        <!-- Total depth dimension -->
+        <line x1="225" y1="140" x2="290" y2="140" stroke="#2b6cb0" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="257" y="152" font-size="6.5" font-weight="700" fill="#2b6cb0" text-anchor="middle">Total Depth: ~11.5 mm</text>
+      </svg>
+      <div style="font-size: 6.8pt; color: #64748b; margin-top: 2px;">Figure 1: SSD1306 0.96" OLED Mechanical Dimensions, Active Screen Window, and Clearances.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">4. Enclosure Design & Bezel Cutout Recommendations</div>
+<div class="note-box">
+  <strong>Enclosure Window Sizing:</strong> For laser-cut acrylic or 3D-printed bezels, cut a rectangular viewing aperture of <strong>23.0 mm (W) × 12.0 mm (H)</strong>. This fully exposes the active matrix while concealing the outer glass borders. Center the cutout <strong>1.5 mm below</strong> the PCB mounting hole centerline. Use 4× M2 standoffs (minimum 12 mm height if routing straight header DuPont jumpers).
+</div>
+
+<div class="grid-2" style="margin-top: 4px;">
+  <div class="col">
+    <div class="section-title">5. CircuitPython Library Setup</div>
+    <p style="margin: 2px 0;">Copy these files to your Pico's <code>CIRCUITPY/lib/</code> folder:</p>
+    <ul style="margin: 2px 0 4px 15px; padding: 0; font-size: 7.2pt;">
+      <li><code>adafruit_displayio_ssd1306.mpy</code> (Hardware Driver)</li>
+      <li><code>adafruit_display_text/</code> (Folder for Labels & Text)</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <div class="section-title">6. Minimal CircuitPython Code Example</div>
+<pre>
+import board, busio, displayio
+from i2cdisplaybus import I2CDisplayBus
+import adafruit_displayio_ssd1306
+from adafruit_display_text import label
+import terminalio
+
+displayio.release_displays()
+i2c = busio.I2C(board.GP1, board.GP0)
+display_bus = I2CDisplayBus(i2c, device_address=0x3C)
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+
+splash = displayio.Group()
+text_area = label.Label(terminalio.FONT, text="Hello Maker!\n0.96 OLED", color=0xFFFFFF, x=8, y=16)
+splash.append(text_area)
+display.root_group = splash
+</pre>
+  </div>
+</div>
+
+</body>
+</html>
