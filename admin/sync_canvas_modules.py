@@ -121,11 +121,19 @@ def parse_modules_md(md_path=MODULES_MD):
             if item_match and current_module:
                 title = item_match.group(1).strip()
                 target = item_match.group(2).strip()
-                current_module["items"].append({
-                    "title": title,
-                    "type": "ExternalUrl",
-                    "external_url": gh_url(target)
-                })
+                disc_match = re.search(r"discussion_topics/(\d+)", target)
+                if disc_match:
+                    current_module["items"].append({
+                        "title": title,
+                        "type": "Discussion",
+                        "content_id": int(disc_match.group(1))
+                    })
+                else:
+                    current_module["items"].append({
+                        "title": title,
+                        "type": "ExternalUrl",
+                        "external_url": gh_url(target)
+                    })
                 continue
 
     return modules
@@ -234,6 +242,15 @@ def sync_modules(force_published=True):
                             "type": "ExternalUrl",
                             "external_url": item["external_url"],
                             "new_tab": True,
+                            "position": idx
+                        }
+                    }
+                elif itype == "Discussion":
+                    item_payload = {
+                        "module_item": {
+                            "title": ititle,
+                            "type": "Discussion",
+                            "content_id": item["content_id"],
                             "position": idx
                         }
                     }

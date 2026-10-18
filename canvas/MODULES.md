@@ -9,6 +9,7 @@
 
 ### Project Roadmap & Requirements
 - [Final Project Master Overview & Roadmap](canvas/pages/final_project_overview.md)
+- [Final Project Kick-off Discussion & Questions](https://canvas.newschool.edu/courses/1929836/discussion_topics/11375660)
 
 ### Milestones & Deliverables
 - [Milestone 1: Project Proposal, Miro Board & Initial BOM](canvas/assignments/final_project_milestone_01_proposal.md)
