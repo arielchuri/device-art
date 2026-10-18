@@ -5,6 +5,19 @@
 
 ---
 
+## Final Project: Device Art Capstone
+
+### Project Roadmap & Requirements
+- [Final Project Master Overview & Roadmap](canvas/pages/final_project_overview.md)
+
+### Milestones & Deliverables
+- [Milestone 1: Project Proposal, Miro Board & Initial BOM](canvas/assignments/final_project_milestone_01_proposal.md)
+- [Milestone 2: Functional Diagram, Pseudo-Code & Benchtop Circuit](canvas/assignments/final_project_milestone_02_systems.md)
+- [Milestone 3: Mechanical Drawing & Enclosure Mockup](canvas/assignments/final_project_milestone_03_enclosure.md)
+- [Final Capstone Submission & Exhibition](canvas/assignments/final_project_final_submission.md)
+
+---
+
 ## Code
 
 ### Course Hub & Setup
