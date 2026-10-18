@@ -3,8 +3,11 @@
 Syncs Course Modules to Canvas LMS as External Links to GitHub.
 Driven by the human-editable configuration file: canvas/MODULES.md
 
-Content Type: ExternalUrl (External Link to GitHub repository)
-State: Unpublished (Draft)
+Features:
+- Non-destructive: Updates modules and items in-place (upsert). Never wipes existing modules.
+- Preserves / defaults to PUBLISHED state so students never lose access.
+- Content Type: ExternalUrl (External Link to GitHub repository) opening in a new tab.
+- Single Source of Truth: GitHub hosts all content; Canvas provides the portal links.
 """
 
 import os
@@ -37,7 +40,7 @@ def load_env():
 TOKEN, BASE_URL, COURSE_ID = load_env()
 HEADERS = {
     "Authorization": f"Bearer {TOKEN}",
-    "User-Agent": "DeviceArt-CanvasSync/1.0",
+    "User-Agent": "DeviceArt-CanvasSync/2.0",
     "Content-Type": "application/json"
 }
 
@@ -89,10 +92,14 @@ def parse_modules_md(md_path=MODULES_MD):
             # Check Module header: ## Module Name
             mod_match = re.match(r"^##\s+(?!#)(.*)", line_str)
             if mod_match:
-                mod_name = mod_match.group(1).replace("Module:", "").strip()
+                raw_name = mod_match.group(1).replace("Module:", "").strip()
+                # Check for optional [draft] tag in header
+                is_draft = "[draft]" in raw_name.lower()
+                clean_name = re.sub(r"\[.*?\]", "", raw_name).strip()
                 current_module = {
-                    "name": mod_name,
+                    "name": clean_name,
                     "position": position,
+                    "published": not is_draft,
                     "items": []
                 }
                 modules.append(current_module)
@@ -123,84 +130,141 @@ def parse_modules_md(md_path=MODULES_MD):
 
     return modules
 
-def rebuild_modules(published=False):
+def sync_modules(force_published=True):
+    """
+    Non-destructively synchronizes modules and items from MODULES.md into Canvas LMS.
+    """
     modules_data = parse_modules_md()
-    print(f"=== Rebuilding Canvas Modules from {MODULES_MD.name} for Course ID {COURSE_ID} (Published={published}) ===\n")
-    print(f"Parsed {len(modules_data)} modules from {MODULES_MD.name}.")
+    print(f"=== Syncing Canvas Modules from {MODULES_MD.name} for Course ID {COURSE_ID} ===")
+    print(f"Parsed {len(modules_data)} target modules.\n")
 
-    # 1. Fetch and delete existing modules
-    print("\n--- 1. Removing Old Modules ---")
-    existing_modules = api_request("GET", "modules?per_page=100") or []
-    for mod in existing_modules:
-        mod_id = mod["id"]
-        mod_name = mod.get("name", "Untitled")
-        print(f"  Deleting old module: '{mod_name}' (ID: {mod_id})...")
-        api_request("DELETE", f"modules/{mod_id}")
+    # 1. Fetch existing modules on Canvas
+    print("--- 1. Fetching Live Canvas Modules ---")
+    live_modules = api_request("GET", "modules?per_page=100") or []
+    live_by_name = {m["name"].strip().lower(): m for m in live_modules}
+    target_names = {m["name"].strip().lower() for m in modules_data}
 
-    # 2. Create the new modules and add External Links
-    print("\n--- 2. Creating New Section Modules with GitHub External Links ---")
+    # 2. Upsert each module from MODULES.md
+    print("\n--- 2. Synchronizing Modules & Items (In-Place Upsert) ---")
     for mod_spec in modules_data:
         mod_name = mod_spec["name"]
+        mod_key = mod_name.strip().lower()
         pos = mod_spec["position"]
-        items = mod_spec["items"]
+        should_publish = force_published if force_published is not None else mod_spec["published"]
+        target_items = mod_spec["items"]
 
-        # Create module
-        mod_payload = {
-            "module": {
-                "name": mod_name,
-                "position": pos,
-                "published": published
+        existing_mod = live_by_name.get(mod_key)
+        if existing_mod:
+            mod_id = existing_mod["id"]
+            # Preserve existing published state unless force_published is True
+            target_pub = True if (force_published or existing_mod.get("published")) else should_publish
+            update_payload = {
+                "module": {
+                    "name": mod_name,
+                    "position": pos,
+                    "published": target_pub
+                }
             }
-        }
-        mod_res = api_request("POST", "modules", mod_payload)
-        if not mod_res or "id" not in mod_res:
-            print(f"  FAILED to create module: {mod_name}")
-            continue
-
-        mod_id = mod_res["id"]
-        print(f"\n  Created Module: '{mod_name}' (ID: {mod_id}, Position: {pos})")
-
-        # Add items
-        for item in items:
-            item_type = item["type"]
-            title = item["title"]
-
-            if item_type == "SubHeader":
-                item_payload = {
-                    "module_item": {
-                        "title": title,
-                        "type": "SubHeader"
-                    }
+            api_request("PUT", f"modules/{mod_id}", update_payload)
+            print(f"✓ Module '{mod_name}' (ID: {mod_id}, Pos: {pos}, Published: {target_pub})")
+        else:
+            create_payload = {
+                "module": {
+                    "name": mod_name,
+                    "position": pos,
+                    "published": should_publish
                 }
-            elif item_type == "ExternalUrl":
-                item_payload = {
-                    "module_item": {
-                        "title": title,
-                        "type": "ExternalUrl",
-                        "external_url": item["external_url"],
-                        "new_tab": True
-                    }
-                }
-            else:
+            }
+            res = api_request("POST", "modules", create_payload)
+            if not res or "id" not in res:
+                print(f"✗ FAILED to create module: {mod_name}")
                 continue
+            mod_id = res["id"]
+            print(f"+ Created Module '{mod_name}' (ID: {mod_id}, Pos: {pos}, Published: {should_publish})")
 
-            item_res = api_request("POST", f"modules/{mod_id}/items", item_payload)
-            if item_res:
-                print(f"    + [{item_type}] {title}")
-                # If published=True, ensure the item is published
-                if published and item_res.get("id"):
-                    item_id = item_res["id"]
-                    api_request("PUT", f"modules/{mod_id}/items/{item_id}", {"module_item": {"published": True}})
+        # 3. Synchronize items inside this module
+        existing_items = api_request("GET", f"modules/{mod_id}/items?per_page=100") or []
+        # Key existing items by (type, title.strip().lower())
+        existing_items_map = {}
+        for it in existing_items:
+            key = (it.get("type"), it.get("title", "").strip().lower())
+            existing_items_map[key] = it
+
+        # Target items lookup
+        target_keys = set()
+        for idx, item in enumerate(target_items, start=1):
+            itype = item["type"]
+            ititle = item["title"]
+            ikey = (itype, ititle.strip().lower())
+            target_keys.add(ikey)
+
+            match = existing_items_map.get(ikey)
+            if match:
+                item_id = match["id"]
+                # Update if URL or position or published state needs sync
+                needs_update = False
+                update_body = {}
+                if itype == "ExternalUrl" and match.get("external_url") != item["external_url"]:
+                    update_body["external_url"] = item["external_url"]
+                    needs_update = True
+                if match.get("position") != idx:
+                    update_body["position"] = idx
+                    needs_update = True
+                if not match.get("published") and should_publish:
+                    update_body["published"] = True
+                    needs_update = True
+
+                if needs_update:
+                    api_request("PUT", f"modules/{mod_id}/items/{item_id}", {"module_item": update_body})
+                    print(f"    ~ Updated [{itype}] {ititle} (Pos: {idx})")
             else:
-                print(f"    ! Failed to add: {title}")
+                # Create item
+                if itype == "SubHeader":
+                    item_payload = {
+                        "module_item": {
+                            "title": ititle,
+                            "type": "SubHeader",
+                            "position": idx
+                        }
+                    }
+                elif itype == "ExternalUrl":
+                    item_payload = {
+                        "module_item": {
+                            "title": ititle,
+                            "type": "ExternalUrl",
+                            "external_url": item["external_url"],
+                            "new_tab": True,
+                            "position": idx
+                        }
+                    }
+                else:
+                    continue
 
-    # Explicitly ensure module published state
-    if published:
-        for mod in existing_modules:
-            pass
-    state_str = "PUBLISHED" if published else "UNPUBLISHED"
-    print(f"\n=== Modules successfully rebuilt with GitHub External Links in {state_str} state! ===")
+                item_res = api_request("POST", f"modules/{mod_id}/items", item_payload)
+                if item_res:
+                    print(f"    + Created [{itype}] {ititle} (Pos: {idx})")
+                    if should_publish and item_res.get("id"):
+                        api_request("PUT", f"modules/{mod_id}/items/{item_res['id']}", {"module_item": {"published": True}})
+                else:
+                    print(f"    ! Failed to add: {ititle}")
+
+        # Delete obsolete items that are no longer in MODULES.md
+        for ikey, old_it in existing_items_map.items():
+            if ikey not in target_keys:
+                old_id = old_it["id"]
+                old_title = old_it.get("title", "")
+                print(f"    - Removing obsolete item: '{old_title}' (ID: {old_id})")
+                api_request("DELETE", f"modules/{mod_id}/items/{old_id}")
+
+    # 4. Remove obsolete modules that are no longer in MODULES.md
+    print("\n--- 3. Checking Obsolete Modules ---")
+    for live_name_key, live_mod in live_by_name.items():
+        if live_name_key not in target_names:
+            print(f"  - Deleting obsolete module: '{live_mod['name']}' (ID: {live_mod['id']})")
+            api_request("DELETE", f"modules/{live_mod['id']}")
+
+    print("\n=== Modules successfully synchronized in non-destructive mode! ===")
 
 if __name__ == "__main__":
-    is_pub = "--publish" in sys.argv or "publish" in sys.argv
-    rebuild_modules(published=is_pub)
+    is_draft_only = "--draft" in sys.argv
+    sync_modules(force_published=not is_draft_only)
