@@ -49,13 +49,11 @@ Create a markdown table or spreadsheet detailing every component you expect to u
 * **Kit Components**: Which parts from your course kit will be used? (Raspberry Pi Pico, OLED SSD1306, LCD1602, Neopixels, Capacitive Touch, Ultrasonic, RTC DS3231, etc.)
 * **Sourced Hardware & Raw Materials**: What materials (acrylic, hardwood, silicone, aluminum, readymades) and fasteners (screws, standoff spacers, hinges) will you need to source? Include vendor links and estimated costs.
 
-```markdown
 | Item | Component / Material | Specification / Color | Qty | Vendor / Source | Part Link | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | Microcontroller | Raspberry Pi Pico (RP2040) | 1 | Course Kit | [Datasheet](../files/raspberryPiPico/pico-datasheet.pdf) | In Hand |
 | 2 | Display | SSD1306 0.96" OLED I2C | 1 | Course Kit | [Datasheet](../files/parts/display/ssd1306-oled-module.pdf) | In Hand |
 | 3 | Enclosure Shell | 1/8" Frosted Cast Acrylic | 1 | Canal Plastics | https://... | Need to Order |
-```
 
 ---
 
