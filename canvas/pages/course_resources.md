@@ -47,7 +47,9 @@ Quick references created specifically for this course:
 - **Electronics & Diagnostics**:
   - [Multimeter Beginner Diagnostics Guide](multimeter-beginner-guide.md) — Measuring DC voltage, resistance, diode test, and continuity debugging.
   - [Breadboard & Electricity Exercises](breadboard_and_electricity_exercises.md) — Step-by-step circuit puzzles, power rails, and LED polarity.
-- **3D Modeling & Mechanisms**:
+- **3D Modeling, Laser Cutting & Fabrication**:
+  - [Fabrication & Enclosure Resources Hub](fabrication.md) — Central directory for laser cutting, 3D modeling, cardboard prototyping, campus making labs, and plastics/hardware vendors.
+  - [Illustrator Universal Laser Cutter Guide (PDF)](../files/cheatsheets/Illustrator-Universal-Laser-Guide-2025.pdf) — Preparing vector cut and etch files for Universal Laser Systems cutters.
   - [Blender 3D Modeling Cheatsheet](../files/cheatsheets/blender_cheatsheet.md) — Viewport navigation, transformations, modifiers, and boolean modeling for device enclosures.
 
 ---

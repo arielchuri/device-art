@@ -95,7 +95,9 @@
 - [Stephanie Houde: What do Prototypes Prototype? (PDF)](canvas/files/readings/prototyping/houde-prototypes.pdf)
 - [Prototyping Methods & Physical Mockups (PDF)](canvas/files/readings/prototyping/prototyping_tisdd_method_ch07.pdf)
 
-### 3D Modeling & CAD Fabrication
+### 3D Modeling, Laser Cutting & CAD Fabrication
+- [Fabrication & Enclosure Resources Hub](canvas/pages/fabrication.md)
+- [Illustrator Universal Laser Cutter Guide (PDF)](canvas/files/cheatsheets/Illustrator-Universal-Laser-Guide-2025.pdf)
 - [Blender 3D Modeling Cheat Sheet](canvas/files/cheatsheets/blender_cheatsheet.md)
 
 ### Bill of Materials & Hardware Sourcing

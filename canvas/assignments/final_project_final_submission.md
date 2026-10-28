@@ -24,7 +24,15 @@ During class on December 09, our studio will be transformed into an exhibition. 
 
 Prior to the start of class, you will submit your complete documentation package to Canvas and publish your comprehensive capstone post on your **Learning Portfolio**.
 
-Refer to the master [Final Project Overview & Roadmap](../pages/final_project_overview.md) for full reference materials.
+Refer to the master [Final Project Overview & Roadmap](../pages/final_project_overview.md) for full reference materials and the [Fabrication & Enclosure Resources Hub](../pages/fabrication.md) for laser cutting and soldering guides.
+
+---
+
+## Example Capstone Artifact
+
+![Finished Device Art Example](../files/images/final_project/eo01c.jpg)
+
+*Example of a completed, self-contained physical capstone device exhibiting intentional laser-cut acrylic joinery, clean internal soldered wiring, secure component mounting, and responsive interaction.*
 
 ---
 

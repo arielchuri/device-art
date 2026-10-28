@@ -22,7 +22,46 @@ In Milestone 3, your device takes physical form. An interactive device must poss
 
 You will produce dimensioned mechanical drawings and fabricate a rapid physical prototype of the enclosure (using laser-cut cardboard/acrylic, 3D printing, or benchtop joinery). This mockup will verify that your circuit, display, sensors, tactile switches, and battery/USB cables physically fit and function together.
 
-Refer to the master [Final Project Overview & Roadmap](../pages/final_project_overview.md) and the [Cardboard Engineering Guide](../pages/cardboard_engineering_guide.md) for techniques and examples.
+Refer to the master [Final Project Overview & Roadmap](../pages/final_project_overview.md), the [Cardboard Engineering Guide](../pages/cardboard_engineering_guide.md), and the [Fabrication & Enclosure Resources Hub](../pages/fabrication.md) for techniques and specifications.
+
+---
+
+## Example References & Drawings
+
+### 1. Dimensioned Mechanical Drawings
+Your mechanical drawing communicates outer panel dimensions, joinery, and internal component mounting:
+
+![Mechanical Drawing Example](../files/images/final_project/projector_mech.png)
+
+![Buddha Box Mechanical Study](../files/images/final_project/buddhabox_mech.jpg)
+
+*Downloadable vector reference:* [mechanical-m.svg](../files/images/final_project/mechanical-m.svg) | [example_mech_drawing.svg](../../meta/pedagogy_and_notes/final_object/mechanical_drawing/example_mech_drawing.svg)
+
+---
+
+## Digital Fabrication & Laser Cutting Standards
+
+When preparing 2D vector files (Illustrator or Inkscape) for laser cutting on Universal Laser Systems machines at the **Parsons Making Center**:
+
+- **Color Mode**: Set document color space to **RGB**.
+- **Stroke Weight**: Set stroke width to **0.001 pt** (hairline) for all vector lines.
+- **Color Coding**:
+  - **Vector Cut (Through-cut)**: RGB Red (`#FF0000`, R: 255, G: 0, B: 0)
+  - **Vector Score (Engrave line without cutting through)**: RGB Blue (`#0000FF`, R: 0, G: 0, B: 255)
+  - **Raster Etch (Surface shading/fill)**: RGB Black (`#000000`, R: 0, G: 0, B: 0)
+- **Reference Guides**:
+  - [Illustrator Universal Laser Guide (PDF)](../files/cheatsheets/Illustrator-Universal-Laser-Guide-2025.pdf) — Complete guide for laser setup and color formatting.
+  - [MoodLight Laser Cut Pattern (`moodlight_laserpattern.svg`)](../assignments/moodlight/moodlight_laserpattern.svg) — Sample vector cut layout showing panel standoffs and sensor windows.
+  - [Parsons E4 Laser Lab Store](https://epay.newschool.edu/C21120_ustores/web/store_main.jsp?STOREID=56) & [Canal Plastics Center](https://www.canalplastic.com/) (345 Canal St, NYC) for acrylic sheet stock and solvent cement.
+
+---
+
+## Circuit Integration & Soldering Preparation
+
+As you test-fit your hardware into the enclosure:
+- **Component Clearance**: Account for the physical depth of components behind panels (e.g., potentiometer bodies, buttons, OLED headers).
+- **Strain Relief & Wire Routing**: Route wires so they cannot be pinched when closing the enclosure. Plan wire lengths allowing the enclosure to open for servicing.
+- **Transition to Solder**: Breadboard jumper wires will come loose inside an enclosed device. Plan out how components will be wired to perfboard or soldered directly to header leads with heat-shrink insulation.
 
 ---
 
