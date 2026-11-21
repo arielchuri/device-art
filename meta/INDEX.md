@@ -29,11 +29,15 @@ This index catalogs backstage instructor notes, planning documents, student doss
 - [meta/terms/fall2026/people/](file:///Users/arielchuri/Life/projects/work/device-art/meta/terms/fall2026/people/) — Individual student dossiers, biographies, interests, and portrait photos.
 - [meta/terms/fall2026/people/dropped/](file:///Users/arielchuri/Life/projects/work/device-art/meta/terms/fall2026/people/dropped/) — Archived dossiers of withdrawn students.
 - [meta/terms/fall2026/people/svg_cards/](file:///Users/arielchuri/Life/projects/work/device-art/meta/terms/fall2026/people/svg_cards/) — Generated 200x200 Miro student cards and roster grid.
+- [meta/terms/fall2026/final/](file:///Users/arielchuri/Life/projects/school/device-art/meta/terms/fall2026/final/) — Final project directories for active students (includes Milestone 1 proposals, Milestone 2 functional diagrams/pseudo-code/circuits, dossiers, summaries, and `notes.md` review feedback).
 - [meta/terms/fall2026/live_code_wall.html](file:///Users/arielchuri/Life/projects/work/device-art/meta/terms/fall2026/live_code_wall.html) — Local dashboard for live student code monitoring during class.
 
 ---
 
 ## 3. Administrative Scripts (`admin/`)
+
+- [admin/process_milestone_2.py](file:///Users/arielchuri/Life/projects/school/device-art/admin/process_milestone_2.py) — Fetches Milestone 2 submissions from Canvas, archives diagrams and pseudo-code into student folders.
+- [admin/generate_and_print_m2.py](file:///Users/arielchuri/Life/projects/school/device-art/admin/generate_and_print_m2.py) — Compiles compact 2-sided PDF dossiers for student folders and sends directly to printer (`EPSON_ET_4550_S`).
 
 - [admin/take_attendance.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/take_attendance.py) — Interactive CLI roll call with ASCII portraits.
 - [admin/sync_attendance_to_canvas.py](file:///Users/arielchuri/Life/projects/work/device-art/admin/sync_attendance_to_canvas.py) — Syncs local attendance ledger marks to Canvas gradebook.
